@@ -8,6 +8,10 @@
     using Microsoft.Extensions.Configuration;
     using Microsoft.Extensions.DependencyInjection;
     using Data;
+    using MyLeasing.Web.Helpers;
+    using MyLeasing.Web.Data.Entities;
+    using Microsoft.AspNetCore.Identity;
+
     public class Startup
     {
         public Startup(IConfiguration configuration)
@@ -27,12 +31,27 @@
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
+            services.AddIdentity<User, IdentityRole>(cfg =>
+            {
+                cfg.User.RequireUniqueEmail = true;
+                cfg.Password.RequireDigit = false;
+                cfg.Password.RequiredUniqueChars = 0;
+                cfg.Password.RequireLowercase = false;
+                cfg.Password.RequireNonAlphanumeric = false;
+                cfg.Password.RequireUppercase = false;
+            }).AddEntityFrameworkStores<DataContext>();
+
+
             services.AddDbContext<DataContext>(cfg =>
             {
                 cfg.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
             });
 
             services.AddTransient<SeedDb>();
+            services.AddScoped<IUserHelper, UserHelper>();
+            services.AddScoped<ICombosHelper, CombosHelper>();
+            services.AddScoped<IConverterHelper, ConverterHelper>();
+            services.AddScoped<IImageHelper, ImageHelper>();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
@@ -53,6 +72,7 @@
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
+            app.UseAuthentication();
             app.UseCookiePolicy();
 
             app.UseMvc(routes =>

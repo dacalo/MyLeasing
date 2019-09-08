@@ -2,7 +2,9 @@
 {
     using Microsoft.EntityFrameworkCore;
     using Entities;
-    public class DataContext : DbContext
+    using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+
+    public class DataContext : IdentityDbContext<User>
     {
         public DataContext(DbContextOptions<DataContext> options) : base(options)
         {
@@ -11,6 +13,8 @@
         public DbSet<Contract> Contracts { get; set; }
 
         public DbSet<Lessee> Lessees { get; set; }
+
+        public DbSet<Manager> Managers { get; set; }
 
         public DbSet<Owner> Owners { get; set; }
 
