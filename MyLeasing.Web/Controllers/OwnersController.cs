@@ -330,7 +330,6 @@ namespace MyLeasing.Web.Controllers
             return RedirectToAction($"{nameof(Details)}/{property.Owner.Id}");
         }
 
-
         public async Task<IActionResult> AddImage(int? id)
         {
             if (id == null)
@@ -416,7 +415,7 @@ namespace MyLeasing.Web.Controllers
                 await _dataContext.SaveChangesAsync();
                 return RedirectToAction($"{nameof(DetailsProperty)}/{model.PropertyId}");
             }
-
+            model.Lessees = _combosHelper.GetComboLessees();
             return View(model);
         }
 
