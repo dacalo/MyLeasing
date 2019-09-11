@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using MyLeasing.Common.Models;
 using Newtonsoft.Json;
+using Plugin.Connectivity;
 
 namespace MyLeasing.Common.Services
 {
@@ -103,5 +104,16 @@ namespace MyLeasing.Common.Services
                 };
             }
         }
+
+        public async Task<bool> CheckConnectionAsync(string url)
+        {
+            if (!CrossConnectivity.Current.IsConnected)
+            {
+                return false;
+            }
+
+            return await CrossConnectivity.Current.IsRemoteReachable(url);
+        }
+
     }
 }

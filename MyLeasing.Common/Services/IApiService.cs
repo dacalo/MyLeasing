@@ -18,5 +18,8 @@ namespace MyLeasing.Common.Services
             string servicePrefix,
             string controller,
             TokenRequest request);
+
+        Task<bool> CheckConnectionAsync(string url);
+
     }
 }
