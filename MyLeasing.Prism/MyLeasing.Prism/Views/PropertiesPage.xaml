@@ -25,7 +25,7 @@
                                 <TapGestureRecognizer Command="{Binding SelectPropertyCommand}"/>
                             </Frame.GestureRecognizers>
                             <StackLayout>
-                                <imageloading:CachedImage
+                                <ffimageloading:CachedImage
                                     Aspect="AspectFit"
                                     CacheDuration= "50"
                                     DownsampleToViewSize = "true"

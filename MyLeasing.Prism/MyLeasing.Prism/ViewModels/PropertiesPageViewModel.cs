@@ -5,7 +5,7 @@ using Prism.Navigation;
 
 namespace MyLeasing.Prism.ViewModels
 {
-    public class PropertiesViewModel : ViewModelBase
+    public class PropertiesPageViewModel : ViewModelBase
     {
         private readonly INavigationService _navigationService;
         private OwnerResponse _owner;
@@ -13,7 +13,7 @@ namespace MyLeasing.Prism.ViewModels
         private ObservableCollection<PropertyResponse> _properties;
         private bool _isRefreshing;
 
-        public PropertiesViewModel(INavigationService navigationService) : base(navigationService)
+        public PropertiesPageViewModel(INavigationService navigationService) : base(navigationService)
         {
             _navigationService = navigationService;
             Title = "Properties";
@@ -46,14 +46,19 @@ namespace MyLeasing.Prism.ViewModels
                 _owner = parameters.GetValue<OwnerResponse>("owner");
                 Properties = new ObservableCollection<PropertyResponse>(_owner.Properties.Select(p => new PropertyItemViewModel
                 {
-                    Born = p.Born,
-                    Histories = p.Histories,
+                    Address = p.Address,
+                    Contracts = p.Contracts,
+                    HasParkingLot = p.HasParkingLot,
                     Id = p.Id,
-                    ImageUrl = p.ImageUrl,
-                    Name = p.Name,
-                    PetType = p.PetType,
-                    Race = p.Race,
-                    Remarks = p.Remarks
+                    IsAvailable = p.IsAvailable,
+                    Neighborhood = p.Neighborhood,
+                    Price = p.Price,
+                    PropertyImages = p.PropertyImages,
+                    PropertyType = p.PropertyType,
+                    Remarks = p.Remarks,
+                    Rooms = p.Rooms,
+                    SquareMeters = p.SquareMeters,
+                    Stratum = p.Stratum
                 }).ToList());
             }
 
