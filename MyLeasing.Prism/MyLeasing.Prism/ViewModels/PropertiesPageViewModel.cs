@@ -10,7 +10,7 @@ namespace MyLeasing.Prism.ViewModels
         private readonly INavigationService _navigationService;
         private OwnerResponse _owner;
         private TokenResponse _token;
-        private ObservableCollection<PropertyResponse> _properties;
+        private ObservableCollection<PropertyItemViewModel> _properties;
         private bool _isRefreshing;
 
         public PropertiesPageViewModel(INavigationService navigationService) : base(navigationService)
@@ -19,7 +19,7 @@ namespace MyLeasing.Prism.ViewModels
             Title = "Properties";
         }
 
-        public ObservableCollection<PropertyResponse> Properties
+        public ObservableCollection<PropertyItemViewModel> Properties
         {
             get => _properties;
             set => SetProperty(ref _properties, value);
@@ -44,7 +44,7 @@ namespace MyLeasing.Prism.ViewModels
             if (parameters.ContainsKey("owner"))
             {
                 _owner = parameters.GetValue<OwnerResponse>("owner");
-                Properties = new ObservableCollection<PropertyResponse>(_owner.Properties.Select(p => new PropertyItemViewModel
+                Properties = new ObservableCollection<PropertyItemViewModel>(_owner.Properties.Select(p => new PropertyItemViewModel(_navigationService)
                 {
                     Address = p.Address,
                     Contracts = p.Contracts,
