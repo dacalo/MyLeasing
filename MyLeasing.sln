@@ -1,19 +1,17 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.852
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29306.81
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyLeasing.Common", "MyLeasing.Common\MyLeasing.Common.csproj", "{0C199C5B-395A-44DE-8D4A-A8F4035019DB}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyLeasing.Web", "MyLeasing.Web\MyLeasing.Web.csproj", "{80B1A6E3-A25D-4726-AAE3-ADA9C8A4CA6E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyLeasing.Prism", "MyLeasing.Prism\MyLeasing.Prism\MyLeasing.Prism.csproj", "{7A2EBF16-7CEE-42B4-9883-56C669BC91CD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyLeasing.Prism", "MyLeasing.Prism\MyLeasing.Prism\MyLeasing.Prism.csproj", "{7A2EBF16-7CEE-42B4-9883-56C669BC91CD}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyLeasing.Prism.Android", "MyLeasing.Prism\MyLeasing.Prism.Android\MyLeasing.Prism.Android.csproj", "{9BA4DF21-4B17-451D-AD98-5F6A6218971D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyLeasing.Prism.iOS", "MyLeasing.Prism\MyLeasing.Prism.iOS\MyLeasing.Prism.iOS.csproj", "{99AEE846-8A52-4BF6-90DC-C18813CBF4A5}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyLeasing.Prism.UWP", "MyLeasing.Prism\MyLeasing.Prism.UWP\MyLeasing.Prism.UWP.csproj", "{953B2480-DC07-4E53-8318-8C4737DCE2C2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -291,66 +289,6 @@ Global
 		{99AEE846-8A52-4BF6-90DC-C18813CBF4A5}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
 		{99AEE846-8A52-4BF6-90DC-C18813CBF4A5}.Release|x64.ActiveCfg = Release|iPhone
 		{99AEE846-8A52-4BF6-90DC-C18813CBF4A5}.Release|x86.ActiveCfg = Release|iPhone
-		{953B2480-DC07-4E53-8318-8C4737DCE2C2}.Ad-Hoc|Any CPU.ActiveCfg = Release|x86
-		{953B2480-DC07-4E53-8318-8C4737DCE2C2}.Ad-Hoc|Any CPU.Build.0 = Release|x86
-		{953B2480-DC07-4E53-8318-8C4737DCE2C2}.Ad-Hoc|Any CPU.Deploy.0 = Release|x86
-		{953B2480-DC07-4E53-8318-8C4737DCE2C2}.Ad-Hoc|ARM.ActiveCfg = Release|ARM
-		{953B2480-DC07-4E53-8318-8C4737DCE2C2}.Ad-Hoc|ARM.Build.0 = Release|ARM
-		{953B2480-DC07-4E53-8318-8C4737DCE2C2}.Ad-Hoc|ARM.Deploy.0 = Release|ARM
-		{953B2480-DC07-4E53-8318-8C4737DCE2C2}.Ad-Hoc|iPhone.ActiveCfg = Release|x86
-		{953B2480-DC07-4E53-8318-8C4737DCE2C2}.Ad-Hoc|iPhone.Build.0 = Release|x86
-		{953B2480-DC07-4E53-8318-8C4737DCE2C2}.Ad-Hoc|iPhone.Deploy.0 = Release|x86
-		{953B2480-DC07-4E53-8318-8C4737DCE2C2}.Ad-Hoc|iPhoneSimulator.ActiveCfg = Release|x86
-		{953B2480-DC07-4E53-8318-8C4737DCE2C2}.Ad-Hoc|iPhoneSimulator.Build.0 = Release|x86
-		{953B2480-DC07-4E53-8318-8C4737DCE2C2}.Ad-Hoc|iPhoneSimulator.Deploy.0 = Release|x86
-		{953B2480-DC07-4E53-8318-8C4737DCE2C2}.Ad-Hoc|x64.ActiveCfg = Release|x64
-		{953B2480-DC07-4E53-8318-8C4737DCE2C2}.Ad-Hoc|x64.Build.0 = Release|x64
-		{953B2480-DC07-4E53-8318-8C4737DCE2C2}.Ad-Hoc|x64.Deploy.0 = Release|x64
-		{953B2480-DC07-4E53-8318-8C4737DCE2C2}.Ad-Hoc|x86.ActiveCfg = Release|x86
-		{953B2480-DC07-4E53-8318-8C4737DCE2C2}.Ad-Hoc|x86.Build.0 = Release|x86
-		{953B2480-DC07-4E53-8318-8C4737DCE2C2}.Ad-Hoc|x86.Deploy.0 = Release|x86
-		{953B2480-DC07-4E53-8318-8C4737DCE2C2}.AppStore|Any CPU.ActiveCfg = Release|x86
-		{953B2480-DC07-4E53-8318-8C4737DCE2C2}.AppStore|Any CPU.Build.0 = Release|x86
-		{953B2480-DC07-4E53-8318-8C4737DCE2C2}.AppStore|Any CPU.Deploy.0 = Release|x86
-		{953B2480-DC07-4E53-8318-8C4737DCE2C2}.AppStore|ARM.ActiveCfg = Release|ARM
-		{953B2480-DC07-4E53-8318-8C4737DCE2C2}.AppStore|ARM.Build.0 = Release|ARM
-		{953B2480-DC07-4E53-8318-8C4737DCE2C2}.AppStore|ARM.Deploy.0 = Release|ARM
-		{953B2480-DC07-4E53-8318-8C4737DCE2C2}.AppStore|iPhone.ActiveCfg = Release|x86
-		{953B2480-DC07-4E53-8318-8C4737DCE2C2}.AppStore|iPhone.Build.0 = Release|x86
-		{953B2480-DC07-4E53-8318-8C4737DCE2C2}.AppStore|iPhone.Deploy.0 = Release|x86
-		{953B2480-DC07-4E53-8318-8C4737DCE2C2}.AppStore|iPhoneSimulator.ActiveCfg = Release|x86
-		{953B2480-DC07-4E53-8318-8C4737DCE2C2}.AppStore|iPhoneSimulator.Build.0 = Release|x86
-		{953B2480-DC07-4E53-8318-8C4737DCE2C2}.AppStore|iPhoneSimulator.Deploy.0 = Release|x86
-		{953B2480-DC07-4E53-8318-8C4737DCE2C2}.AppStore|x64.ActiveCfg = Release|x64
-		{953B2480-DC07-4E53-8318-8C4737DCE2C2}.AppStore|x64.Build.0 = Release|x64
-		{953B2480-DC07-4E53-8318-8C4737DCE2C2}.AppStore|x64.Deploy.0 = Release|x64
-		{953B2480-DC07-4E53-8318-8C4737DCE2C2}.AppStore|x86.ActiveCfg = Release|x86
-		{953B2480-DC07-4E53-8318-8C4737DCE2C2}.AppStore|x86.Build.0 = Release|x86
-		{953B2480-DC07-4E53-8318-8C4737DCE2C2}.AppStore|x86.Deploy.0 = Release|x86
-		{953B2480-DC07-4E53-8318-8C4737DCE2C2}.Debug|Any CPU.ActiveCfg = Debug|x86
-		{953B2480-DC07-4E53-8318-8C4737DCE2C2}.Debug|ARM.ActiveCfg = Debug|ARM
-		{953B2480-DC07-4E53-8318-8C4737DCE2C2}.Debug|ARM.Build.0 = Debug|ARM
-		{953B2480-DC07-4E53-8318-8C4737DCE2C2}.Debug|ARM.Deploy.0 = Debug|ARM
-		{953B2480-DC07-4E53-8318-8C4737DCE2C2}.Debug|iPhone.ActiveCfg = Debug|x86
-		{953B2480-DC07-4E53-8318-8C4737DCE2C2}.Debug|iPhoneSimulator.ActiveCfg = Debug|x86
-		{953B2480-DC07-4E53-8318-8C4737DCE2C2}.Debug|x64.ActiveCfg = Debug|x64
-		{953B2480-DC07-4E53-8318-8C4737DCE2C2}.Debug|x64.Build.0 = Debug|x64
-		{953B2480-DC07-4E53-8318-8C4737DCE2C2}.Debug|x64.Deploy.0 = Debug|x64
-		{953B2480-DC07-4E53-8318-8C4737DCE2C2}.Debug|x86.ActiveCfg = Debug|x86
-		{953B2480-DC07-4E53-8318-8C4737DCE2C2}.Debug|x86.Build.0 = Debug|x86
-		{953B2480-DC07-4E53-8318-8C4737DCE2C2}.Debug|x86.Deploy.0 = Debug|x86
-		{953B2480-DC07-4E53-8318-8C4737DCE2C2}.Release|Any CPU.ActiveCfg = Release|x86
-		{953B2480-DC07-4E53-8318-8C4737DCE2C2}.Release|ARM.ActiveCfg = Release|ARM
-		{953B2480-DC07-4E53-8318-8C4737DCE2C2}.Release|ARM.Build.0 = Release|ARM
-		{953B2480-DC07-4E53-8318-8C4737DCE2C2}.Release|ARM.Deploy.0 = Release|ARM
-		{953B2480-DC07-4E53-8318-8C4737DCE2C2}.Release|iPhone.ActiveCfg = Release|x86
-		{953B2480-DC07-4E53-8318-8C4737DCE2C2}.Release|iPhoneSimulator.ActiveCfg = Release|x86
-		{953B2480-DC07-4E53-8318-8C4737DCE2C2}.Release|x64.ActiveCfg = Release|x64
-		{953B2480-DC07-4E53-8318-8C4737DCE2C2}.Release|x64.Build.0 = Release|x64
-		{953B2480-DC07-4E53-8318-8C4737DCE2C2}.Release|x64.Deploy.0 = Release|x64
-		{953B2480-DC07-4E53-8318-8C4737DCE2C2}.Release|x86.ActiveCfg = Release|x86
-		{953B2480-DC07-4E53-8318-8C4737DCE2C2}.Release|x86.Build.0 = Release|x86
-		{953B2480-DC07-4E53-8318-8C4737DCE2C2}.Release|x86.Deploy.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
