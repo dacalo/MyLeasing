@@ -110,13 +110,13 @@ namespace MyLeasing.Prism.ViewModels
             var owner = response2.Result;
             var parameters = new NavigationParameters
             {
+                {"token", token},
                 {"owner", owner}
             };
-
-            await _navigationService.NavigateAsync("PropertiesPage", parameters);
+            
             IsEnabled = true;
             IsRunning = false;
-
+            await _navigationService.NavigateAsync("PropertiesPage", parameters);
         }
     }
 }
