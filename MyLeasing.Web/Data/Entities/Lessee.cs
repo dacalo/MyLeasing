@@ -4,6 +4,7 @@
     using System.ComponentModel.DataAnnotations;
     public class Lessee
     {
+        //repsresents an lessee
         public int Id { get; set; }
 
         public User User { get; set; }
