@@ -4,7 +4,7 @@
     using System.ComponentModel.DataAnnotations;
     public class Owner
     {
-
+        //Repsents an owner
         public int Id { get; set; }
 
         public User User { get; set; }
