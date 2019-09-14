@@ -55,6 +55,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="Syncfusion.Xamarin.SfBusyIndicator">
+      <Version>17.2.0.51</Version>
+    </PackageReference>
+    <PackageReference Include="Syncfusion.Xamarin.SfBusyIndicator.Android">
+      <Version>17.2.0.51</Version>
+    </PackageReference>
     <PackageReference Include="Syncfusion.Xamarin.SfRotator">
       <Version>17.2.0.51</Version>
     </PackageReference>
