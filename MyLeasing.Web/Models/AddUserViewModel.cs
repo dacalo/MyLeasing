@@ -1,5 +1,7 @@
 ﻿namespace MyLeasing.Web.Models
 {
+    using Microsoft.AspNetCore.Mvc.Rendering;
+    using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
 
     public class AddUserViewModel : EditUserViewModel
@@ -22,5 +24,13 @@
         [StringLength(20, MinimumLength = 6, ErrorMessage = "The {0} field must contain between {2} and {1} characters.")]
         [Compare("Password")]
         public string PasswordConfirm { get; set; }
+
+        [Required(ErrorMessage = "The field {0} is mandatory.")]
+        [Display(Name = "Register as")]
+        [Range(1, int.MaxValue, ErrorMessage = "You must select a role.")]
+        public int RoleId { get; set; }
+
+        public IEnumerable<SelectListItem> Roles { get; set; }
+
     }
 }

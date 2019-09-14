@@ -8,5 +8,7 @@
         IEnumerable<SelectListItem> GetComboPropertyTypes();
 
         IEnumerable<SelectListItem> GetComboLessees();
+
+        IEnumerable<SelectListItem> GetComboRoles();
     }
 }
