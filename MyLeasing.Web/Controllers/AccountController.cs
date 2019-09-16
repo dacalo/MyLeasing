@@ -197,7 +197,7 @@
                 return NotFound();
             }
 
-            var view = new EditUserViewModel
+            var model = new EditUserViewModel
             {
                 Address = user.Address,
                 Document = user.Document,
@@ -206,28 +206,28 @@
                 PhoneNumber = user.PhoneNumber
             };
 
-            return View(view);
+            return View(model);
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> ChangeUser(EditUserViewModel view)
+        public async Task<IActionResult> ChangeUser(EditUserViewModel model)
         {
             if (ModelState.IsValid)
             {
                 var user = await _userHelper.GetUserByEmailAsync(User.Identity.Name);
 
-                user.Document = view.Document;
-                user.FirstName = view.FirstName;
-                user.LastName = view.LastName;
-                user.Address = view.Address;
-                user.PhoneNumber = view.PhoneNumber;
+                user.Document = model.Document;
+                user.FirstName = model.FirstName;
+                user.LastName = model.LastName;
+                user.Address = model.Address;
+                user.PhoneNumber = model.PhoneNumber;
 
                 await _userHelper.UpdateUserAsync(user);
                 return RedirectToAction("Index", "Home");
             }
 
-            return View(view);
+            return View(model);
         }
 
         public IActionResult ChangePassword()
