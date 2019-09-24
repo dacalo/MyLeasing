@@ -15,6 +15,7 @@
 
 
   <ItemGroup>
+    <Folder Include="wwwroot\images\Home\" />
     <Folder Include="wwwroot\images\Properties\" />
   </ItemGroup>
 

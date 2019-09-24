@@ -75,7 +75,7 @@ namespace MyLeasing.Web.Controllers
         public IActionResult Create()
         {
             var view = new AddUserViewModel { RoleId = 2 };
-            return View();
+            return View(view);
         }
 
         [HttpPost]
@@ -256,7 +256,7 @@ namespace MyLeasing.Web.Controllers
                 var property = await _converterHelper.ToPropertyAsync(view, true);
                 _dataContext.Properties.Add(property);
                 await _dataContext.SaveChangesAsync();
-                return RedirectToAction($"Details/{view.OwnerId}");
+                return RedirectToAction("Details", new {id = view.OwnerId});
             }
             view.PropertyTypes = _combosHelper.GetComboPropertyTypes();
             return View(view);
@@ -284,17 +284,17 @@ namespace MyLeasing.Web.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> EditProperty(PropertyViewModel view)
+        public async Task<IActionResult> EditProperty(PropertyViewModel model)
         {
             if (ModelState.IsValid)
             {
-                var property = await _converterHelper.ToPropertyAsync(view, false);
+                var property = await _converterHelper.ToPropertyAsync(model, false);
                 _dataContext.Properties.Update(property);
                 await _dataContext.SaveChangesAsync();
-                return RedirectToAction($"{nameof(Details)}/{view.OwnerId}");
+                return RedirectToAction("Details", new {id = model.OwnerId});
             }
 
-            return View(view);
+            return View(model);
         }
 
         public async Task<IActionResult> DetailsProperty(int? id)
@@ -341,13 +341,13 @@ namespace MyLeasing.Web.Controllers
             if (property.Contracts.Count != 0)
             {
                 ModelState.AddModelError(string.Empty, "The property can't be deleted because it has contracts.");
-                return RedirectToAction($"{nameof(Details)}/{property.Owner.Id}");
+                return RedirectToAction("Details", new{id = property.Owner.Id});
             }
 
             _dataContext.PropertyImages.RemoveRange(property.PropertyImages);
             _dataContext.Properties.Remove(property);
             await _dataContext.SaveChangesAsync();
-            return RedirectToAction($"{nameof(Details)}/{property.Owner.Id}");
+            return RedirectToAction("Details", new {id = property.Owner.Id});
         }
 
         public async Task<IActionResult> AddImage(int? id)
@@ -391,7 +391,7 @@ namespace MyLeasing.Web.Controllers
 
                 _dataContext.PropertyImages.Add(propertyImage);
                 await _dataContext.SaveChangesAsync();
-                return RedirectToAction($"{nameof(DetailsProperty)}/{model.Id}");
+                return RedirectToAction("DetailsProperty", new {id = model.Id});
             }
 
             return View(model);
@@ -433,7 +433,7 @@ namespace MyLeasing.Web.Controllers
                 var contract = await _converterHelper.ToContractAsync(model, true);
                 _dataContext.Contracts.Add(contract);
                 await _dataContext.SaveChangesAsync();
-                return RedirectToAction($"{nameof(DetailsProperty)}/{model.PropertyId}");
+                return RedirectToAction("DetailsProperty", new {id = model.PropertyId});
             }
             model.Lessees = _combosHelper.GetComboLessees();
             return View(model);
@@ -467,7 +467,7 @@ namespace MyLeasing.Web.Controllers
                 var contract = await _converterHelper.ToContractAsync(model, false);
                 _dataContext.Contracts.Update(contract);
                 await _dataContext.SaveChangesAsync();
-                return RedirectToAction($"{nameof(DetailsProperty)}/{model.PropertyId}");
+                return RedirectToAction("DetailsProperty", new {id = model.PropertyId});
             }
             return View(model);
         }
@@ -512,7 +512,7 @@ namespace MyLeasing.Web.Controllers
 
             _dataContext.PropertyImages.Remove(propertyImage);
             await _dataContext.SaveChangesAsync();
-            return RedirectToAction($"{nameof(DetailsProperty)}/{propertyImage.Property.Id}");
+            return RedirectToAction("DetailsProperty", new {id = propertyImage.Property.Id});
         }
 
         public async Task<IActionResult> DeleteContract(int? id)
@@ -532,7 +532,7 @@ namespace MyLeasing.Web.Controllers
 
             _dataContext.Contracts.Remove(contract);
             await _dataContext.SaveChangesAsync();
-            return RedirectToAction($"{nameof(DetailsProperty)}/{contract.Property.Id}");
+            return RedirectToAction("DetailsProperty", new {id = contract.Property.Id});
         }
 
     }

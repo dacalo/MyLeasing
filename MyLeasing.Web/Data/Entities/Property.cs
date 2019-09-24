@@ -2,6 +2,7 @@
 {
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
+    using System.Linq;
 
     public class Property
     {
@@ -50,5 +51,8 @@
 
         public ICollection<Contract> Contracts { get; set; }
 
+        public string FirstImage => PropertyImages == null || PropertyImages.Count == 0
+            ? "https://myleasing.azurewebsites.net/images/Properties/noImage.png"
+            : PropertyImages.FirstOrDefault().ImageUrl;
     }
 }
