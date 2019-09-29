@@ -1,33 +1,29 @@
-﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
+﻿using System.Collections.Generic;
+using System.Linq;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using MyLeasing.Web.Data;
 using MyLeasing.Web.Data.Entities;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace MyLeasing.Web.Controllers.API
 {
     [Route("api/[controller]")]
     [ApiController]
     [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
-    public class PropertyTypesController : ControllerBase
+    public class PropertyTypesController : Controller
     {
-        private readonly DataContext _context;
+        private readonly DataContext _dataContext;
 
-        public PropertyTypesController(DataContext context)
+        public PropertyTypesController(DataContext dataContext)
         {
-            _context = context;
+            _dataContext = dataContext;
         }
-        
-        // GET: api/PropertyTypes
+
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<PropertyType>>> GetPropertyTypes()
+        public IEnumerable<PropertyType> GetPropertyTypes()
         {
-            return await _context.PropertyTypes.OrderBy(x=>x.Name).ToListAsync();
+            return _dataContext.PropertyTypes.OrderBy(pt => pt.Name);
         }
-        
     }
 }
