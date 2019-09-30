@@ -8,6 +8,7 @@ using MyLeasing.Common.Helpers;
 using MyLeasing.Common.Models;
 using MyLeasing.Web.Data;
 using MyLeasing.Web.Data.Entities;
+using MyLeasing.Web.Helpers;
 
 namespace MyLeasing.Web.Controllers.API
 {
@@ -17,10 +18,14 @@ namespace MyLeasing.Web.Controllers.API
     public class PropertiesController : ControllerBase
     {
         private readonly DataContext _dataContext;
+        private readonly IConverterHelper _converterHelper;
 
-        public PropertiesController(DataContext dataContext)
+        public PropertiesController(
+            DataContext dataContext,
+            IConverterHelper converterHelper)
         {
             _dataContext = dataContext;
+            _converterHelper = converterHelper;
         }
 
         [HttpPost]
@@ -60,7 +65,7 @@ namespace MyLeasing.Web.Controllers.API
 
             _dataContext.Properties.Add(property);
             await _dataContext.SaveChangesAsync();
-            return Ok(property);
+            return Ok(true);
         }
 
         [HttpPost]
@@ -144,7 +149,7 @@ namespace MyLeasing.Web.Controllers.API
 
             _dataContext.Properties.Update(oldProperty);
             await _dataContext.SaveChangesAsync();
-            return Ok(oldProperty);
+            return Ok(true);
         }
 
         [HttpPost]
