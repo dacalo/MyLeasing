@@ -16,9 +16,12 @@ namespace MyLeasing.Prism.ViewModels
         private readonly INavigationService _navigationService;
         private readonly IApiService _apiService;
         private string _password;
+        private bool _isRemember;
         private bool _isRunning;
         private bool _isEnabled;
         private DelegateCommand _loginCommand;
+        private DelegateCommand _registerCommand;
+        private DelegateCommand _forgotPasswordCommand;
 
         public LoginPageViewModel(
             INavigationService navigationService,
@@ -26,6 +29,9 @@ namespace MyLeasing.Prism.ViewModels
         {
             Title = "Login";
             IsEnabled = true;
+            IsRemember = true;
+
+            //TODO: Delete those lines
             Email = "jzuluaga55@hotmail.com";
             Password = "123456";
             _navigationService = navigationService;
@@ -34,12 +40,22 @@ namespace MyLeasing.Prism.ViewModels
 
         public DelegateCommand LoginCommand => _loginCommand ?? (_loginCommand = new DelegateCommand(Login));
 
+        public DelegateCommand RegisterCommand => _registerCommand ?? (_registerCommand = new DelegateCommand(Register));
+
+        public DelegateCommand ForgotPasswordCommand => _forgotPasswordCommand ?? (_forgotPasswordCommand = new DelegateCommand(ForgotPassword));
+
         public string Email { get; set; }
 
         public string Password
         {
             get => _password;
             set => SetProperty(ref _password, value);
+        }
+
+        public bool IsRemember
+        {
+            get => _isRemember;
+            set => SetProperty(ref _isRemember, value);
         }
 
         public bool IsRunning
@@ -115,6 +131,17 @@ namespace MyLeasing.Prism.ViewModels
             await _navigationService.NavigateAsync("/LeasingMasterDetailPage/NavigationPage/PropertiesPage");
             IsRunning = false;
             IsEnabled = true;
+        }
+
+        private async void Register()
+        {
+            await _navigationService.NavigateAsync("RegisterPage");
+
+        }
+
+        private async void ForgotPassword()
+        {
+            await _navigationService.NavigateAsync("RememberPasswordPage");
         }
     }
 }
