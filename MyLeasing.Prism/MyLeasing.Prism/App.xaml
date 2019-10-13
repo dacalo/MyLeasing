@@ -8,8 +8,8 @@
         <ResourceDictionary>
 
             <!-- Parameters -->
-            <!--<x:String x:Key="UrlAPI">https://myleasing.azurewebsites.net/</x:String>-->
-            <x:String x:Key="UrlAPI">http://localhost:50545/</x:String>
+            <x:String x:Key="UrlAPI">https://myleasing.azurewebsites.net/</x:String>
+            <!--<x:String x:Key="UrlAPI">http://localhost:93/</x:String>-->
             <!-- Colors -->
             <Color x:Key="colorBackgroud">#F2F2F2</Color>
             <Color x:Key="colorPrimary">#0468BF</Color>

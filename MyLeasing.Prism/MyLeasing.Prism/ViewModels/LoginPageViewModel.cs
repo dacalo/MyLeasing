@@ -86,7 +86,8 @@ namespace MyLeasing.Prism.ViewModels
             IsRunning = true;
             IsEnabled = false;
 
-            var url = App.Current.Resources["UrlAPI"].ToString();
+            var url = "https://www.google.com/";
+            //var url = App.Current.Resources["UrlAPI"].ToString();
             var connection = await _apiService.CheckConnectionAsync(url);
             if (!connection)
             {
@@ -102,7 +103,7 @@ namespace MyLeasing.Prism.ViewModels
                 Username = Email
             };
 
-            //var url = App.Current.Resources["UrlAPI"].ToString();
+            url = App.Current.Resources["UrlAPI"].ToString();
             var response = await _apiService.GetTokenAsync(url, "Account", "/CreateToken", request);
             
             if (!response.IsSuccess)
@@ -128,6 +129,7 @@ namespace MyLeasing.Prism.ViewModels
             var owner = response2.Result;
             Settings.Owner = JsonConvert.SerializeObject(owner);
             Settings.Token = JsonConvert.SerializeObject(token);
+            Settings.IsRemembered = IsRemember;
             await _navigationService.NavigateAsync("/LeasingMasterDetailPage/NavigationPage/PropertiesPage");
             IsRunning = false;
             IsEnabled = true;
