@@ -26,6 +26,10 @@
 
         public string PropertyType { get; set; }
 
+        public double Latitude { get; set; }
+
+        public double Longitude { get; set; }
+
         public ICollection<PropertyImageResponse> PropertyImages { get; set; }
 
         public ICollection<ContractResponse> Contracts { get; set; }
