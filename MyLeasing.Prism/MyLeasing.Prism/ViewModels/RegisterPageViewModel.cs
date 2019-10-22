@@ -5,6 +5,7 @@ using MyLeasing.Common.Models;
 using MyLeasing.Common.Services;
 using Prism.Commands;
 using Prism.Navigation;
+using Xamarin.Forms.Maps;
 
 namespace MyLeasing.Prism.ViewModels
 {
@@ -12,15 +13,22 @@ namespace MyLeasing.Prism.ViewModels
     {
         private readonly INavigationService _navigationService;
         private readonly IApiService _apiService;
+        private readonly IGeolocatorService _geolocatorService;
+        private Position _position;
+        private string _address;
+
         private bool _isRunning;
         private bool _isEnabled;
         private DelegateCommand _registerCommand;
 
-        public RegisterPageViewModel(INavigationService navigationService,
-            IApiService apiService) : base(navigationService)
+        public RegisterPageViewModel(
+            INavigationService navigationService,
+            IApiService apiService,
+            IGeolocatorService geolocatorService) : base(navigationService)
         {
             _navigationService = navigationService;
             _apiService = apiService;
+            _geolocatorService = geolocatorService;
             Title = "Register new user";
             IsEnabled = true;
             LoadRoles();
@@ -47,6 +55,7 @@ namespace MyLeasing.Prism.ViewModels
         public Role Role { get; set; }
 
         public ObservableCollection<Role> Roles { get; set; }
+
 
         public bool IsRunning
         {
