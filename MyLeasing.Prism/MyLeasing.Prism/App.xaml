@@ -18,6 +18,7 @@
             <Color x:Key="colorAccent">#BF4904</Color>
             <Color x:Key="colorFont">#0468BF</Color>
             <Color x:Key="colorFontInverse">#F2F2F2</Color>
+            <Color x:Key="colorDanger">#D9042B</Color>
             <!-- Styles -->
             <Style TargetType="Button">
 	            <Setter Property="BackgroundColor" Value="{StaticResource colorPrimary}" />
@@ -35,6 +36,11 @@
 
             <Style TargetType="Label">
                 <Setter Property="TextColor" Value="{StaticResource colorFont}" />
+            </Style>
+
+            <Style x:Key="DangerButton" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="{StaticResource colorDanger}" />
+                <Setter Property="TextColor" Value="{StaticResource colorFontInverse}" />
             </Style>
 
         </ResourceDictionary>

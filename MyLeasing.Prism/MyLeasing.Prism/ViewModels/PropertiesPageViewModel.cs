@@ -3,7 +3,9 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using MyLeasing.Common.Helpers;
 using MyLeasing.Common.Models;
+using MyLeasing.Prism.Helpers;
 using Newtonsoft.Json;
+using Prism.Commands;
 using Prism.Navigation;
 
 namespace MyLeasing.Prism.ViewModels
@@ -15,6 +17,7 @@ namespace MyLeasing.Prism.ViewModels
         private TokenResponse _token;
         private ObservableCollection<PropertyItemViewModel> _properties;
         private bool _isRefreshing;
+        private DelegateCommand _addPropertyCommand;
 
         public PropertiesPageViewModel(INavigationService navigationService) : base(navigationService)
         {
@@ -33,6 +36,8 @@ namespace MyLeasing.Prism.ViewModels
             get => _isRefreshing;
             set => SetProperty(ref _isRefreshing, value);
         }
+
+        public DelegateCommand AddPropertyCommand => _addPropertyCommand ?? (_addPropertyCommand = new DelegateCommand(AddProperty));
 
         private void LoadOwner()
         {
@@ -64,6 +69,14 @@ namespace MyLeasing.Prism.ViewModels
             }).ToList());
         }
 
-
+        private async void AddProperty()
+        {
+            if(_owner.RoleId !=1)
+            {
+                await App.Current.MainPage.DisplayAlert(Languages.Error, Languages.ErrorNoOwner, Languages.Accept);
+                return;
+            }
+            await _navigationService.NavigateAsync("EditProperty");
+        }
     }
 }

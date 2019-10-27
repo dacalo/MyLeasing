@@ -1,6 +1,7 @@
 ﻿using MyLeasing.Common.Helpers;
 using MyLeasing.Common.Models;
 using MyLeasing.Common.Services;
+using MyLeasing.Prism.Helpers;
 using Newtonsoft.Json;
 using Prism.Commands;
 using Prism.Mvvm;
@@ -73,13 +74,13 @@ namespace MyLeasing.Prism.ViewModels
         {
             if (string.IsNullOrEmpty(Email))
             {
-                await App.Current.MainPage.DisplayAlert("Error", "Your must enter an email.", "Accept");
+                await App.Current.MainPage.DisplayAlert(Languages.Error, Languages.EmailError, Languages.Accept);
                 return;
             }
 
             if (string.IsNullOrEmpty(Password))
             {
-                await App.Current.MainPage.DisplayAlert("Error", "Your must enter an password.", "Accept");
+                await App.Current.MainPage.DisplayAlert(Languages.Error, Languages.PasswordError, Languages.Accept);
                 return;
             }
 
@@ -93,7 +94,7 @@ namespace MyLeasing.Prism.ViewModels
             {
                 IsEnabled = true;
                 IsRunning = false;
-                await App.Current.MainPage.DisplayAlert("Error", "Check the internet connection.", "Accept");
+                await App.Current.MainPage.DisplayAlert(Languages.Error, "Check the internet connection.", Languages.Accept);
                 return;
             }
             

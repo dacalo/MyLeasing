@@ -26,7 +26,7 @@ namespace MyLeasing.Prism
 
         protected override async void OnInitialized()
         {
-            Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("MTU2MjMxQDMxMzcyZTMyMmUzMGg3Mnh0YUVXZHFHR2JUZVFybmlrSkVuNTFSMyt4RmJyNkNFemVFRXRoenc9");
+            Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("MTYyODIxQDMxMzcyZTMzMmUzMEIxYlJrQWRHY001bURGaHIyUXQxUW5mZWV1NnR5RFhnMkxRcldJb0Qrb289");
 
             InitializeComponent();
             var token = JsonConvert.DeserializeObject<TokenResponse>(Settings.Token);
@@ -58,6 +58,7 @@ namespace MyLeasing.Prism
             containerRegistry.RegisterForNavigation<RememberPasswordPage, RememberPasswordPageViewModel>();
             containerRegistry.RegisterForNavigation<RememberPasswordPage, RememberPasswordPageViewModel>();
             containerRegistry.RegisterForNavigation<ChangePasswordPage, ChangePasswordPageViewModel>();
+            containerRegistry.RegisterForNavigation<EditPropertyPage, EditPropertyPageViewModel>();
         }
     }
 }
