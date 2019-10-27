@@ -1,12 +1,12 @@
-﻿using System;
-using System.Collections.ObjectModel;
-using System.Linq;
-using MyLeasing.Common.Helpers;
+﻿using MyLeasing.Common.Helpers;
 using MyLeasing.Common.Models;
 using MyLeasing.Prism.Helpers;
 using Newtonsoft.Json;
 using Prism.Commands;
 using Prism.Navigation;
+using System;
+using System.Collections.ObjectModel;
+using System.Linq;
 
 namespace MyLeasing.Prism.ViewModels
 {
@@ -14,7 +14,6 @@ namespace MyLeasing.Prism.ViewModels
     {
         private readonly INavigationService _navigationService;
         private OwnerResponse _owner;
-        private TokenResponse _token;
         private ObservableCollection<PropertyItemViewModel> _properties;
         private bool _isRefreshing;
         private DelegateCommand _addPropertyCommand;
@@ -22,6 +21,7 @@ namespace MyLeasing.Prism.ViewModels
         public PropertiesPageViewModel(INavigationService navigationService) : base(navigationService)
         {
             _navigationService = navigationService;
+            Title = Languages.Properties;
             LoadOwner();
         }
 
@@ -37,7 +37,7 @@ namespace MyLeasing.Prism.ViewModels
             set => SetProperty(ref _isRefreshing, value);
         }
 
-        public DelegateCommand AddPropertyCommand => _addPropertyCommand ?? (_addPropertyCommand = new DelegateCommand(AddProperty));
+        public DelegateCommand AddPropertyCommand => _addPropertyCommand ?? (_addPropertyCommand = new DelegateCommand(AddPropertyAsync));
 
         private void LoadOwner()
         {
@@ -69,14 +69,14 @@ namespace MyLeasing.Prism.ViewModels
             }).ToList());
         }
 
-        private async void AddProperty()
+        private async void AddPropertyAsync()
         {
             if(_owner.RoleId !=1)
             {
                 await App.Current.MainPage.DisplayAlert(Languages.Error, Languages.ErrorNoOwner, Languages.Accept);
                 return;
             }
-            await _navigationService.NavigateAsync("EditProperty");
+            await _navigationService.NavigateAsync("EditPropertyPage");
         }
     }
 }

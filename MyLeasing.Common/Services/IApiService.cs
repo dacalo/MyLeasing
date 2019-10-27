@@ -56,5 +56,6 @@ namespace MyLeasing.Common.Services
             string controller,
             string tokenType,
             string accessToken);
+
     }
 }

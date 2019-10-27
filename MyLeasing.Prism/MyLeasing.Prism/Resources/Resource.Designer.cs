@@ -70,6 +70,42 @@ namespace MyLeasing.Prism.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Add Property.
+        /// </summary>
+        public static string AddProperty {
+            get {
+                return ResourceManager.GetString("AddProperty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Address.
+        /// </summary>
+        public static string Address {
+            get {
+                return ResourceManager.GetString("Address", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You must enter an address..
+        /// </summary>
+        public static string AddressError {
+            get {
+                return ResourceManager.GetString("AddressError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enter the property address....
+        /// </summary>
+        public static string AddressPlaceHolder {
+            get {
+                return ResourceManager.GetString("AddressPlaceHolder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Change Image.
         /// </summary>
         public static string ChangeImage {
@@ -97,6 +133,15 @@ namespace MyLeasing.Prism.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Details.
+        /// </summary>
+        public static string Details {
+            get {
+                return ResourceManager.GetString("Details", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Edit Property.
         /// </summary>
         public static string EditProperty {
@@ -115,7 +160,7 @@ namespace MyLeasing.Prism.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Your must enter an email..
+        ///   Looks up a localized string similar to You must enter an email..
         /// </summary>
         public static string EmailError {
             get {
@@ -160,7 +205,7 @@ namespace MyLeasing.Prism.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Problem with user data, call IT.
+        ///   Looks up a localized string similar to Problem with user data, call support..
         /// </summary>
         public static string ErrorToken {
             get {
@@ -174,6 +219,24 @@ namespace MyLeasing.Prism.Resources {
         public static string ForgotPassword {
             get {
                 return ResourceManager.GetString("ForgotPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Has Parking Lot?.
+        /// </summary>
+        public static string HasParkingLot {
+            get {
+                return ResourceManager.GetString("HasParkingLot", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Is Available? .
+        /// </summary>
+        public static string IsAvailable {
+            get {
+                return ResourceManager.GetString("IsAvailable", resourceCulture);
             }
         }
         
@@ -205,11 +268,20 @@ namespace MyLeasing.Prism.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Neighborhood Error.
+        ///   Looks up a localized string similar to You must enter a Neighborhood.
         /// </summary>
         public static string NeighborhoodError {
             get {
                 return ResourceManager.GetString("NeighborhoodError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enter the Neighborhood....
+        /// </summary>
+        public static string NeighborhoodPlaceHolder {
+            get {
+                return ResourceManager.GetString("NeighborhoodPlaceHolder", resourceCulture);
             }
         }
         
@@ -232,7 +304,7 @@ namespace MyLeasing.Prism.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Your must enter an password..
+        ///   Looks up a localized string similar to You must enter a password..
         /// </summary>
         public static string PasswordError {
             get {
@@ -250,6 +322,69 @@ namespace MyLeasing.Prism.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Price.
+        /// </summary>
+        public static string Price {
+            get {
+                return ResourceManager.GetString("Price", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You must enter a price..
+        /// </summary>
+        public static string PriceError {
+            get {
+                return ResourceManager.GetString("PriceError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enter the price....
+        /// </summary>
+        public static string PricePlaceHolder {
+            get {
+                return ResourceManager.GetString("PricePlaceHolder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Properties.
+        /// </summary>
+        public static string Properties {
+            get {
+                return ResourceManager.GetString("Properties", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Property Type.
+        /// </summary>
+        public static string PropertyType {
+            get {
+                return ResourceManager.GetString("PropertyType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You must select a property type..
+        /// </summary>
+        public static string PropertyTypeError {
+            get {
+                return ResourceManager.GetString("PropertyTypeError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Select the property type....
+        /// </summary>
+        public static string PropertyTypePlaceHolder {
+            get {
+                return ResourceManager.GetString("PropertyTypePlaceHolder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Register.
         /// </summary>
         public static string Register {
@@ -259,11 +394,110 @@ namespace MyLeasing.Prism.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Remember me in this device.
+        ///   Looks up a localized string similar to Remarks.
+        /// </summary>
+        public static string Remarks {
+            get {
+                return ResourceManager.GetString("Remarks", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Rememberme in this device.
         /// </summary>
         public static string Rememberme {
             get {
                 return ResourceManager.GetString("Rememberme", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Rooms.
+        /// </summary>
+        public static string Rooms {
+            get {
+                return ResourceManager.GetString("Rooms", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You must enter the number of rooms..
+        /// </summary>
+        public static string RoomsError {
+            get {
+                return ResourceManager.GetString("RoomsError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enterr the number of rooms....
+        /// </summary>
+        public static string RoomsPlaceHolder {
+            get {
+                return ResourceManager.GetString("RoomsPlaceHolder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Save.
+        /// </summary>
+        public static string Save {
+            get {
+                return ResourceManager.GetString("Save", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Square Meters.
+        /// </summary>
+        public static string SquareMeters {
+            get {
+                return ResourceManager.GetString("SquareMeters", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You must enter the square meters..
+        /// </summary>
+        public static string SquareMetersError {
+            get {
+                return ResourceManager.GetString("SquareMetersError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enter the square meters....
+        /// </summary>
+        public static string SquareMetersPlaceHolder {
+            get {
+                return ResourceManager.GetString("SquareMetersPlaceHolder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Stratum.
+        /// </summary>
+        public static string Stratum {
+            get {
+                return ResourceManager.GetString("Stratum", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You must enter a stratum..
+        /// </summary>
+        public static string StratumError {
+            get {
+                return ResourceManager.GetString("StratumError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enter the property stratum....
+        /// </summary>
+        public static string StratumPlaceHolder {
+            get {
+                return ResourceManager.GetString("StratumPlaceHolder", resourceCulture);
             }
         }
     }

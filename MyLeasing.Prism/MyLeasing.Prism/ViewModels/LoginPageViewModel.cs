@@ -80,7 +80,7 @@ namespace MyLeasing.Prism.ViewModels
 
             if (string.IsNullOrEmpty(Password))
             {
-                await App.Current.MainPage.DisplayAlert(Languages.Error, Languages.PasswordError, Languages.Accept);
+                await App.Current.MainPage.DisplayAlert(Languages.Error, Languages.Password, Languages.Accept);
                 return;
             }
 

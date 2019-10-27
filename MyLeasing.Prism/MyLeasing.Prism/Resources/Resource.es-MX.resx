@@ -171,4 +171,97 @@
   <data name="NewProperty" xml:space="preserve">
     <value>Nueva Propiedad</value>
   </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Eliminar</value>
+  </data>
+  <data name="EditProperty" xml:space="preserve">
+    <value>Editar propiedad</value>
+  </data>
+  <data name="ChangeImage" xml:space="preserve">
+    <value>Cambiar imagen.</value>
+  </data>
+  <data name="Neighborhood" xml:space="preserve">
+    <value>Vecindario</value>
+  </data>
+  <data name="NeighborhoodError" xml:space="preserve">
+    <value>¡Debes entrar en un vecindario!</value>
+  </data>
+  <data name="AddProperty" xml:space="preserve">
+    <value>Agregar propiedad</value>
+  </data>
+  <data name="NeighborhoodPlaceHolder" xml:space="preserve">
+    <value>Entra en el barrio ...!</value>
+  </data>
+  <data name="Price" xml:space="preserve">
+    <value>Precio:</value>
+  </data>
+  <data name="PriceError" xml:space="preserve">
+    <value>Debe ingresar un precio.</value>
+  </data>
+  <data name="PricePlaceHolder" xml:space="preserve">
+    <value>Escriba el precio</value>
+  </data>
+  <data name="SquareMeters" xml:space="preserve">
+    <value>Metros cuadrados</value>
+  </data>
+  <data name="SquareMetersError" xml:space="preserve">
+    <value>Debes ingresar los metros cuadrados.</value>
+  </data>
+  <data name="SquareMetersPlaceHolder" xml:space="preserve">
+    <value>Introduzca los metros cuadrados ...</value>
+  </data>
+  <data name="Rooms" xml:space="preserve">
+    <value>Salas</value>
+  </data>
+  <data name="RoomsError" xml:space="preserve">
+    <value>Debe ingresar el número de habitaciones.</value>
+  </data>
+  <data name="RoomsPlaceHolder" xml:space="preserve">
+    <value>El Numero de Autocaravanas</value>
+  </data>
+  <data name="Stratum" xml:space="preserve">
+    <value>Estrato</value>
+  </data>
+  <data name="StratumError" xml:space="preserve">
+    <value>Debes entrar en un estrato.!</value>
+  </data>
+  <data name="StratumPlaceHolder" xml:space="preserve">
+    <value>Ingresa el estrato de propiedad ...</value>
+  </data>
+  <data name="PropertyType" xml:space="preserve">
+    <value>Tipo de propiedad</value>
+  </data>
+  <data name="PropertyTypeError" xml:space="preserve">
+    <value>Debe seleccionar un tipo de propiedad</value>
+  </data>
+  <data name="PropertyTypePlaceHolder" xml:space="preserve">
+    <value>Elige el tipo de propiedad.</value>
+  </data>
+  <data name="HasParkingLot" xml:space="preserve">
+    <value>Estacionamiento</value>
+  </data>
+  <data name="IsAvailable" xml:space="preserve">
+    <value>Está disponible!</value>
+  </data>
+  <data name="Remarks" xml:space="preserve">
+    <value>Comentarios</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>Guardar</value>
+  </data>
+  <data name="Address" xml:space="preserve">
+    <value>DIRECCIÓN</value>
+  </data>
+  <data name="AddressPlaceHolder" xml:space="preserve">
+    <value>Ingresa la dirección de la Propiedad.</value>
+  </data>
+  <data name="AddressError" xml:space="preserve">
+    <value>Debes especificar una dirección.</value>
+  </data>
+  <data name="Details" xml:space="preserve">
+    <value>Detalles</value>
+  </data>
+  <data name="Properties" xml:space="preserve">
+    <value>Propiedades</value>
+  </data>
 </root>

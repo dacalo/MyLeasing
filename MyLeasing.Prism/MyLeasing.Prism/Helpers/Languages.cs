@@ -18,19 +18,29 @@ namespace MyLeasing.Prism.Helpers
         public static string Error => Resource.Error;
 
         public static string EmailError => Resource.EmailError;
+
         public static string Email => Resource.Email;
+
         public static string EmailPlaceHolder => Resource.EmailPlaceHolder;
+
         public static string Password => Resource.Password;
+
         public static string PasswordPlaceHolder => Resource.PasswordPlaceHolder;
+
         public static string Rememberme => Resource.Rememberme;
+
         public static string ForgotPassword => Resource.ForgotPassword;
+
+        public static string Login => Resource.Login;
+
         public static string Register => Resource.Register;
+
         public static string Loading => Resource.Loading;
-        public static string PasswordError => Resource.PasswordError;
-        public static string CheckConnection => Resource.CheckConnection;
-        public static string ErrorToken => Resource.ErrorToken;
+
         public static string ErrorNoOwner => Resource.ErrorNoOwner;
-        public static string NewProperty => Resource.NewProperty;
+
+        public static string AddProperty => Resource.AddProperty;
+
         public static string Delete => Resource.Delete;
 
         public static string EditProperty => Resource.EditProperty;
@@ -79,5 +89,19 @@ namespace MyLeasing.Prism.Helpers
 
         public static string Remarks => Resource.Remarks;
 
+        public static string Address => Resource.Address;
+
+        public static string AddressError => Resource.AddressError;
+
+        public static string AddressPlaceHolder => Resource.AddressPlaceHolder;
+
+        public static string Save => Resource.Save;
+        public static string PasswordError => Resource.PasswordError;
+        public static string CheckConnection => Resource.CheckConnection;
+        public static string ErrorLogin => Resource.ErrorLogin;
+        public static string ErrorToken => Resource.ErrorToken;
+        public static string NewProperty => Resource.NewProperty;
+        public static string Details => Resource.Details;
+        public static string Properties => Resource.Properties;
     }
 }
