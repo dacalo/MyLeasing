@@ -24,14 +24,12 @@ namespace MyLeasing.Prism.ViewModels
         private ObservableCollection<Stratum> _stratums;
         private Stratum _stratum;
 
-
         public EditPropertyPageViewModel(
             INavigationService navigationService,
             IApiService apiService) : base(navigationService)
         {
             _apiService = apiService;
             IsEnabled = true;
-            Title = Languages.AddProperty;
         }
 
         public bool IsRunning
@@ -108,7 +106,7 @@ namespace MyLeasing.Prism.ViewModels
                 Title = Languages.AddProperty;
             }
 
-            LoadPropertyTypes();
+            LoadPropertyTypesAsync();
             LoadStratums();
         }
 
@@ -123,18 +121,12 @@ namespace MyLeasing.Prism.ViewModels
             Stratum = Stratums.FirstOrDefault(s => s.Id == Property.Stratum);
         }
 
-        private async void LoadPropertyTypes()
+        private async void LoadPropertyTypesAsync()
         {
-            IsRunning = true;
-            IsEnabled = false;
-
             var url = App.Current.Resources["UrlAPI"].ToString();
             var token = JsonConvert.DeserializeObject<TokenResponse>(Settings.Token);
 
             var response = await _apiService.GetListAsync<PropertyTypeResponse>(url, "/api", "/PropertyTypes", "bearer", token.Token);
-
-            IsRunning = false;
-            IsEnabled = true;
 
             if (!response.IsSuccess)
             {

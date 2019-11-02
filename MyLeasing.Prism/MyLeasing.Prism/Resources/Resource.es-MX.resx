@@ -241,7 +241,7 @@
     <value>Estacionamiento</value>
   </data>
   <data name="IsAvailable" xml:space="preserve">
-    <value>Está disponible!</value>
+    <value>Está disponible?</value>
   </data>
   <data name="Remarks" xml:space="preserve">
     <value>Comentarios</value>
@@ -263,5 +263,20 @@
   </data>
   <data name="Properties" xml:space="preserve">
     <value>Propiedades</value>
+  </data>
+  <data name="ChangePassword" xml:space="preserve">
+    <value>Cambiar contraseña</value>
+  </data>
+  <data name="Ok" xml:space="preserve">
+    <value>Ok!</value>
+  </data>
+  <data name="Contracts" xml:space="preserve">
+    <value>Contratos</value>
+  </data>
+  <data name="AddImage" xml:space="preserve">
+    <value>Agregar imagen</value>
+  </data>
+  <data name="DeleteImage" xml:space="preserve">
+    <value>Eliminar imagen</value>
   </data>
 </root>

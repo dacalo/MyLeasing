@@ -37,7 +37,7 @@ namespace MyLeasing.Prism.ViewModels
             set => SetProperty(ref _property, value);
         }
 
-        public DelegateCommand EditPropertyCommand => _editPropertyCommand ?? (_editPropertyCommand = new DelegateCommand(EditProperty));
+        public DelegateCommand EditPropertyCommand => _editPropertyCommand ?? (_editPropertyCommand = new DelegateCommand(EditPropertyAsync));
 
         public override void OnNavigatedTo(INavigationParameters parameters)
         {
@@ -59,7 +59,7 @@ namespace MyLeasing.Prism.ViewModels
             ImageCollection = new ObservableCollection<RotatorModel>(list);
         }
 
-        private async void EditProperty()
+        private async void EditPropertyAsync()
         {
             var parameters = new NavigationParameters 
             { 

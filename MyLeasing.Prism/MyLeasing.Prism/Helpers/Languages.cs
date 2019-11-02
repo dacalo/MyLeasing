@@ -103,5 +103,9 @@ namespace MyLeasing.Prism.Helpers
         public static string NewProperty => Resource.NewProperty;
         public static string Details => Resource.Details;
         public static string Properties => Resource.Properties;
+        public static string ChangePassword => Resource.ChangePassword;
+        public static string Ok => Resource.Ok;
+        public static string Contracts => Resource.Contracts;
+        public static string AddImage => Resource.AddImage;
     }
 }

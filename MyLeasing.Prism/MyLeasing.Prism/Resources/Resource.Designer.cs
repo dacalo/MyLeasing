@@ -70,6 +70,15 @@ namespace MyLeasing.Prism.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Add image.
+        /// </summary>
+        public static string AddImage {
+            get {
+                return ResourceManager.GetString("AddImage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Add Property.
         /// </summary>
         public static string AddProperty {
@@ -115,6 +124,15 @@ namespace MyLeasing.Prism.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Change password.
+        /// </summary>
+        public static string ChangePassword {
+            get {
+                return ResourceManager.GetString("ChangePassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Check the internet connection..
         /// </summary>
         public static string CheckConnection {
@@ -124,11 +142,29 @@ namespace MyLeasing.Prism.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Contracts.
+        /// </summary>
+        public static string Contracts {
+            get {
+                return ResourceManager.GetString("Contracts", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Delete.
         /// </summary>
         public static string Delete {
             get {
                 return ResourceManager.GetString("Delete", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Delete image.
+        /// </summary>
+        public static string DeleteImage {
+            get {
+                return ResourceManager.GetString("DeleteImage", resourceCulture);
             }
         }
         
@@ -291,6 +327,15 @@ namespace MyLeasing.Prism.Resources {
         public static string NewProperty {
             get {
                 return ResourceManager.GetString("NewProperty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ok.
+        /// </summary>
+        public static string Ok {
+            get {
+                return ResourceManager.GetString("Ok", resourceCulture);
             }
         }
         

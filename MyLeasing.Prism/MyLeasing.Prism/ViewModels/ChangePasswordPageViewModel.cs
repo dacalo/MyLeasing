@@ -2,6 +2,7 @@
 using MyLeasing.Common.Helpers;
 using MyLeasing.Common.Models;
 using MyLeasing.Common.Services;
+using MyLeasing.Prism.Helpers;
 using Newtonsoft.Json;
 using Prism.Commands;
 using Prism.Navigation;
@@ -23,7 +24,7 @@ namespace MyLeasing.Prism.ViewModels
             _navigationService = navigationService;
             _apiService = apiService;
             IsEnabled = true;
-            Title = "Change Password";
+            Title = Languages.ChangePassword;
         }
 
         public DelegateCommand ChangePasswordCommand => _changePasswordCommand ?? (_changePasswordCommand = new DelegateCommand(ChangePasswordAsync));
@@ -82,16 +83,16 @@ namespace MyLeasing.Prism.ViewModels
             if (!response.IsSuccess)
             {
                 await App.Current.MainPage.DisplayAlert(
-                    "Error",
+                    Languages.Error,
                     response.Message,
-                    "Accept");
+                    Languages.Accept);
                 return;
             }
 
             await App.Current.MainPage.DisplayAlert(
-                "Ok",
+                Languages.Ok,
                 response.Message,
-                "Accept");
+                Languages.Accept);
 
             await _navigationService.GoBackAsync();
 
@@ -102,36 +103,36 @@ namespace MyLeasing.Prism.ViewModels
             if (string.IsNullOrEmpty(CurrentPassword))
             {
                 await App.Current.MainPage.DisplayAlert(
-                    "Error",
+                    Languages.Error,
                     "You must enter your current password.",
-                    "Accept");
+                    Languages.Accept);
                 return false;
             }
 
             if (string.IsNullOrEmpty(NewPassword) || NewPassword?.Length < 6)
             {
                 await App.Current.MainPage.DisplayAlert(
-                    "Error",
+                    Languages.Error,
                     "You must enter a new password at least 6 characters lenth.",
-                    "Accept");
+                    Languages.Accept);
                 return false;
             }
 
             if (string.IsNullOrEmpty(PasswordConfirm))
             {
                 await App.Current.MainPage.DisplayAlert(
-                    "Error",
-                    "You must enter your a password confim.",
-                    "Accept");
+                    Languages.Error,
+                    "You must enter your a password confirm.",
+                    Languages.Accept);
                 return false;
             }
 
             if (!NewPassword.Equals(PasswordConfirm))
             {
                 await App.Current.MainPage.DisplayAlert(
-                    "Error",
+                    Languages.Error,
                     "The password and confirmation does not match.",
-                    "Accept");
+                    Languages.Accept);
                 return false;
             }
 

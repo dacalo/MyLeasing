@@ -263,4 +263,19 @@
   <data name="Properties" xml:space="preserve">
     <value>Properties</value>
   </data>
+  <data name="ChangePassword" xml:space="preserve">
+    <value>Change password</value>
+  </data>
+  <data name="Ok" xml:space="preserve">
+    <value>Ok</value>
+  </data>
+  <data name="Contracts" xml:space="preserve">
+    <value>Contracts</value>
+  </data>
+  <data name="AddImage" xml:space="preserve">
+    <value>Add image</value>
+  </data>
+  <data name="DeleteImage" xml:space="preserve">
+    <value>Delete image</value>
+  </data>
 </root>
