@@ -115,6 +115,15 @@ namespace MyLeasing.Prism.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Cancel.
+        /// </summary>
+        public static string Cancel {
+            get {
+                return ResourceManager.GetString("Cancel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Change Image.
         /// </summary>
         public static string ChangeImage {
@@ -142,11 +151,38 @@ namespace MyLeasing.Prism.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Confirm.
+        /// </summary>
+        public static string Confirm {
+            get {
+                return ResourceManager.GetString("Confirm", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Contracts.
         /// </summary>
         public static string Contracts {
             get {
                 return ResourceManager.GetString("Contracts", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Created.
+        /// </summary>
+        public static string Created {
+            get {
+                return ResourceManager.GetString("Created", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The property was {0} succesfully..
+        /// </summary>
+        public static string CreateEditPropertyConfirm {
+            get {
+                return ResourceManager.GetString("CreateEditPropertyConfirm", resourceCulture);
             }
         }
         
@@ -174,6 +210,15 @@ namespace MyLeasing.Prism.Resources {
         public static string Details {
             get {
                 return ResourceManager.GetString("Details", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edited.
+        /// </summary>
+        public static string Edited {
+            get {
+                return ResourceManager.GetString("Edited", resourceCulture);
             }
         }
         
@@ -259,6 +304,24 @@ namespace MyLeasing.Prism.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to From Camera.
+        /// </summary>
+        public static string FromCamera {
+            get {
+                return ResourceManager.GetString("FromCamera", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to From Gallery.
+        /// </summary>
+        public static string FromGallery {
+            get {
+                return ResourceManager.GetString("FromGallery", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Has Parking Lot?.
         /// </summary>
         public static string HasParkingLot {
@@ -331,6 +394,15 @@ namespace MyLeasing.Prism.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to No.
+        /// </summary>
+        public static string No {
+            get {
+                return ResourceManager.GetString("No", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Ok.
         /// </summary>
         public static string Ok {
@@ -363,6 +435,15 @@ namespace MyLeasing.Prism.Resources {
         public static string PasswordPlaceHolder {
             get {
                 return ResourceManager.GetString("PasswordPlaceHolder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Where do you get the image?.
+        /// </summary>
+        public static string PictureSource {
+            get {
+                return ResourceManager.GetString("PictureSource", resourceCulture);
             }
         }
         
@@ -426,6 +507,15 @@ namespace MyLeasing.Prism.Resources {
         public static string PropertyTypePlaceHolder {
             get {
                 return ResourceManager.GetString("PropertyTypePlaceHolder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to QuestionToDeleteProperty.
+        /// </summary>
+        public static string QuestionToDeleteProperty {
+            get {
+                return ResourceManager.GetString("QuestionToDeleteProperty", resourceCulture);
             }
         }
         
@@ -543,6 +633,15 @@ namespace MyLeasing.Prism.Resources {
         public static string StratumPlaceHolder {
             get {
                 return ResourceManager.GetString("StratumPlaceHolder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Yes.
+        /// </summary>
+        public static string Yes {
+            get {
+                return ResourceManager.GetString("Yes", resourceCulture);
             }
         }
     }

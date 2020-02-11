@@ -87,8 +87,8 @@ namespace MyLeasing.Prism.ViewModels
             IsRunning = true;
             IsEnabled = false;
 
-            var url = "https://www.google.com/";
-            //var url = App.Current.Resources["UrlAPI"].ToString();
+            //var url = "https://www.google.com/";
+            var url = App.Current.Resources["UrlAPI"].ToString();
             var connection = await _apiService.CheckConnectionAsync(url);
             if (!connection)
             {
@@ -117,7 +117,7 @@ namespace MyLeasing.Prism.ViewModels
             }
 
             var token = response.Result;
-            var response2 = await _apiService.GetOwnerByEmail(url, "api", "/Owners/GetOwnerByEmail", "bearer", token.Token, Email);
+            var response2 = await _apiService.GetOwnerByEmailAsync(url, "api", "/Owners/GetOwnerByEmail", "bearer", token.Token, Email);
 
             if (!response2.IsSuccess)
             {

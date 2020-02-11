@@ -1,5 +1,6 @@
 ﻿using MyLeasing.Common.Helpers;
 using MyLeasing.Common.Models;
+using MyLeasing.Common.Services;
 using MyLeasing.Prism.Helpers;
 using Newtonsoft.Json;
 using Prism.Commands;
@@ -7,22 +8,30 @@ using Prism.Navigation;
 using System;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace MyLeasing.Prism.ViewModels
 {
     public class PropertiesPageViewModel : ViewModelBase
     {
         private readonly INavigationService _navigationService;
+        private readonly IApiService _apiService;
         private OwnerResponse _owner;
         private ObservableCollection<PropertyItemViewModel> _properties;
         private bool _isRefreshing;
         private DelegateCommand _addPropertyCommand;
+        private static PropertiesPageViewModel _instance;
+        private DelegateCommand _refreshPropertiesCommand;
 
-        public PropertiesPageViewModel(INavigationService navigationService) : base(navigationService)
+        public PropertiesPageViewModel(
+            INavigationService navigationService,
+            IApiService apiService) : base(navigationService)
         {
+            _instance = this;
             _navigationService = navigationService;
+            _apiService = apiService;
             Title = Languages.Properties;
-            LoadOwner();
+            LoadProperties();
         }
 
         public ObservableCollection<PropertyItemViewModel> Properties
@@ -37,9 +46,18 @@ namespace MyLeasing.Prism.ViewModels
             set => SetProperty(ref _isRefreshing, value);
         }
 
+        public static PropertiesPageViewModel GetInstance()
+        {
+            return _instance;
+        }
+
+
         public DelegateCommand AddPropertyCommand => _addPropertyCommand ?? (_addPropertyCommand = new DelegateCommand(AddPropertyAsync));
 
-        private void LoadOwner()
+        public DelegateCommand RefreshPropertiesCommand => _refreshPropertiesCommand ?? (_refreshPropertiesCommand = new DelegateCommand(RefreshProperties));
+
+
+        private void LoadProperties()
         {
             _owner = JsonConvert.DeserializeObject<OwnerResponse>(Settings.Owner);
             if (_owner.RoleId == 1)
@@ -78,5 +96,36 @@ namespace MyLeasing.Prism.ViewModels
             }
             await _navigationService.NavigateAsync("EditPropertyPage");
         }
+
+        public async Task UpdateOwnerAsync()
+        {
+            var url = App.Current.Resources["UrlAPI"].ToString();
+            var token = JsonConvert.DeserializeObject<TokenResponse>(Settings.Token);
+
+            var response = await _apiService.GetOwnerByEmailAsync(
+                url,
+                "/api",
+                "/Owners/GetOwnerByEmail",
+                "bearer",
+                token.Token,
+                _owner.Email);
+
+            if (response.IsSuccess)
+            {
+                var owner = (OwnerResponse)response.Result;
+                Settings.Owner = JsonConvert.SerializeObject(owner);
+                _owner = owner;
+                LoadProperties();
+            }
+        }
+
+        private async void RefreshProperties()
+        {
+            IsRefreshing = true;
+            await UpdateOwnerAsync();
+            IsRefreshing = false;
+        }
+
+
     }
 }

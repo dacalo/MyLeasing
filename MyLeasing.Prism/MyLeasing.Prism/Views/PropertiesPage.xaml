@@ -17,6 +17,8 @@
         <ListView
             BackgroundColor="Transparent"
             HasUnevenRows="True"
+            IsPullToRefreshEnabled="True"
+            RefreshCommand="{Binding RefreshPropertiesCommand}"
             ItemsSource="{Binding Properties}"
             SeparatorVisibility="None">
             <ListView.ItemTemplate>

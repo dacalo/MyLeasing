@@ -5,7 +5,7 @@ namespace MyLeasing.Common.Services
 {
     public interface IApiService
     {
-        Task<Response<OwnerResponse>> GetOwnerByEmail(
+        Task<Response<OwnerResponse>> GetOwnerByEmailAsync(
             string urlBase,
             string servicePrefix,
             string controller,
@@ -54,6 +54,39 @@ namespace MyLeasing.Common.Services
             string urlBase,
             string servicePrefix,
             string controller,
+            string tokenType,
+            string accessToken);
+
+        Task<Response<object>> PostAsync<T>(
+            string urlBase,
+            string servicePrefix,
+            string controller,
+            T model,
+            string tokenType,
+            string accessToken);
+
+        Task<Response<object>> PutAsync<T>(
+            string urlBase,
+            string servicePrefix,
+            string controller,
+            int id,
+            T model,
+            string tokenType,
+            string accessToken);
+
+        Task<Response<object>> GetLastPropertyByOwnerId(
+            string urlBase,
+            string servicePrefix,
+            string controller,
+            string tokenType,
+            string accessToken,
+            int ownerId);
+
+        Task<Response<object>> DeleteAsync(
+            string urlBase,
+            string servicePrefix,
+            string controller,
+            int id,
             string tokenType,
             string accessToken);
 
