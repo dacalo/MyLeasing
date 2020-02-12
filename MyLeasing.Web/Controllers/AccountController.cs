@@ -215,7 +215,7 @@
             var model = new EditUserViewModel
             {
                 Address = user.Address,
-                Document = user.Document,
+                RFC = user.RFC,
                 FirstName = user.FirstName,
                 LastName = user.LastName,
                 PhoneNumber = user.PhoneNumber
@@ -232,7 +232,7 @@
             {
                 var user = await _userHelper.GetUserByEmailAsync(User.Identity.Name);
 
-                user.Document = model.Document;
+                user.RFC = model.RFC;
                 user.FirstName = model.FirstName;
                 user.LastName = model.LastName;
                 user.Address = model.Address;

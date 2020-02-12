@@ -1,29 +1,29 @@
 ﻿@model MyLeasing.Web.Data.Entities.Contract
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Detalles";
 }
 
-<h2>Details</h2>
+<h2>Detalles</h2>
 
 <div>
-    <h4>Contract</h4>
+    <h4>Contrato</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            Owner
+            Propietario
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.Owner.User.FullNameWithDocument)
+            @Html.DisplayFor(model => model.Owner.User.FullNameWithRFC)
         </dd>
         <dt>
-            Lessee
+            Arrendatario
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.Lessee.User.FullNameWithDocument)
+            @Html.DisplayFor(model => model.Lessee.User.FullNameWithRFC)
         </dd>
         <dt>
-            Property Type
+            Tipo de propiedad
         </dt>
         <dd>
             @Html.DisplayFor(model => model.Property.PropertyType.Name)
@@ -73,5 +73,5 @@
     </dl>
 </div>
 <div>
-    <a asp-action="MyContracts" class="btn btn-success">Back to My Contracts</a>
+    <a asp-action="MyContracts" class="btn btn-success">Regresar a los contratos</a>
 </div>

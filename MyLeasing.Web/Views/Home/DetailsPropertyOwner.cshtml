@@ -1,23 +1,23 @@
 ﻿@model MyLeasing.Web.Data.Entities.Property
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Detalles";
 }
 
 <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" />
-<h2>Property</h2>
+<h2>Propiedad</h2>
 
 <div class="row">
     <div class="col-md-6">
         <div>
-            <h4>Owner</h4>
+            <h4>Propietario</h4>
             <hr />
             <dl class="dl-horizontal">
                 <dt>
-                    @Html.DisplayNameFor(model => model.Owner.User.Document)
+                    @Html.DisplayNameFor(model => model.Owner.User.RFC)
                 </dt>
                 <dd>
-                    @Html.DisplayFor(model => model.Owner.User.Document)
+                    @Html.DisplayFor(model => model.Owner.User.RFC)
                 </dd>
                 <dt>
                     @Html.DisplayNameFor(model => model.Owner.User.FirstName)
@@ -48,7 +48,7 @@
     </div>
     <div class="col-md-6">
         <div>
-            <h4>Property Details</h4>
+            <h4>Detalles de la Propiedad</h4>
             <hr />
             <dl class="dl-horizontal">
                 <dt>
@@ -110,9 +110,9 @@
     </div>
 </div>
 <div>
-    <a asp-action="EditProperty" asp-route-id="@Model.Id" class="btn btn-warning">Edit</a>
-    <a asp-action="AddImage" asp-route-id="@Model.Id" class="btn btn-primary">Add Image</a>
-    <a asp-action="MyProperties" class="btn btn-success">Back to My Properties</a>
+    <a asp-action="EditProperty" asp-route-id="@Model.Id" class="btn btn-warning">Editar</a>
+    <a asp-action="AddImage" asp-route-id="@Model.Id" class="btn btn-primary">Agregar foto</a>
+    <a asp-action="MyProperties" class="btn btn-success">Regresar a las propiedades</a>
 </div>
 <hr />
 <div class="row">
@@ -120,7 +120,7 @@
         <div>
             @if (Model.PropertyImages.Count == 0)
             {
-                <h5>Not images added yet.</h5>
+                <h5>No se han agregado fotos.</h5>
             }
             else
             {
@@ -128,7 +128,7 @@
                     <div class="col-md-12">
                         <div class="panel panel-default">
                             <div class="panel-heading">
-                                <h3 class="panel-title">Images</h3>
+                                <h3 class="panel-title">Fotos</h3>
                             </div>
                             <div class="panel-body">
                                 <table class="table table-hover table-responsive table-striped" id="MyTableImages">
@@ -168,7 +168,7 @@
         <div>
             @if (Model.Contracts.Count == 0)
             {
-                <h5>Not contracts added yet.</h5>
+                <h5>No se han agregado contratos.</h5>
             }
             else
             {
@@ -176,14 +176,14 @@
                     <div class="col-md-12">
                         <div class="panel panel-default">
                             <div class="panel-heading">
-                                <h3 class="panel-title">Contracts</h3>
+                                <h3 class="panel-title">Contratos</h3>
                             </div>
                             <div class="panel-body">
                                 <table class="table table-hover table-responsive table-striped" id="MyTableContracts">
                                     <thead>
                                         <tr>
                                             <th>
-                                                Lessee
+                                                Arrendatario
                                             </th>
                                             <th>
                                                 @Html.DisplayNameFor(model => model.Contracts.FirstOrDefault().Remarks)
@@ -208,7 +208,7 @@
                                         {
                                             <tr>
                                                 <td>
-                                                    @Html.DisplayFor(modelItem => item.Lessee.User.FullNameWithDocument)
+                                                    @Html.DisplayFor(modelItem => item.Lessee.User.FullNameWithRFC)
                                                 </td>
                                                 <td>
                                                     @Html.DisplayFor(modelItem => item.Remarks)
@@ -246,17 +246,17 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Delete Item</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Eliminar Registro</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
-                <p>Do you want to delete the record?</p>
+                <p>¿Desea eliminar el registro?</p>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-danger" id="btnYesDelete">Delete</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-danger" id="btnYesDelete">Eliminar</button>
             </div>
         </div>
     </div>

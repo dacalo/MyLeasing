@@ -23,9 +23,9 @@
         {
             await _context.Database.EnsureCreatedAsync();
             await CheckRoles();
-            var manager = await CheckUserAsync("1010", "Juan", "Zuluaga", "jzuluaga55@gmail.com", "350 634 2747", "Calle Luna Calle Sol", "Manager");
-            var owner = await CheckUserAsync("2020", "Juan", "Zuluaga", "jzuluaga55@hotmail.com", "350 634 2747", "Calle Luna Calle Sol", "Owner");
-            var lessee = await CheckUserAsync("3030", "Juan", "Zuluaga", "carlos.zuluaga@globant.com", "350 634 2747", "Calle Luna Calle Sol", "Lessee");
+            var manager = await CheckUserAsync("CALD7808244AA", "David", "Chávez López", "divadchl@gmail.com", "5543531789", "Dr. Velasco Número 135", "Manager");
+            var owner = await CheckUserAsync("CALD7808244AA", "David", "Chávez López", "divadchl@hotmail.com", "5543531789", "Dr. Velasco Número 135", "Owner");
+            var lessee = await CheckUserAsync("CALD7808244AA", "David", "Chávez López", "dacalo.soporte@gmail.com", "5543531789", "Dr. Velasco Número 135", "Lessee");
             await CheckPropertyTypesAsync();
             await CheckManagerAsync(manager);
             await CheckOwnersAsync(owner);
@@ -85,7 +85,7 @@
                     UserName = email,
                     PhoneNumber = phone,
                     Address = address,
-                    Document = document
+                    RFC = document
                 };
 
                 await _userHelper.AddUserAsync(user, "123456");

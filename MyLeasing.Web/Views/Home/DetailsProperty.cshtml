@@ -1,20 +1,20 @@
 ﻿@model MyLeasing.Web.Data.Entities.Property
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Detalles";
 }
 
 <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" />
-<h2>Property</h2>
+<h2>Propiedad</h2>
 
 <div class="row">
     <div class="col-md-6">
         <div>
-            <h4>Details</h4>
+            <h4>Detalles</h4>
             <hr />
             <dl class="dl-horizontal">
                 <dt>
-                    Property Type
+                    Tipo de propiedad
                 </dt>
                 <dd>
                     @Html.DisplayFor(model => model.PropertyType.Name)
@@ -66,12 +66,12 @@
     </div>
 </div>
 <div>
-    <a asp-action="SearchProperties" class="btn btn-success">Back to Properties</a>
+    <a asp-action="SearchProperties" class="btn btn-success">Regresar a las propiedades</a>
 </div>
 <hr />
 @if (Model.PropertyImages.Count == 0)
 {
-    <h5>Not images added yet.</h5>
+    <h5>No se han agregado fotos.</h5>
 }
 else
 {

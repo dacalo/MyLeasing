@@ -97,7 +97,7 @@
             var user = new User
             {
                 Address = view.Address,
-                Document = view.Document,
+                RFC = view.RFC,
                 Email = view.Username,
                 FirstName = view.FirstName,
                 LastName = view.LastName,

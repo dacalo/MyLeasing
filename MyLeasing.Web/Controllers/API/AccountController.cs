@@ -54,7 +54,7 @@ namespace MyLeasing.Web.Controllers.API
             user = new User
             {
                 Address = request.Address,
-                Document = request.Document,
+                RFC = request.Document,
                 Email = request.Email,
                 FirstName = request.FirstName,
                 LastName = request.LastName,
@@ -157,7 +157,7 @@ namespace MyLeasing.Web.Controllers.API
             userEntity.LastName = request.LastName;
             userEntity.Address = request.Address;
             userEntity.PhoneNumber = request.Phone;
-            userEntity.Document = request.Document;
+            userEntity.RFC = request.Document;
 
             var respose = await _userHelper.UpdateUserAsync(userEntity);
             if (!respose.Succeeded)

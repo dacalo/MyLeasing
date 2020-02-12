@@ -6,9 +6,9 @@
     {
         public int Id { get; set; }
 
-        [Display(Name = "Property Type*")]
-        [MaxLength(50, ErrorMessage = "The {0} field can not have more than {1} characters.")]
-        [Required(ErrorMessage = "The field {0} is mandatory.")]
+        [Display(Name = "Tipo de Propiedad*")]
+        [MaxLength(50, ErrorMessage = "El campo {0} no puede ser mayor a {1} caracteres.")]
+        [Required(ErrorMessage = "El campo {0} es obligatorio.")]
         public string Name { get; set; }
 
         public ICollection<Property> Properties { get; set; }

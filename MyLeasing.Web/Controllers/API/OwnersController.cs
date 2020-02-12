@@ -78,7 +78,7 @@ namespace MyLeasing.Web.Controllers.API
                 FirstName = lessee.User.FirstName,
                 LastName = lessee.User.LastName,
                 Address = lessee.User.Address,
-                Document = lessee.User.Document,
+                Document = lessee.User.RFC,
                 Email = lessee.User.Email,
                 PhoneNumber = lessee.User.PhoneNumber,
                 Properties = properties?.Select(p => new PropertyResponse
@@ -134,7 +134,7 @@ namespace MyLeasing.Web.Controllers.API
                 FirstName = owner.User.FirstName,
                 LastName = owner.User.LastName,
                 Address = owner.User.Address,
-                Document = owner.User.Document,
+                Document = owner.User.RFC,
                 Email = owner.User.Email,
                 PhoneNumber = owner.User.PhoneNumber,
                 Properties = owner.Properties?.Select(p => new PropertyResponse
@@ -185,7 +185,7 @@ namespace MyLeasing.Web.Controllers.API
             return new LesseeResponse
             {
                 Address = lessee.User.Address,
-                Document = lessee.User.Document,
+                Document = lessee.User.RFC,
                 Email = lessee.User.Email,
                 FirstName = lessee.User.FirstName,
                 LastName = lessee.User.LastName,

@@ -6,7 +6,7 @@
 
     public class PropertyImageViewModel : PropertyImage
     {
-        [Display(Name = "Image")]
+        [Display(Name = "Foto")]
         public IFormFile ImageFile { get; set; }
     }
 }

@@ -1,7 +1,7 @@
 ﻿@model MyLeasing.Web.Data.Entities.Property
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Detalles";
 }
 
 <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" />
@@ -104,8 +104,8 @@
     </div>
 </div>
 <div>
-    <a asp-action="EditProperty" asp-route-id="@Model.Id" class="btn btn-warning">Edit</a>
-    <a asp-action="AddImage" asp-route-id="@Model.Id" class="btn btn-primary">Add Image</a>
+    <a asp-action="EditProperty" asp-route-id="@Model.Id" class="btn btn-warning">Editar</a>
+    <a asp-action="AddImage" asp-route-id="@Model.Id" class="btn btn-primary">Agregar foto</a>
     <a asp-action="AddContract" asp-route-id="@Model.Id" class="btn btn-default">Add Contract</a>
     <a asp-action="Details" asp-route-id="@Model.Owner.Id" class="btn btn-success">Back to Owner</a>
 </div>
@@ -223,9 +223,9 @@
                                                     @Html.DisplayFor(modelItem => item.IsActive)
                                                 </td>
                                                 <td>
-                                                    <a asp-action="EditContract" asp-route-id="@item.Id" class="btn btn-warning">Edit</a>
+                                                    <a asp-action="EditContract" asp-route-id="@item.Id" class="btn btn-warning">Editar</a>
                                                     <a asp-action="DetailsContract" asp-route-id="@item.Id" class="btn btn-info">Details</a>
-                                                    <button data-id="@item.Id" class="btn btn-danger deleteContract" data-toggle="modal" data-target="#deleteDialog">Delete</button>
+                                                    <button data-id="@item.Id" class="btn btn-danger deleteContract" data-toggle="modal" data-target="#deleteDialog">Eliminar</button>
                                                     <a asp-action="EditContract" class="btn btn-default" asp-route-id="@item.Id"><i class="glyphicon glyphicon-pencil"></i> </a>
                                                     <a asp-action="DetailsContract" class="btn btn-default" asp-route-id="@item.Id"><i class="glyphicon glyphicon-list"> </i> </a>
                                                     <button data-id="@item.Id" class="btn btn-danger deleteItem" data-toggle="modal" data-target="#deleteDialog"><i class="glyphicon glyphicon-trash"></i></button>

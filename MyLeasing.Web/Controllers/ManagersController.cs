@@ -1,13 +1,11 @@
-﻿using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using MyLeasing.Web.Data;
 using MyLeasing.Web.Data.Entities;
 using MyLeasing.Web.Helpers;
 using MyLeasing.Web.Models;
+using System.Threading.Tasks;
 
 namespace MyLeasing.Web.Controllers
 {
@@ -109,7 +107,7 @@ namespace MyLeasing.Web.Controllers
             var view = new EditUserViewModel
             {
                 Address = manager.User.Address,
-                Document = manager.User.Document,
+                RFC = manager.User.RFC,
                 FirstName = manager.User.FirstName,
                 Id = manager.Id,
                 LastName = manager.User.LastName,
@@ -129,7 +127,7 @@ namespace MyLeasing.Web.Controllers
                     .Include(m => m.User)
                     .FirstOrDefaultAsync(o => o.Id == model.Id);
 
-                manager.User.Document = model.Document;
+                manager.User.RFC = model.RFC;
                 manager.User.FirstName = model.FirstName;
                 manager.User.LastName = model.LastName;
                 manager.User.Address = model.Address;

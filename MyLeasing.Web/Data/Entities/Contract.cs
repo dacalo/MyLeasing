@@ -6,25 +6,26 @@
     {
         public int Id { get; set; }
 
-        [Required(ErrorMessage = "The field {0} is mandatory.")]
+        [Display(Name = "Observaciones")]
+        [Required(ErrorMessage = "El campo {0} es obligatorio.")]
         public string Remarks { get; set; }
 
-        [Display(Name = "Price*")]
-        [Required(ErrorMessage = "The field {0} is mandatory.")]
+        [Display(Name = "Precio*")]
+        [Required(ErrorMessage = "El campo {0} es obligatorio.")]
         [DisplayFormat(DataFormatString = "{0:C2}", ApplyFormatInEditMode = false)]
         public decimal Price { get; set; }
 
-        [Display(Name = "Start Date*")]
-        [Required(ErrorMessage = "The field {0} is mandatory.")]
+        [Display(Name = "Fecha de inicio*")]
+        [Required(ErrorMessage = "El campo {0} es obligatorio.")]
         [DisplayFormat(DataFormatString = "{0:yyyy/MM/dd}", ApplyFormatInEditMode = true)]
         public DateTime StartDate { get; set; }
 
-        [Display(Name = "End Date*")]
-        [Required(ErrorMessage = "The field {0} is mandatory.")]
+        [Display(Name = "Fecha de término*")]
+        [Required(ErrorMessage = "El campo {0} es obligatorio.")]
         [DisplayFormat(DataFormatString = "{0:yyyy/MM/dd}", ApplyFormatInEditMode = true)]
         public DateTime EndDate { get; set; }
 
-        [Display(Name = "Is Active?")]
+        [Display(Name = "Está activo?")]
         public bool IsActive { get; set; }
 
         public Property Property { get; set; }
@@ -33,13 +34,13 @@
 
         public Lessee Lessee { get; set; }
 
-        [Display(Name = "Start Date*")]
-        [Required(ErrorMessage = "The field {0} is mandatory.")]
+        [Display(Name = "Fecha de inicio*")]
+        [Required(ErrorMessage = "El campo {0} es obligatorio.")]
         [DisplayFormat(DataFormatString = "{0:yyyy/MM/dd}", ApplyFormatInEditMode = true)]
         public DateTime StartDateLocal => StartDate.ToLocalTime();
 
-        [Display(Name = "End Date*")]
-        [Required(ErrorMessage = "The field {0} is mandatory.")]
+        [Display(Name = "Fecha de término*")]
+        [Required(ErrorMessage = "El campo {0} es obligatorio.")]
         [DisplayFormat(DataFormatString = "{0:yyyy/MM/dd}", ApplyFormatInEditMode = true)]
         public DateTime EndDateLocal => EndDate.ToLocalTime();
 

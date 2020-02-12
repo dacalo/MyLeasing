@@ -34,7 +34,7 @@
         {
             var list = _dataContext.Lessees.Select(l => new SelectListItem
             {
-                Text = l.User.FullNameWithDocument,
+                Text = l.User.FullNameWithRFC,
                 Value = $"{l.Id}"
             })
                 .OrderBy(pt => pt.Text)

@@ -1,10 +1,10 @@
 ﻿@model MyLeasing.Web.Data.Entities.Contract
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Detalles";
 }
 
-<h2>Details</h2>
+<h2>Detalles</h2>
 
 <div>
     <h4>Contract</h4>
@@ -73,6 +73,6 @@
     </dl>
 </div>
 <div>
-    <a asp-action="EditContract" asp-route-id="@Model.Id" class="btn btn-warning">Edit</a>
+    <a asp-action="EditContract" asp-route-id="@Model.Id" class="btn btn-warning">Editar</a>
     <a asp-action="DetailsProperty" asp-route-id="@Model.Property.Id" class="btn btn-success">Back to Property</a>
 </div>

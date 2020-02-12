@@ -6,7 +6,7 @@
     {
         public int Id { get; set; }
 
-        [Display(Name = "Image")]
+        [Display(Name = "Foto")]
         public string ImageUrl { get; set; }
 
         public Property Property { get; set; }
