@@ -223,8 +223,8 @@
                                                     @Html.DisplayFor(modelItem => item.IsActive)
                                                 </td>
                                                 <td>
-                                                    <a asp-action="EditContract" class="btn btn-default" asp-route-id="@item.Id"><i class="glyphicon glyphicon-pencil"></i> </a>
-                                                    <a asp-action="DetailsContract" class="btn btn-default" asp-route-id="@item.Id"><i class="glyphicon glyphicon-list"> </i> </a>
+                                                    <a asp-action="EditContract" class="btn btn-warning" asp-route-id="@item.Id"><i class="glyphicon glyphicon-pencil"></i> </a>
+                                                    <a asp-action="DetailsContract" class="btn btn-info" asp-route-id="@item.Id"><i class="glyphicon glyphicon-list"> </i> </a>
                                                     <button data-id="@item.Id" class="btn btn-danger deleteItem" data-toggle="modal" data-target="#deleteDialog"><i class="glyphicon glyphicon-trash"></i></button>
                                                 </td>
                                             </tr>
