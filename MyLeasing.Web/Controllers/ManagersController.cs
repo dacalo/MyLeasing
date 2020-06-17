@@ -63,7 +63,7 @@ namespace MyLeasing.Web.Controllers
                 var user = await _userHelper.AddUser(model, "Manager");
                 if (user == null)
                 {
-                    ModelState.AddModelError(string.Empty, "This email is already used.");
+                    ModelState.AddModelError(string.Empty, "Este correo ya está registrado.");
                     return View(model);
                 }
 
@@ -79,9 +79,9 @@ namespace MyLeasing.Web.Controllers
                     token = myToken
                 }, protocol: HttpContext.Request.Scheme);
 
-                _mailHelper.SendMail(model.Username, "Email confirmation", $"<h1>Email Confirmation</h1>" +
-                    $"To allow the user, " +
-                    $"plase click in this link:</br></br><a href = \"{tokenLink}\">Confirm Email</a>");
+                _mailHelper.SendMail(model.Username, "Confirmación de correo", $"<h1>Correo de confirmación</h1>" +
+                    $"Para permitir el acceso, " +
+                    $"por favor haga clic en este enlace:</br></br><a href = \"{tokenLink}\">Confirmar Correo</a>");
 
                 return RedirectToAction(nameof(Index));
             }

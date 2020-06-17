@@ -38,7 +38,7 @@ namespace MyLeasing.Web.Controllers.API
                 var user = await _userHelper.GetUserByEmailAsync(emailRequest.Email);
                 if (user == null)
                 {
-                    return BadRequest("User not found.");
+                    return BadRequest("Usuario no encontrado.");
                 }
 
                 if (await _userHelper.IsUserInRoleAsync(user, "Owner"))

@@ -7,7 +7,6 @@ using MyLeasing.Web.Data;
 using MyLeasing.Web.Data.Entities;
 using MyLeasing.Web.Helpers;
 using System.Linq;
-using System.Net;
 using System.Threading.Tasks;
 
 namespace MyLeasing.Web.Controllers.API
@@ -47,7 +46,7 @@ namespace MyLeasing.Web.Controllers.API
                 return BadRequest(new Response<object>
                 {
                     IsSuccess = false,
-                    Message = "This email is already registered."
+                    Message = "Este correo electrónico ya está registrado."
                 });
             }
 
@@ -90,14 +89,14 @@ namespace MyLeasing.Web.Controllers.API
                 token = myToken
             }, protocol: HttpContext.Request.Scheme);
 
-            _mailHelper.SendMail(request.Email, "Email confirmation", $"<h1>Email Confirmation</h1>" +
-                $"To allow the user, " +
-                $"please click on this link:</br></br><a href = \"{tokenLink}\">Confirm Email</a>");
+            _mailHelper.SendMail(request.Email, "Correo de confirmación", $"<h1>Correo de Confirmación</h1>" +
+                $"Para tener acceso a la aplicación, " +
+                $"por favor haga clic en este link:</br></br><a href = \"{tokenLink}\">Confirmar Correo</a>");
 
             return Ok(new Response<object>
             {
                 IsSuccess = true,
-                Message = "A Confirmation email was sent. Please confirm your account and log into the App."
+                Message = "Se envió un correo electrónico de confirmación. Confirme su cuenta e inicie sessión en la aplicación."
             });
         }
 
@@ -110,7 +109,7 @@ namespace MyLeasing.Web.Controllers.API
                 return BadRequest(new Response<object>
                 {
                     IsSuccess = false,
-                    Message = "Bad request"
+                    Message = "Solicitud incorrecta"
                 });
             }
 
@@ -120,26 +119,25 @@ namespace MyLeasing.Web.Controllers.API
                 return BadRequest(new Response<object>
                 {
                     IsSuccess = false,
-                    Message = "This email is not assigned to any user."
+                    Message = "Este correo electrónico no está asignado a un usuario."
                 });
             }
 
             var myToken = await _userHelper.GeneratePasswordResetTokenAsync(user);
             var link = Url.Action("ResetPassword", "Account", new { token = myToken }, protocol: HttpContext.Request.Scheme);
-            _mailHelper.SendMail(request.Email, "Password Reset", $"<h1>Recover Password</h1>" +
-                $"To reset the password click in this link:</br></br>" +
-                $"<a href = \"{link}\">Reset Password</a>");
+            _mailHelper.SendMail(request.Email, "Restablecer Contraseña", $"<h1>Recuperar Contraseña</h1>" +
+                $"Para restablecer la contraseña dar clic en este link:</br></br>" +
+                $"<a href = \"{link}\">Restablecer Contraseña</a>");
 
             return Ok(new Response<object>
             {
                 IsSuccess = true,
-                Message = "An email with instructions to change the password was sent."
+                Message = "Un correo electrónico con instrucciones para cambiar la contraseña han sido enviadas."
             });
         }
 
         [HttpPut]
         [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
-
         public async Task<IActionResult> PutUser([FromBody] UserRequest request)
         {
             if (!ModelState.IsValid)
@@ -150,7 +148,7 @@ namespace MyLeasing.Web.Controllers.API
             var userEntity = await _userHelper.GetUserByEmailAsync(request.Email);
             if (userEntity == null)
             {
-                return BadRequest("User not found.");
+                return BadRequest("Usuario no encontrado.");
             }
 
             userEntity.FirstName = request.FirstName;
@@ -179,7 +177,7 @@ namespace MyLeasing.Web.Controllers.API
                 return BadRequest(new Response<object>
                 {
                     IsSuccess = false,
-                    Message = "Bad request"
+                    Message = "Solicitud incorrecta"
                 });
             }
 
@@ -189,7 +187,7 @@ namespace MyLeasing.Web.Controllers.API
                 return BadRequest(new Response<object>
                 {
                     IsSuccess = false,
-                    Message = "This email is not assigned to any user."
+                    Message = "Este correo no está asignado a un usuario."
                 });
             }
 
@@ -206,7 +204,7 @@ namespace MyLeasing.Web.Controllers.API
             return Ok(new Response<object>
             {
                 IsSuccess = true,
-                Message = "The password was changed successfully!"
+                Message = "La contraseña ha sido cambiada satisfactoriamente!"
             });
         }
 

@@ -64,7 +64,7 @@
                 }
             }
 
-            ModelState.AddModelError(string.Empty, "Failed to login.");
+            ModelState.AddModelError(string.Empty, "Error al iniciar sesión.");
             return View(model);
         }
 
@@ -146,7 +146,7 @@
                 var user = await _userHelper.AddUser(model, role);
                 if (user == null)
                 {
-                    ModelState.AddModelError(string.Empty, "This email is already used.");
+                    ModelState.AddModelError(string.Empty, "Este correo ya está en uso.");
                     return View(model);
                 }
 
@@ -193,10 +193,10 @@
                     token = myToken
                 }, protocol: HttpContext.Request.Scheme);
 
-                _mailHelper.SendMail(model.Username, "Email confirmation", $"<h1>Email Confirmation</h1>" +
-                    $"To allow the user, " +
-                    $"plase click in this link:</br></br><a href = \"{tokenLink}\">Confirm Email</a>");
-                ViewBag.Message = "The instructions to allow your user has been sent to email.";
+                _mailHelper.SendMail(model.Username, "Correo de confirmación", $"<h1>Confirmación de correo</h1>" +
+                    $"Para permitir el acceso, " +
+                    $"por favor haga clic en este enlace:</br></br><a href = \"{tokenLink}\">Confirmar Correo</a>");
+                ViewBag.Message = "Las instrucciones para acceder al sistema, han sido enviadas al correo.";
                 return View(model);
             }
 
@@ -270,7 +270,7 @@
                 }
                 else
                 {
-                    ModelState.AddModelError(string.Empty, "User no found.");
+                    ModelState.AddModelError(string.Empty, "Usuario no encontrado.");
                 }
             }
 
@@ -312,7 +312,7 @@
                 var user = await _userHelper.GetUserByEmailAsync(model.Email);
                 if (user == null)
                 {
-                    ModelState.AddModelError(string.Empty, "The email doesn't correspont to a registered user.");
+                    ModelState.AddModelError(string.Empty, "El correo no correponde a un usuario registrado.");
                     return View(model);
                 }
 
@@ -322,10 +322,10 @@
                     "Account",
                     new { token = myToken }, protocol: HttpContext.Request.Scheme);
 
-                _mailHelper.SendMail(model.Email, "MyLeasing Password Reset", $"<h1>MyLeasing Password Reset</h1>" +
-                    $"To reset the password click in this link:</br></br>" +
-                    $"<a href = \"{link}\">Reset Password</a>");
-                ViewBag.Message = "The instructions to recover your password has been sent to email.";
+                _mailHelper.SendMail(model.Email, "Restablecer Contraseña", $"<h1>Recuperar contraseña</h1>" +
+                    $"Para restablecer la contraseña haga clic en el link:</br></br>" +
+                    $"<a href = \"{link}\">Restablecer Contraseña</a>");
+                ViewBag.Message = "Las instrucciones para restablecer la contraseña han sido enviadas al correo.";
                 return View();
 
             }
@@ -347,15 +347,15 @@
                 var result = await _userHelper.ResetPasswordAsync(user, model.Token, model.Password);
                 if (result.Succeeded)
                 {
-                    ViewBag.Message = "Password reset successful.";
+                    ViewBag.Message = "Restablecimiento de contraseña exitosa.";
                     return View();
                 }
 
-                ViewBag.Message = "Error while resetting the password.";
+                ViewBag.Message = "Error al restablecer la contraseña.";
                 return View(model);
             }
 
-            ViewBag.Message = "User not found.";
+            ViewBag.Message = "Usuario no encontrado.";
             return View(model);
         }
 

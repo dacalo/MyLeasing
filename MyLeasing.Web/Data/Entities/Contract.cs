@@ -17,12 +17,12 @@
 
         [Display(Name = "Fecha de inicio*")]
         [Required(ErrorMessage = "El campo {0} es obligatorio.")]
-        [DisplayFormat(DataFormatString = "{0:yyyy/MM/dd}", ApplyFormatInEditMode = true)]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         public DateTime StartDate { get; set; }
 
         [Display(Name = "Fecha de término*")]
         [Required(ErrorMessage = "El campo {0} es obligatorio.")]
-        [DisplayFormat(DataFormatString = "{0:yyyy/MM/dd}", ApplyFormatInEditMode = true)]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         public DateTime EndDate { get; set; }
 
         [Display(Name = "Está activo?")]
@@ -36,12 +36,12 @@
 
         [Display(Name = "Fecha de inicio*")]
         [Required(ErrorMessage = "El campo {0} es obligatorio.")]
-        [DisplayFormat(DataFormatString = "{0:yyyy/MM/dd}", ApplyFormatInEditMode = true)]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         public DateTime StartDateLocal => StartDate.ToLocalTime();
 
         [Display(Name = "Fecha de término*")]
         [Required(ErrorMessage = "El campo {0} es obligatorio.")]
-        [DisplayFormat(DataFormatString = "{0:yyyy/MM/dd}", ApplyFormatInEditMode = true)]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         public DateTime EndDateLocal => EndDate.ToLocalTime();
 
     }

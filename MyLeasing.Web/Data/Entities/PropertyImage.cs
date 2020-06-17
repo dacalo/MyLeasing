@@ -1,5 +1,6 @@
 ﻿namespace MyLeasing.Web.Data.Entities
 {
+    using MyLeasing.Common.Business;
     using System.ComponentModel.DataAnnotations;
 
     public class PropertyImage
@@ -12,7 +13,7 @@
         public Property Property { get; set; }
 
         // TODO: Change the path when publish
-        public string ImageFullPath => string.IsNullOrEmpty(ImageUrl) ? null : $"https://TBD.azurewebsites.net{ImageUrl.Substring(1)}";
+        public string ImageFullPath => string.IsNullOrEmpty(ImageUrl) ? null : $"{Constants.URL_API}{ImageUrl.Substring(1)}";
 
     }
 }

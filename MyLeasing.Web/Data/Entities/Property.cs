@@ -1,5 +1,6 @@
 ﻿namespace MyLeasing.Web.Data.Entities
 {
+    using MyLeasing.Common.Business;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.Linq;
@@ -38,7 +39,7 @@
         [Display(Name = "Tiene estacionamiento?")]
         public bool HasParkingLot { get; set; }
 
-        [Display(Name = "Is Available?")]
+        [Display(Name = "Etsá disponible?")]
         public bool IsAvailable { get; set; }
 
         [Display(Name = "Observaciones")]
@@ -62,7 +63,7 @@
         public ICollection<Contract> Contracts { get; set; }
 
         public string FirstImage => PropertyImages == null || PropertyImages.Count == 0
-            ? "http://dacalo-001-site4.atempurl.com/images/Properties/noImage.png"
+            ?  $"{Constants.URL_API}/images/Properties/noImage.png"
             : PropertyImages.FirstOrDefault().ImageUrl;
     }
 }

@@ -41,29 +41,29 @@
     </div>
     <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
         <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
+        <span class="sr-only">Anterior</span>
     </a>
     <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
         <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
+        <span class="sr-only">Siguiente</span>
     </a>
 </div>
 
 <hr />
 <div class="row">
     <div class="col-md-2">
-        <a asp-action="SearchProperties" class="btn btn-primary">Search Properties</a>
+        <a asp-action="SearchProperties" class="btn btn-primary">Buscar Propiedades</a>
     </div>
     @if (User.IsInRole("Owner") || User.IsInRole("Lessee"))
     {
         <div class="col-md-2">
-            <a asp-action="MyContracts" class="btn btn-warning">My Contracts</a>
+            <a asp-action="MyContracts" class="btn btn-warning">Mis Contratos</a>
         </div>
     }
     @if (User.IsInRole("Owner"))
     {
         <div class="col-md-2">
-            <a asp-action="MyProperties" class="btn btn-success">My Properties</a>
+            <a asp-action="MyProperties" class="btn btn-success">Mis Propiedades</a>
         </div>
     }
 </div>

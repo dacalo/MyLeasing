@@ -48,7 +48,7 @@
                 <Label
                 	Grid.Row="1"
                 	Grid.Column="1"
-                	Text="{Binding Contract.StartDateLocal, StringFormat='{0:yyyy/MM/dd}'}"/>
+                	Text="{Binding Contract.StartDateLocal, StringFormat='{0:dd/MM/yyyy}'}"/>
 
                 <Label
                 	Grid.Row="2"
@@ -58,7 +58,7 @@
                 <Label
                 	Grid.Row="2"
                 	Grid.Column="1"
-                	Text="{Binding Contract.EndDateLocal, StringFormat='{0:yyyy/MM/dd}'}"/>
+                	Text="{Binding Contract.EndDateLocal, StringFormat='{0:dd/MM/yyyy}'}"/>
 
                 <Label
                 	Grid.Row="3"

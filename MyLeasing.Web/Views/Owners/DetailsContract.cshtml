@@ -7,20 +7,20 @@
 <h2>Detalles</h2>
 
 <div>
-    <h4>Contract</h4>
+    <h4>Contratos</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            Owner
+            Propietarios
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.Owner.User.FullNameWithDocument)
+            @Html.DisplayFor(model => model.Owner.User.FullNameWithRFC)
         </dd>
         <dt>
-            Lessee
+            Arrendatarios
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.Lessee.User.FullNameWithDocument)
+            @Html.DisplayFor(model => model.Lessee.User.FullNameWithRFC)
         </dd>
         <dt>
             @Html.DisplayNameFor(model => model.Property.PropertyType.Name)
@@ -74,5 +74,5 @@
 </div>
 <div>
     <a asp-action="EditContract" asp-route-id="@Model.Id" class="btn btn-warning">Editar</a>
-    <a asp-action="DetailsProperty" asp-route-id="@Model.Property.Id" class="btn btn-success">Back to Property</a>
+    <a asp-action="DetailsProperty" asp-route-id="@Model.Property.Id" class="btn btn-success">Regresar a la Propiedad</a>
 </div>

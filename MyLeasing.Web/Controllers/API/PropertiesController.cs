@@ -41,13 +41,13 @@ namespace MyLeasing.Web.Controllers.API
             var owner = await _dataContext.Owners.FindAsync(request.OwnerId);
             if (owner == null)
             {
-                return BadRequest("Not valid owner.");
+                return BadRequest("Propietario no válido.");
             }
 
             var propertyType = await _dataContext.PropertyTypes.FindAsync(request.PropertyTypeId);
             if (propertyType == null)
             {
-                return BadRequest("Not valid property type.");
+                return BadRequest("Tipo de propietario no válido.");
             }
 
             var property = new Property
@@ -82,7 +82,7 @@ namespace MyLeasing.Web.Controllers.API
             var property = await _dataContext.Properties.FindAsync(request.PropertyId);
             if (property == null)
             {
-                return BadRequest("Not valid property.");
+                return BadRequest("Propiedad no válida.");
             }
 
             var imageUrl = string.Empty;
@@ -129,13 +129,13 @@ namespace MyLeasing.Web.Controllers.API
             var oldProperty = await _dataContext.Properties.FindAsync(request.Id);
             if (oldProperty == null)
             {
-                return BadRequest("Property doesn't exists.");
+                return BadRequest("La propiedad no existe.");
             }
 
             var propertyType = await _dataContext.PropertyTypes.FindAsync(request.PropertyTypeId);
             if (propertyType == null)
             {
-                return BadRequest("Not valid property type.");
+                return BadRequest("Tipo de propiedad no válida.");
             }
 
             oldProperty.Address = request.Address;
@@ -166,7 +166,7 @@ namespace MyLeasing.Web.Controllers.API
             var propertyImage = await _dataContext.PropertyImages.FindAsync(request.Id);
             if (propertyImage == null)
             {
-                return BadRequest("Property image doesn't exist.");
+                return BadRequest("La imagen de la propiedad no existe.");
             }
 
             _dataContext.PropertyImages.Remove(propertyImage);
@@ -231,13 +231,13 @@ namespace MyLeasing.Web.Controllers.API
 
             if (property.Contracts.Count > 0)
             {
-                BadRequest("The property can't be deleted because it has contracts.");
+                BadRequest("La propiedad no puede ser eliminada porque contiene contratos.");
             }
 
             _dataContext.PropertyImages.RemoveRange(property.PropertyImages);
             _dataContext.Properties.Remove(property);
             await _dataContext.SaveChangesAsync();
-            return Ok("Property deleted");
+            return Ok("Propiedad Eliminada");
         }
 
 

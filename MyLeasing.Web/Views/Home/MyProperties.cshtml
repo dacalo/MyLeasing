@@ -5,17 +5,17 @@
 }
 
 <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" />
-<h2>Owner</h2>
+<h2>Propietario</h2>
 
 <div>
-    <h4>Details</h4>
+    <h4>Detalles</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.User.Document)
+            @Html.DisplayNameFor(model => model.User.RFC)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.User.Document)
+            @Html.DisplayFor(model => model.User.RFC)
         </dd>
         <dt>
             @Html.DisplayNameFor(model => model.User.FirstName)
@@ -42,13 +42,13 @@
             @Html.DisplayFor(model => model.User.PhoneNumber)
         </dd>
         <dt>
-            Properties
+            Propiedades
         </dt>
         <dd>
             @Html.DisplayFor(model => model.Properties.Count)
         </dd>
         <dt>
-            Contracts
+            Contratos
         </dt>
         <dd>
             @Html.DisplayFor(model => model.Contracts.Count)
@@ -56,13 +56,13 @@
     </dl>
 </div>
 <div>
-    <a asp-action="AddProperty" asp-route-id="@Model.Id" class="btn btn-primary">Add Property</a>
-    <a asp-action="Index" class="btn btn-success">Back to Home</a>
+    <a asp-action="AddProperty" asp-route-id="@Model.Id" class="btn btn-primary">Agregar Propiedad</a>
+    <a asp-action="Index" class="btn btn-success">Regresar al Inicio</a>
 </div>
 <hr />
 @if (Model.Properties.Count == 0)
 {
-    <h5>Not properties added yet.</h5>
+    <h5>No se han agregado propiedades.</h5>
 }
 else
 {
@@ -101,10 +101,10 @@ else
                                     @Html.DisplayNameFor(model => model.Properties.FirstOrDefault().IsAvailable)
                                 </th>
                                 <th>
-                                    Images
+                                    Imagenes
                                 </th>
                                 <th>
-                                    Contracts
+                                    Contratos
                                 </th>
                                 <th></th>
                             </tr>
