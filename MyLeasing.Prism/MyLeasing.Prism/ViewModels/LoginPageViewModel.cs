@@ -1,4 +1,5 @@
-﻿using MyLeasing.Common.Helpers;
+﻿using MyLeasing.Common.Business;
+using MyLeasing.Common.Helpers;
 using MyLeasing.Common.Models;
 using MyLeasing.Common.Services;
 using MyLeasing.Prism.Helpers;
@@ -28,7 +29,7 @@ namespace MyLeasing.Prism.ViewModels
             INavigationService navigationService,
             IApiService apiService) : base(navigationService)
         {
-            Title = "Login";
+            Title = Languages.Login;
             IsEnabled = true;
             IsRemember = true;
 
@@ -87,14 +88,13 @@ namespace MyLeasing.Prism.ViewModels
             IsRunning = true;
             IsEnabled = false;
 
-            //var url = "https://www.google.com/";
-            var url = App.Current.Resources["UrlAPI"].ToString();
+            var url = Constants.URL_API;
             var connection = await _apiService.CheckConnectionAsync(url);
             if (!connection)
             {
                 IsEnabled = true;
                 IsRunning = false;
-                await App.Current.MainPage.DisplayAlert(Languages.Error, "Check the internet connection.", Languages.Accept);
+                await App.Current.MainPage.DisplayAlert(Languages.Error, Languages.CheckConnection, Languages.Accept);
                 return;
             }
             
@@ -104,7 +104,7 @@ namespace MyLeasing.Prism.ViewModels
                 Username = Email
             };
 
-            url = App.Current.Resources["UrlAPI"].ToString();
+            url = Constants.URL_API;
             var response = await _apiService.GetTokenAsync(url, "Account", "/CreateToken", request);
             
             if (!response.IsSuccess)

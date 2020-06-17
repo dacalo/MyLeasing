@@ -9,6 +9,7 @@ using MyLeasing.Common.Models;
 using MyLeasing.Common.Helpers;
 using Newtonsoft.Json;
 using System;
+using MyLeasing.Common.Business;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace MyLeasing.Prism
@@ -26,7 +27,7 @@ namespace MyLeasing.Prism
 
         protected override async void OnInitialized()
         {
-            Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("MTYyODIxQDMxMzcyZTMzMmUzMEIxYlJrQWRHY001bURGaHIyUXQxUW5mZWV1NnR5RFhnMkxRcldJb0Qrb289");
+            Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense(Constants.LicenseSyncfusion);
 
             InitializeComponent();
             var token = JsonConvert.DeserializeObject<TokenResponse>(Settings.Token);

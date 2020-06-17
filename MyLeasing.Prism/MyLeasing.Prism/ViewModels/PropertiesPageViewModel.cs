@@ -1,4 +1,5 @@
-﻿using MyLeasing.Common.Helpers;
+﻿using MyLeasing.Common.Business;
+using MyLeasing.Common.Helpers;
 using MyLeasing.Common.Models;
 using MyLeasing.Common.Services;
 using MyLeasing.Prism.Helpers;
@@ -99,7 +100,7 @@ namespace MyLeasing.Prism.ViewModels
 
         public async Task UpdateOwnerAsync()
         {
-            var url = App.Current.Resources["UrlAPI"].ToString();
+            var url = Constants.URL_API;
             var token = JsonConvert.DeserializeObject<TokenResponse>(Settings.Token);
 
             var response = await _apiService.GetOwnerByEmailAsync(

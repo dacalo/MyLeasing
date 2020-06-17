@@ -1,6 +1,8 @@
-﻿using MyLeasing.Common.Helpers;
+﻿using MyLeasing.Common.Business;
+using MyLeasing.Common.Helpers;
 using MyLeasing.Common.Models;
 using MyLeasing.Common.Services;
+using MyLeasing.Prism.Helpers;
 using Newtonsoft.Json;
 using System.Collections.Generic;
 using Xamarin.Forms;
@@ -24,7 +26,7 @@ namespace MyLeasing.Prism.Views
 
         private async void ShowPropertiesAsync()
         {
-            var url = App.Current.Resources["UrlAPI"].ToString();
+            var url = Constants.URL_API;
             var token = JsonConvert.DeserializeObject<TokenResponse>(Settings.Token);
 
             var response = await _apiService.GetListAsync<PropertyResponse>(
@@ -37,9 +39,9 @@ namespace MyLeasing.Prism.Views
             if (!response.IsSuccess)
             {
                 await App.Current.MainPage.DisplayAlert(
-                    "Error",
+                    Languages.Error,
                     response.Message,
-                    "Accept");
+                    Languages.Accept);
                 return;
             }
 

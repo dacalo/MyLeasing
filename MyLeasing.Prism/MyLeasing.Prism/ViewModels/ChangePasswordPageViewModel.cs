@@ -1,4 +1,5 @@
 ﻿using System.Threading.Tasks;
+using MyLeasing.Common.Business;
 using MyLeasing.Common.Helpers;
 using MyLeasing.Common.Models;
 using MyLeasing.Common.Services;
@@ -68,7 +69,7 @@ namespace MyLeasing.Prism.ViewModels
                 OldPassword = CurrentPassword
             };
 
-            var url = App.Current.Resources["UrlAPI"].ToString();
+            var url = Constants.URL_API;
             var response = await _apiService.ChangePasswordAsync(
                 url,
                 "/api",

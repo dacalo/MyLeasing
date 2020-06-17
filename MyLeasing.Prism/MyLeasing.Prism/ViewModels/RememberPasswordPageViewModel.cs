@@ -1,7 +1,9 @@
 ﻿using System.Threading.Tasks;
+using MyLeasing.Common.Business;
 using MyLeasing.Common.Helpers;
 using MyLeasing.Common.Models;
 using MyLeasing.Common.Services;
+using MyLeasing.Prism.Helpers;
 using Prism.Commands;
 using Prism.Navigation;
 
@@ -57,7 +59,7 @@ namespace MyLeasing.Prism.ViewModels
                 Email = Email
             };
 
-            var url = App.Current.Resources["UrlAPI"].ToString();
+            var url = Constants.URL_API;
             var response = await _apiService.RecoverPasswordAsync(
                 url,
                 "/api",
@@ -70,16 +72,16 @@ namespace MyLeasing.Prism.ViewModels
             if (!response.IsSuccess)
             {
                 await App.Current.MainPage.DisplayAlert(
-                    "Error",
+                    Languages.Error,
                     response.Message,
-                    "Accept");
+                    Languages.Accept);
                 return;
             }
 
             await App.Current.MainPage.DisplayAlert(
-                "Ok",
+                Languages.Ok,
                 response.Message,
-                "Accept");
+                Languages.Accept);
             await _navigationService.GoBackAsync();
         }
 
@@ -87,7 +89,7 @@ namespace MyLeasing.Prism.ViewModels
         {
             if (string.IsNullOrEmpty(Email) || !RegexHelper.IsValidEmail(Email))
             {
-                await App.Current.MainPage.DisplayAlert("Error", "You must enter a valid email.", "Accept");
+                await App.Current.MainPage.DisplayAlert(Languages.Error, "You must enter a valid email.", Languages.Accept);
                 return false;
             }
 

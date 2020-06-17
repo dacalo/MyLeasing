@@ -1,4 +1,5 @@
-﻿using MyLeasing.Common.Helpers;
+﻿using MyLeasing.Common.Business;
+using MyLeasing.Common.Helpers;
 using MyLeasing.Common.Models;
 using MyLeasing.Common.Services;
 using Newtonsoft.Json;
@@ -75,7 +76,7 @@ namespace MyLeasing.Prism.ViewModels
 
             var token = JsonConvert.DeserializeObject<TokenResponse>(Settings.Token);
 
-            var url = App.Current.Resources["UrlAPI"].ToString();
+            var url = Constants.URL_API;
             var response = await _apiService.PutAsync(
                 url,
                 "/api",

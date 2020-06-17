@@ -1,4 +1,5 @@
-﻿using MyLeasing.Common.Helpers;
+﻿using MyLeasing.Common.Business;
+using MyLeasing.Common.Helpers;
 using MyLeasing.Common.Models;
 using MyLeasing.Common.Services;
 using MyLeasing.Prism.Helpers;
@@ -139,7 +140,7 @@ namespace MyLeasing.Prism.ViewModels
 
         private async void LoadPropertyTypesAsync()
         {
-            var url = App.Current.Resources["UrlAPI"].ToString();
+            var url = Constants.URL_API;
             var token = JsonConvert.DeserializeObject<TokenResponse>(Settings.Token);
 
             var response = await _apiService.GetListAsync<PropertyTypeResponse>(url, "/api", "/PropertyTypes", "bearer", token.Token);
@@ -213,7 +214,7 @@ namespace MyLeasing.Prism.ViewModels
             IsRunning = true;
             IsEnabled = false;
 
-            var url = App.Current.Resources["UrlAPI"].ToString();
+            var url = Constants.URL_API;
             var token = JsonConvert.DeserializeObject<TokenResponse>(Settings.Token);
             var owner = JsonConvert.DeserializeObject<OwnerResponse>(Settings.Owner);
 
@@ -312,7 +313,7 @@ namespace MyLeasing.Prism.ViewModels
             IsRunning = true;
             IsEnabled = false;
 
-            var url = App.Current.Resources["UrlAPI"].ToString();
+            var url = Constants.URL_API;
             var token = JsonConvert.DeserializeObject<TokenResponse>(Settings.Token);
             var response = await _apiService.DeleteAsync(url, "/api", "/Pets", Property.Id, "bearer", token.Token);
 
