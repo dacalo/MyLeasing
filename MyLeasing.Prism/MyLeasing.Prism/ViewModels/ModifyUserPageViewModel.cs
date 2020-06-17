@@ -65,7 +65,7 @@ namespace MyLeasing.Prism.ViewModels
             var userRequest = new UserRequest
             {
                 Address = Owner.Address,
-                Document = Owner.Document,
+                RFC = Owner.RFC,
                 Email = Owner.Email,
                 FirstName = Owner.FirstName,
                 LastName = Owner.LastName,
@@ -107,7 +107,7 @@ namespace MyLeasing.Prism.ViewModels
 
         private async Task<bool> ValidateDataAsync()
         {
-            if (string.IsNullOrEmpty(Owner.Document))
+            if (string.IsNullOrEmpty(Owner.RFC))
             {
                 await App.Current.MainPage.DisplayAlert(
                     "Error",

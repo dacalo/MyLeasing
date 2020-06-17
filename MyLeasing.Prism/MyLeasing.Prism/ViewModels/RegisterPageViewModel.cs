@@ -36,7 +36,7 @@ namespace MyLeasing.Prism.ViewModels
 
         public DelegateCommand RegisterCommand => _registerCommand ?? (_registerCommand = new DelegateCommand(Register));
 
-        public string Document { get; set; }
+        public string RFC { get; set; }
 
         public string FirstName { get; set; }
 
@@ -83,7 +83,7 @@ namespace MyLeasing.Prism.ViewModels
             var request = new UserRequest
             {
                 Address = Address,
-                Document = Document,
+                RFC = RFC,
                 Email = Email,
                 FirstName = FirstName,
                 LastName = LastName,
@@ -115,7 +115,7 @@ namespace MyLeasing.Prism.ViewModels
 
         private async Task<bool> ValidateData()
         {
-            if (string.IsNullOrEmpty(Document))
+            if (string.IsNullOrEmpty(RFC))
             {
                 await App.Current.MainPage.DisplayAlert("Error", "You must enter a document.", "Accept");
                 return false;

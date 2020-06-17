@@ -11,7 +11,7 @@
 
         public string LastName { get; set; }
 
-        public string Document { get; set; }
+        public string RFC { get; set; }
 
         public string Address { get; set; }
 
