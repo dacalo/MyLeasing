@@ -118,7 +118,25 @@ namespace MyLeasing.Prism.Helpers
         public static string QuestionToDeleteProperty => Resource.QuestionToDeleteProperty;
         public static string Yes => Resource.Yes;
         public static string No => Resource.No;
-
+        public static string EmailValidError => Resource.EmailValidError;
+        public static string RecoverPassword => Resource.RecoverPassword;
+        public static string ChangePasswordError => Resource.ChangePasswordError;
+        public static string ChangePasswordLengthError => Resource.ChangePasswordLengthError;
+        public static string ChangePasswordConfirm => Resource.ChangePasswordConfirm;
+        public static string ChangePasswordConfirmError => Resource.ChangePasswordConfirmError;
+        public static string Contract => Resource.Contract;
+        public static string ContractTo => Resource.ContractTo;
+        public static string ModifyUser => Resource.ModifyUser;
+        public static string Map => Resource.Map;
+        public static string Logout => Resource.Logout;
+        public static string UserUpdate => Resource.UserUpdate;
+        public static string DocumentError => Resource.DocumentError;
+        public static string FirstNameError => Resource.FirstNameError;
+        public static string LastNameError => Resource.LastNameError;
+        public static string Property => Resource.Property;
+        public static string NewUser => Resource.NewUser;
+        public static string PhoneNumberError => Resource.PhoneNumberError;
+        public static string RoleError => Resource.RoleError;
 
     }
 }

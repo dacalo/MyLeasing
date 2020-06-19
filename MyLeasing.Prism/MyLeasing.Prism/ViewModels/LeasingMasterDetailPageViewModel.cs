@@ -1,4 +1,5 @@
 ﻿using MyLeasing.Common.Models;
+using MyLeasing.Prism.Helpers;
 using Prism.Navigation;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -26,35 +27,35 @@ namespace MyLeasing.Prism.ViewModels
                 {
                     Icon = "ic_home",
                     PageName = "PropertiesPage",
-                    Title = "Propierties"
+                    Title = Languages.Properties
                 },
 
                 new Menu
                 {
                     Icon = "ic_list_alt",
                     PageName = "ContractsPage",
-                    Title = "Contracts"
+                    Title = Languages.Contracts
                 },
 
                 new Menu
                 {
                     Icon = "ic_person",
                     PageName = "ModifyUserPage",
-                    Title = "Modify User"
+                    Title = Languages.ModifyUser
                 },
 
                 new Menu
                 {
                     Icon = "ic_map",
                     PageName = "MapPage",
-                    Title = "Map"
+                    Title = Languages.Map
                 },
 
                 new Menu
                 {
                     Icon = "ic_exit_to_app",
                     PageName = "LoginPage",
-                    Title = "Log out"
+                    Title = Languages.Logout
                 }
             };
 

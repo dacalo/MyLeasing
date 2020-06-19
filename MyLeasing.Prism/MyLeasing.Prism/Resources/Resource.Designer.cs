@@ -142,6 +142,42 @@ namespace MyLeasing.Prism.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to You must enter your a password confirm..
+        /// </summary>
+        public static string ChangePasswordConfirm {
+            get {
+                return ResourceManager.GetString("ChangePasswordConfirm", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The password and confirmation does not match..
+        /// </summary>
+        public static string ChangePasswordConfirmError {
+            get {
+                return ResourceManager.GetString("ChangePasswordConfirmError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You must enter your current password..
+        /// </summary>
+        public static string ChangePasswordError {
+            get {
+                return ResourceManager.GetString("ChangePasswordError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You must enter a new password at least 6 characters length..
+        /// </summary>
+        public static string ChangePasswordLengthError {
+            get {
+                return ResourceManager.GetString("ChangePasswordLengthError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Check the internet connection..
         /// </summary>
         public static string CheckConnection {
@@ -160,11 +196,29 @@ namespace MyLeasing.Prism.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Contract.
+        /// </summary>
+        public static string Contract {
+            get {
+                return ResourceManager.GetString("Contract", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Contracts.
         /// </summary>
         public static string Contracts {
             get {
                 return ResourceManager.GetString("Contracts", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Contract to:.
+        /// </summary>
+        public static string ContractTo {
+            get {
+                return ResourceManager.GetString("ContractTo", resourceCulture);
             }
         }
         
@@ -214,6 +268,15 @@ namespace MyLeasing.Prism.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to You must to enter a document..
+        /// </summary>
+        public static string DocumentError {
+            get {
+                return ResourceManager.GetString("DocumentError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Edited.
         /// </summary>
         public static string Edited {
@@ -259,6 +322,15 @@ namespace MyLeasing.Prism.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to You must enter a valid email..
+        /// </summary>
+        public static string EmailValidError {
+            get {
+                return ResourceManager.GetString("EmailValidError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Error.
         /// </summary>
         public static string Error {
@@ -291,6 +363,15 @@ namespace MyLeasing.Prism.Resources {
         public static string ErrorToken {
             get {
                 return ResourceManager.GetString("ErrorToken", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You must to enter a first name..
+        /// </summary>
+        public static string FirstNameError {
+            get {
+                return ResourceManager.GetString("FirstNameError", resourceCulture);
             }
         }
         
@@ -340,6 +421,15 @@ namespace MyLeasing.Prism.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to You must to enter a last name..
+        /// </summary>
+        public static string LastNameError {
+            get {
+                return ResourceManager.GetString("LastNameError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Loading....
         /// </summary>
         public static string Loading {
@@ -354,6 +444,33 @@ namespace MyLeasing.Prism.Resources {
         public static string Login {
             get {
                 return ResourceManager.GetString("Login", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Log out.
+        /// </summary>
+        public static string Logout {
+            get {
+                return ResourceManager.GetString("Logout", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Map.
+        /// </summary>
+        public static string Map {
+            get {
+                return ResourceManager.GetString("Map", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ModifyUser.
+        /// </summary>
+        public static string ModifyUser {
+            get {
+                return ResourceManager.GetString("ModifyUser", resourceCulture);
             }
         }
         
@@ -390,6 +507,15 @@ namespace MyLeasing.Prism.Resources {
         public static string NewProperty {
             get {
                 return ResourceManager.GetString("NewProperty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Register new user.
+        /// </summary>
+        public static string NewUser {
+            get {
+                return ResourceManager.GetString("NewUser", resourceCulture);
             }
         }
         
@@ -439,6 +565,15 @@ namespace MyLeasing.Prism.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to You must enter a phone number..
+        /// </summary>
+        public static string PhoneNumberError {
+            get {
+                return ResourceManager.GetString("PhoneNumberError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Where do you get the image?.
         /// </summary>
         public static string PictureSource {
@@ -484,6 +619,15 @@ namespace MyLeasing.Prism.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Property.
+        /// </summary>
+        public static string Property {
+            get {
+                return ResourceManager.GetString("Property", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Property Type.
         /// </summary>
         public static string PropertyType {
@@ -520,6 +664,15 @@ namespace MyLeasing.Prism.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Recover Password.
+        /// </summary>
+        public static string RecoverPassword {
+            get {
+                return ResourceManager.GetString("RecoverPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Register.
         /// </summary>
         public static string Register {
@@ -543,6 +696,15 @@ namespace MyLeasing.Prism.Resources {
         public static string Rememberme {
             get {
                 return ResourceManager.GetString("Rememberme", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You must select a role..
+        /// </summary>
+        public static string RoleError {
+            get {
+                return ResourceManager.GetString("RoleError", resourceCulture);
             }
         }
         
@@ -633,6 +795,15 @@ namespace MyLeasing.Prism.Resources {
         public static string StratumPlaceHolder {
             get {
                 return ResourceManager.GetString("StratumPlaceHolder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to User updated sucessfully..
+        /// </summary>
+        public static string UserUpdate {
+            get {
+                return ResourceManager.GetString("UserUpdate", resourceCulture);
             }
         }
         

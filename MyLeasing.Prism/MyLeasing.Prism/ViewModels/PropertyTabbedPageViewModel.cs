@@ -1,12 +1,8 @@
 ﻿using MyLeasing.Common.Helpers;
 using MyLeasing.Common.Models;
+using MyLeasing.Prism.Helpers;
 using Newtonsoft.Json;
-using Prism.Commands;
-using Prism.Mvvm;
 using Prism.Navigation;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 
 namespace MyLeasing.Prism.ViewModels
 {
@@ -15,7 +11,7 @@ namespace MyLeasing.Prism.ViewModels
         public PropertyTabbedPageViewModel(INavigationService navigationService) : base (navigationService)
         {
             var property = JsonConvert.DeserializeObject<PropertyResponse>(Settings.Property);
-            Title = $"Property: {property.Neighborhood}";
+            Title = $"{Languages.Property}: {property.Neighborhood}";
         }
     }
 }

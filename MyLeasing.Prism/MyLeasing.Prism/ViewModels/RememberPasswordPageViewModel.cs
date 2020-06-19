@@ -23,7 +23,7 @@ namespace MyLeasing.Prism.ViewModels
         {
             _navigationService = navigationService;
             _apiService = apiService;
-            Title = "Recover Password";
+            Title = Languages.RecoverPassword;
             IsEnabled = true;
         }
 
@@ -62,8 +62,8 @@ namespace MyLeasing.Prism.ViewModels
             var url = Constants.URL_API;
             var response = await _apiService.RecoverPasswordAsync(
                 url,
-                "/api",
-                "/Account/RecoverPassword",
+                Constants.PREFIX,
+                "Account/RecoverPassword",
                 request);
 
             IsRunning = false;
@@ -89,7 +89,7 @@ namespace MyLeasing.Prism.ViewModels
         {
             if (string.IsNullOrEmpty(Email) || !RegexHelper.IsValidEmail(Email))
             {
-                await App.Current.MainPage.DisplayAlert(Languages.Error, "You must enter a valid email.", Languages.Accept);
+                await App.Current.MainPage.DisplayAlert(Languages.Error, Languages.EmailValidError, Languages.Accept);
                 return false;
             }
 

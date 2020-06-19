@@ -312,4 +312,61 @@
   <data name="No" xml:space="preserve">
     <value>No</value>
   </data>
+  <data name="EmailValidError" xml:space="preserve">
+    <value>Debes introducir una dirección de correo válida.</value>
+  </data>
+  <data name="RecoverPassword" xml:space="preserve">
+    <value>Recuperar contraseña</value>
+  </data>
+  <data name="ChangePasswordError" xml:space="preserve">
+    <value>Debe ingresar su contraseña actual.</value>
+  </data>
+  <data name="ChangePasswordLengthError" xml:space="preserve">
+    <value>Debe ingresar una nueva contraseña de al menos 6 caracteres de longitud.</value>
+  </data>
+  <data name="ChangePasswordConfirm" xml:space="preserve">
+    <value>Debe ingresar su contraseña para confirmar.!</value>
+  </data>
+  <data name="ChangePasswordConfirmError" xml:space="preserve">
+    <value>La contraseña y la confirmación no coinciden</value>
+  </data>
+  <data name="Contract" xml:space="preserve">
+    <value>Contrato</value>
+  </data>
+  <data name="ContractTo" xml:space="preserve">
+    <value>Contrato de:</value>
+  </data>
+  <data name="ModifyUser" xml:space="preserve">
+    <value>Modificar usuario</value>
+  </data>
+  <data name="Map" xml:space="preserve">
+    <value>Mapa</value>
+  </data>
+  <data name="Logout" xml:space="preserve">
+    <value>Cerrar sesión</value>
+  </data>
+  <data name="UserUpdate" xml:space="preserve">
+    <value>Usuario actualizado correctamente.</value>
+  </data>
+  <data name="DocumentError" xml:space="preserve">
+    <value>Debe ingresar un documento.!</value>
+  </data>
+  <data name="FirstNameError" xml:space="preserve">
+    <value>Debe introducir un nombre</value>
+  </data>
+  <data name="LastNameError" xml:space="preserve">
+    <value>Debe escribir un nombre.</value>
+  </data>
+  <data name="Property" xml:space="preserve">
+    <value>Propiedad</value>
+  </data>
+  <data name="NewUser" xml:space="preserve">
+    <value>Registrar nuevo usuario</value>
+  </data>
+  <data name="PhoneNumberError" xml:space="preserve">
+    <value>Debe introducir un número de teléfono.</value>
+  </data>
+  <data name="RoleError" xml:space="preserve">
+    <value>Debe seleccionar un role.</value>
+  </data>
 </root>

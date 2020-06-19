@@ -1,9 +1,5 @@
-﻿using Prism.Commands;
-using Prism.Mvvm;
+﻿using MyLeasing.Prism.Helpers;
 using Prism.Navigation;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 
 namespace MyLeasing.Prism.ViewModels
 {
@@ -11,7 +7,7 @@ namespace MyLeasing.Prism.ViewModels
     {
         public MapPageViewModel(INavigationService navigationService) : base(navigationService)
         {
-            Title = "Map";
+            Title = Languages.Map;
         }
     }
 }

@@ -311,4 +311,61 @@
   <data name="No" xml:space="preserve">
     <value>No</value>
   </data>
+  <data name="EmailValidError" xml:space="preserve">
+    <value>You must enter a valid email.</value>
+  </data>
+  <data name="RecoverPassword" xml:space="preserve">
+    <value>Recover Password</value>
+  </data>
+  <data name="ChangePasswordError" xml:space="preserve">
+    <value>You must enter your current password.</value>
+  </data>
+  <data name="ChangePasswordLengthError" xml:space="preserve">
+    <value>You must enter a new password at least 6 characters length.</value>
+  </data>
+  <data name="ChangePasswordConfirm" xml:space="preserve">
+    <value>You must enter your a password confirm.</value>
+  </data>
+  <data name="ChangePasswordConfirmError" xml:space="preserve">
+    <value>The password and confirmation does not match.</value>
+  </data>
+  <data name="Contract" xml:space="preserve">
+    <value>Contract</value>
+  </data>
+  <data name="ContractTo" xml:space="preserve">
+    <value>Contract to:</value>
+  </data>
+  <data name="ModifyUser" xml:space="preserve">
+    <value>ModifyUser</value>
+  </data>
+  <data name="Map" xml:space="preserve">
+    <value>Map</value>
+  </data>
+  <data name="Logout" xml:space="preserve">
+    <value>Log out</value>
+  </data>
+  <data name="UserUpdate" xml:space="preserve">
+    <value>User updated sucessfully.</value>
+  </data>
+  <data name="DocumentError" xml:space="preserve">
+    <value>You must to enter a document.</value>
+  </data>
+  <data name="FirstNameError" xml:space="preserve">
+    <value>You must to enter a first name.</value>
+  </data>
+  <data name="LastNameError" xml:space="preserve">
+    <value>You must to enter a last name.</value>
+  </data>
+  <data name="Property" xml:space="preserve">
+    <value>Property</value>
+  </data>
+  <data name="NewUser" xml:space="preserve">
+    <value>Register new user</value>
+  </data>
+  <data name="PhoneNumberError" xml:space="preserve">
+    <value>You must enter a phone number.</value>
+  </data>
+  <data name="RoleError" xml:space="preserve">
+    <value>You must select a role.</value>
+  </data>
 </root>

@@ -1,4 +1,5 @@
 ﻿using MyLeasing.Common.Models;
+using MyLeasing.Prism.Helpers;
 using Prism.Navigation;
 
 namespace MyLeasing.Prism.ViewModels
@@ -10,7 +11,7 @@ namespace MyLeasing.Prism.ViewModels
         public ContractPageViewModel(
             INavigationService navigationService) : base(navigationService)
         {
-            Title = "Contract";
+            Title = Languages.Contract;
         }
 
         public ContractResponse Contract
@@ -26,7 +27,7 @@ namespace MyLeasing.Prism.ViewModels
             if (parameters.ContainsKey("contract"))
             {
                 Contract = parameters.GetValue<ContractResponse>("contract");
-                Title = $"Contract to: {Contract.Lessee.FullName}";
+                Title = $"{Languages.ContractTo} {Contract.Lessee.FullName}";
             }
         }
     }

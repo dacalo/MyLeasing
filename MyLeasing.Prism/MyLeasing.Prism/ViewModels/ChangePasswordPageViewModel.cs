@@ -72,10 +72,10 @@ namespace MyLeasing.Prism.ViewModels
             var url = Constants.URL_API;
             var response = await _apiService.ChangePasswordAsync(
                 url,
-                "/api",
-                "/Account/ChangePassword",
+                Constants.PREFIX,
+                "Account/ChangePassword",
                 request,
-                "bearer",
+                Constants.TokenType,
                 token.Token);
 
             IsRunning = false;
@@ -105,7 +105,7 @@ namespace MyLeasing.Prism.ViewModels
             {
                 await App.Current.MainPage.DisplayAlert(
                     Languages.Error,
-                    "You must enter your current password.",
+                    Languages.ChangePasswordError,
                     Languages.Accept);
                 return false;
             }
@@ -114,7 +114,7 @@ namespace MyLeasing.Prism.ViewModels
             {
                 await App.Current.MainPage.DisplayAlert(
                     Languages.Error,
-                    "You must enter a new password at least 6 characters lenth.",
+                    Languages.ChangePasswordLengthError,
                     Languages.Accept);
                 return false;
             }
@@ -123,7 +123,7 @@ namespace MyLeasing.Prism.ViewModels
             {
                 await App.Current.MainPage.DisplayAlert(
                     Languages.Error,
-                    "You must enter your a password confirm.",
+                    Languages.ChangePasswordConfirm,
                     Languages.Accept);
                 return false;
             }
@@ -132,7 +132,7 @@ namespace MyLeasing.Prism.ViewModels
             {
                 await App.Current.MainPage.DisplayAlert(
                     Languages.Error,
-                    "The password and confirmation does not match.",
+                    Languages.ChangePasswordConfirmError,
                     Languages.Accept);
                 return false;
             }

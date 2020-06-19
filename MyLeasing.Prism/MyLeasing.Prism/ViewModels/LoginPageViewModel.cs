@@ -5,11 +5,7 @@ using MyLeasing.Common.Services;
 using MyLeasing.Prism.Helpers;
 using Newtonsoft.Json;
 using Prism.Commands;
-using Prism.Mvvm;
 using Prism.Navigation;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 
 namespace MyLeasing.Prism.ViewModels
 {
@@ -111,19 +107,19 @@ namespace MyLeasing.Prism.ViewModels
             {
                 IsRunning = false;
                 IsEnabled = true;
-                await App.Current.MainPage.DisplayAlert("Error", "User or password incorrect.", "Accept");
+                await App.Current.MainPage.DisplayAlert(Languages.Error, Languages.ErrorLogin, Languages.Accept);
                 Password = string.Empty;
                 return;
             }
 
             var token = response.Result;
-            var response2 = await _apiService.GetOwnerByEmailAsync(url, "api", "/Owners/GetOwnerByEmail", "bearer", token.Token, Email);
+            var response2 = await _apiService.GetOwnerByEmailAsync(url, Constants.PREFIX, "Owners/GetOwnerByEmail", Constants.TokenType, token.Token, Email);
 
             if (!response2.IsSuccess)
             {
                 IsEnabled = true;
                 IsRunning = false;
-                await App.Current.MainPage.DisplayAlert("Error", "Problem with user data, call IT.", "Accept");
+                await App.Current.MainPage.DisplayAlert(Languages.Error, Languages.ErrorToken, Languages.Accept);
                 return;
             }
 

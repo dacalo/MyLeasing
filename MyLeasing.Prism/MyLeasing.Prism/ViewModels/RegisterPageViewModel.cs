@@ -4,6 +4,7 @@ using MyLeasing.Common.Business;
 using MyLeasing.Common.Helpers;
 using MyLeasing.Common.Models;
 using MyLeasing.Common.Services;
+using MyLeasing.Prism.Helpers;
 using Prism.Commands;
 using Prism.Navigation;
 using Xamarin.Forms.Maps;
@@ -30,7 +31,7 @@ namespace MyLeasing.Prism.ViewModels
             _navigationService = navigationService;
             _apiService = apiService;
             _geolocatorService = geolocatorService;
-            Title = "Register new user";
+            Title = Languages.NewUser;
             IsEnabled = true;
             LoadRoles();
         }
@@ -96,8 +97,8 @@ namespace MyLeasing.Prism.ViewModels
             var url = Constants.URL_API;
             var response = await _apiService.RegisterUserAsync(
                 url,
-                "/api",
-                "/Account",
+                Constants.PREFIX,
+                "Account",
                 request);
 
             IsRunning = false;
@@ -105,11 +106,17 @@ namespace MyLeasing.Prism.ViewModels
 
             if (!response.IsSuccess)
             {
-                await App.Current.MainPage.DisplayAlert("Error", response.Message, "Accept");
+                await App.Current.MainPage.DisplayAlert(
+                    Languages.Error, 
+                    response.Message,
+                    Languages.Accept);
                 return;
             }
 
-            await App.Current.MainPage.DisplayAlert("Ok", response.Message, "Accept");
+            await App.Current.MainPage.DisplayAlert(
+                Languages.Ok,
+                response.Message,
+                Languages.Accept);
             await _navigationService.GoBackAsync();
         }
 
@@ -118,67 +125,100 @@ namespace MyLeasing.Prism.ViewModels
         {
             if (string.IsNullOrEmpty(RFC))
             {
-                await App.Current.MainPage.DisplayAlert("Error", "You must enter a document.", "Accept");
+                await App.Current.MainPage.DisplayAlert(
+                    Languages.Error,
+                    Languages.DocumentError,
+                    Languages.Accept);
                 return false;
             }
 
             if (string.IsNullOrEmpty(FirstName))
             {
-                await App.Current.MainPage.DisplayAlert("Error", "You must enter a firstname.", "Accept");
+                await App.Current.MainPage.DisplayAlert(
+                    Languages.Error,
+                    Languages.FirstNameError,
+                    Languages.Accept);
                 return false;
             }
 
             if (string.IsNullOrEmpty(LastName))
             {
-                await App.Current.MainPage.DisplayAlert("Error", "You must enter a lastname.", "Accept");
+                await App.Current.MainPage.DisplayAlert(
+                    Languages.Error,
+                    Languages.LastNameError,
+                    Languages.Accept);
                 return false;
             }
 
             if (string.IsNullOrEmpty(Address))
             {
-                await App.Current.MainPage.DisplayAlert("Error", "You must enter an address.", "Accept");
+                await App.Current.MainPage.DisplayAlert(
+                    Languages.Error,
+                    Languages.AddressError,
+                    Languages.Accept);
                 return false;
             }
 
             if (string.IsNullOrEmpty(Email) || !RegexHelper.IsValidEmail(Email))
             {
-                await App.Current.MainPage.DisplayAlert("Error", "You must enter an email.", "Accept");
+                await App.Current.MainPage.DisplayAlert(
+                    Languages.Error,
+                    Languages.EmailError,
+                    Languages.Accept);
                 return false;
             }
 
             if (string.IsNullOrEmpty(Phone))
             {
-                await App.Current.MainPage.DisplayAlert("Error", "You must enter a phonenumber.", "Accept");
+                await App.Current.MainPage.DisplayAlert(
+                    Languages.Error,
+                    Languages.PhoneNumberError,
+                    Languages.Accept);
                 return false;
             }
 
             if (Role == null)
             {
-                await App.Current.MainPage.DisplayAlert("Error", "You must seelct a role.", "Accept");
+                await App.Current.MainPage.DisplayAlert(
+                    Languages.Error,
+                    Languages.RoleError,
+                    Languages.Accept);
                 return false;
             }
 
             if (string.IsNullOrEmpty(Password))
             {
-                await App.Current.MainPage.DisplayAlert("Error", "You must enter a password.", "Accept");
+                await App.Current.MainPage.DisplayAlert(
+                    Languages.Error,
+                    Languages.PasswordError,
+                    Languages.Accept);
                 return false;
             }
 
             if (Password.Length < 6)
             {
-                await App.Current.MainPage.DisplayAlert("Error", "The password must have at least 6 charactes length.", "Accept");
+                await App.Current.MainPage.DisplayAlert(
+                    Languages.Error,
+                    Languages.ChangePasswordLengthError,
+                    Languages.Accept);
                 return false;
             }
 
             if (string.IsNullOrEmpty(PasswordConfirm))
             {
-                await App.Current.MainPage.DisplayAlert("Error", "You must enter a password confirm.", "Accept");
+                await App.Current.MainPage.DisplayAlert(
+                    Languages.Error,
+                    Languages.PasswordError,
+                    Languages.Accept);
                 return false;
             }
 
             if (!Password.Equals(PasswordConfirm))
             {
-                await App.Current.MainPage.DisplayAlert("Error", "The password and confirm does not match.", "Accept");
+                await App.Current.MainPage.DisplayAlert(
+                    Languages.Error,
+                    Languages.ChangePasswordConfirmError,
+                    Languages.Accept);
                 return false;
             }
 

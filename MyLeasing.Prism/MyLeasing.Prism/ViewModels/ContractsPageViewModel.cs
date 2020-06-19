@@ -1,5 +1,6 @@
 ﻿using MyLeasing.Common.Helpers;
 using MyLeasing.Common.Models;
+using MyLeasing.Prism.Helpers;
 using Newtonsoft.Json;
 using Prism.Navigation;
 using System.Collections.ObjectModel;
@@ -17,7 +18,7 @@ namespace MyLeasing.Prism.ViewModels
             INavigationService navigationService) : base(navigationService)
         {
             _navigationService = navigationService;
-            Title = "Contracts";
+            Title = Languages.Contracts;
             Property = JsonConvert.DeserializeObject<PropertyResponse>(Settings.Property);
             LoadContracts();
         }
@@ -46,7 +47,6 @@ namespace MyLeasing.Prism.ViewModels
 
         private void LoadContracts()
         {
-            //Title = $"Contracts: {Property.Neighborhood}";
             Contracts = new ObservableCollection<ContractItemViewModel>(Property.Contracts.Select(c => new ContractItemViewModel(_navigationService)
             {
                 EndDate = c.EndDate,

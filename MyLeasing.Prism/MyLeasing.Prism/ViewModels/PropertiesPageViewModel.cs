@@ -105,9 +105,9 @@ namespace MyLeasing.Prism.ViewModels
 
             var response = await _apiService.GetOwnerByEmailAsync(
                 url,
-                "/api",
-                "/Owners/GetOwnerByEmail",
-                "bearer",
+                Constants.PREFIX,
+                "Owners/GetOwnerByEmail",
+                Constants.TokenType,
                 token.Token,
                 _owner.Email);
 

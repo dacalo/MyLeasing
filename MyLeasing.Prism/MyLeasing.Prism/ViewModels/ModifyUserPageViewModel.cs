@@ -2,6 +2,7 @@
 using MyLeasing.Common.Helpers;
 using MyLeasing.Common.Models;
 using MyLeasing.Common.Services;
+using MyLeasing.Prism.Helpers;
 using Newtonsoft.Json;
 using Prism.Commands;
 using Prism.Navigation;
@@ -25,7 +26,7 @@ namespace MyLeasing.Prism.ViewModels
         {
             _navigationService = navigationService;
             _apiService = apiService;
-            Title = "Modify User";
+            Title = Languages.ModifyUser;
             IsEnabled = true;
             Owner = JsonConvert.DeserializeObject<OwnerResponse>(Settings.Owner);
         }
@@ -79,10 +80,10 @@ namespace MyLeasing.Prism.ViewModels
             var url = Constants.URL_API;
             var response = await _apiService.PutAsync(
                 url,
-                "/api",
-                "/Account",
+                Constants.PREFIX,
+                "Account",
                 userRequest,
-                "bearer",
+                Constants.TokenType,
                 token.Token);
 
             IsRunning = false;
@@ -91,18 +92,18 @@ namespace MyLeasing.Prism.ViewModels
             if (!response.IsSuccess)
             {
                 await App.Current.MainPage.DisplayAlert(
-                    "Error",
+                    Languages.Error,
                     response.Message,
-                    "Accept");
+                    Languages.Accept);
                 return;
             }
 
             Settings.Owner = JsonConvert.SerializeObject(Owner);
 
             await App.Current.MainPage.DisplayAlert(
-                "Ok",
-                "User updated sucessfully.",
-                "Accept");
+                Languages.Ok,
+                Languages.UserUpdate,
+                Languages.Accept);
 
         }
 
@@ -111,36 +112,36 @@ namespace MyLeasing.Prism.ViewModels
             if (string.IsNullOrEmpty(Owner.RFC))
             {
                 await App.Current.MainPage.DisplayAlert(
-                    "Error",
-                    "You must to enter a document.",
-                    "Accept");
+                    Languages.Error,
+                    Languages.DocumentError,
+                    Languages.Accept);
                 return false;
             }
 
             if (string.IsNullOrEmpty(Owner.FirstName))
             {
                 await App.Current.MainPage.DisplayAlert(
-                    "Error",
-                    "You must to enter a first name.",
-                    "Accept");
+                    Languages.Error,
+                    Languages.FirstNameError,
+                    Languages.Accept);
                 return false;
             }
 
             if (string.IsNullOrEmpty(Owner.LastName))
             {
                 await App.Current.MainPage.DisplayAlert(
-                    "Error",
-                    "You must to enter a last name.",
-                    "Accept");
+                    Languages.Error,
+                    Languages.LastNameError,
+                    Languages.Accept);
                 return false;
             }
 
             if (string.IsNullOrEmpty(Owner.Address))
             {
                 await App.Current.MainPage.DisplayAlert(
-                    "Error",
-                    "You must to enter an address.",
-                    "Accept");
+                    Languages.Error,
+                    Languages.AddressError,
+                    Languages.Accept);
                 return false;
             }
 

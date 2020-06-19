@@ -143,7 +143,7 @@ namespace MyLeasing.Prism.ViewModels
             var url = Constants.URL_API;
             var token = JsonConvert.DeserializeObject<TokenResponse>(Settings.Token);
 
-            var response = await _apiService.GetListAsync<PropertyTypeResponse>(url, "/api", "/PropertyTypes", "bearer", token.Token);
+            var response = await _apiService.GetListAsync<PropertyTypeResponse>(url, Constants.PREFIX, "PropertyTypes", Constants.TokenType, token.Token);
 
             if (!response.IsSuccess)
             {
@@ -237,11 +237,11 @@ namespace MyLeasing.Prism.ViewModels
             Response<object> response;
             if (IsEdit)
             {
-                response = await _apiService.PutAsync(url, "/api", "/Properties", propertyRequest.Id, propertyRequest, "bearer", token.Token);
+                response = await _apiService.PutAsync(url, Constants.PREFIX, "Properties", propertyRequest.Id, propertyRequest, Constants.TokenType, token.Token);
             }
             else
             {
-                response = await _apiService.PostAsync(url, "/api", "/Properties", propertyRequest, "bearer", token.Token);
+                response = await _apiService.PostAsync(url, Constants.PREFIX, "Properties", propertyRequest, Constants.TokenType, token.Token);
             }
 
             byte[] imageArray = null;
@@ -250,7 +250,7 @@ namespace MyLeasing.Prism.ViewModels
                 imageArray = FilesHelper.ReadFully(_file.GetStream());
                 if (Property.Id == 0)
                 {
-                    var response2 = await _apiService.GetLastPropertyByOwnerId(url, "/api", "/Properties/GetLastPropertyByOwnerId", "bearer", token.Token, owner.Id);
+                    var response2 = await _apiService.GetLastPropertyByOwnerId(url, Constants.PREFIX, "Properties/GetLastPropertyByOwnerId", Constants.TokenType, token.Token, owner.Id);
                     if (response2.IsSuccess)
                     {
                         var property = (PropertyResponse)response2.Result;
@@ -266,7 +266,7 @@ namespace MyLeasing.Prism.ViewModels
                         ImageArray = imageArray
                     };
 
-                    var response3 = await _apiService.PostAsync(url, "/api", "/Properties/AddImageToProperty", imageRequest, "bearer", token.Token);
+                    var response3 = await _apiService.PostAsync(url, Constants.PREFIX, "Properties/AddImageToProperty", imageRequest, Constants.TokenType, token.Token);
                     if (!response3.IsSuccess)
                     {
                         IsRunning = false;
@@ -315,7 +315,7 @@ namespace MyLeasing.Prism.ViewModels
 
             var url = Constants.URL_API;
             var token = JsonConvert.DeserializeObject<TokenResponse>(Settings.Token);
-            var response = await _apiService.DeleteAsync(url, "/api", "/Pets", Property.Id, "bearer", token.Token);
+            var response = await _apiService.DeleteAsync(url, Constants.PREFIX, "Pets", Property.Id, Constants.TokenType, token.Token);
 
             if (!response.IsSuccess)
             {

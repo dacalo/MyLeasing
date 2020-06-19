@@ -20,6 +20,7 @@ namespace MyLeasing.Prism.ViewModels
 
         private async void SelectProperty()
         {
+            //TODO Eliminar Comentarios
             //var parameters = new NavigationParameters
             //{
             //    { "property", this }

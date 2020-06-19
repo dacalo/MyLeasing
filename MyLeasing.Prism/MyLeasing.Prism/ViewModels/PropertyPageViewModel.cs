@@ -49,7 +49,6 @@ namespace MyLeasing.Prism.ViewModels
 
         private void LoadImages()
         {
-            //Title = $"Property: {Property.Neighborhood}";
             var list = new List<RotatorModel>();
             foreach (var propertyImage in Property.PropertyImages)
             {

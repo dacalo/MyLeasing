@@ -31,9 +31,9 @@ namespace MyLeasing.Prism.Views
 
             var response = await _apiService.GetListAsync<PropertyResponse>(
                 url,
-                "api",
-                "/Owners/GetAvailbleProperties",
-                "bearer",
+                Constants.PREFIX,
+                "Owners/GetAvailbleProperties",
+                Constants.TokenType,
                 token.Token);
 
             if (!response.IsSuccess)

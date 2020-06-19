@@ -311,4 +311,61 @@
   <data name="No" xml:space="preserve">
     <value>&amp;Não</value>
   </data>
+  <data name="EmailValidError" xml:space="preserve">
+    <value>Você deve inserir um endereço de email válido.</value>
+  </data>
+  <data name="RecoverPassword" xml:space="preserve">
+    <value>Recuperar Senha</value>
+  </data>
+  <data name="ChangePasswordError" xml:space="preserve">
+    <value>Você deve inserir sua senha atual.</value>
+  </data>
+  <data name="ChangePasswordLengthError" xml:space="preserve">
+    <value>Você deve inserir uma nova senha com pelo menos 6 caracteres.!</value>
+  </data>
+  <data name="ChangePasswordConfirm" xml:space="preserve">
+    <value>Você deve digitar sua senha para confirmar.!</value>
+  </data>
+  <data name="ChangePasswordConfirmError" xml:space="preserve">
+    <value>A confirmação da palavra-passe não corresponde.</value>
+  </data>
+  <data name="Contract" xml:space="preserve">
+    <value>Contrato</value>
+  </data>
+  <data name="ContractTo" xml:space="preserve">
+    <value>Contrato para :</value>
+  </data>
+  <data name="ModifyUser" xml:space="preserve">
+    <value>ModifyUser!</value>
+  </data>
+  <data name="Map" xml:space="preserve">
+    <value>Mapa</value>
+  </data>
+  <data name="Logout" xml:space="preserve">
+    <value>Fazer logoff</value>
+  </data>
+  <data name="UserUpdate" xml:space="preserve">
+    <value>Usuário atualizado com sucesso.!</value>
+  </data>
+  <data name="DocumentError" xml:space="preserve">
+    <value>Você deve inserir um documento.</value>
+  </data>
+  <data name="FirstNameError" xml:space="preserve">
+    <value>Você deve digitar o nome</value>
+  </data>
+  <data name="LastNameError" xml:space="preserve">
+    <value>Você deve digitar um nome.</value>
+  </data>
+  <data name="Property" xml:space="preserve">
+    <value>Propriedade</value>
+  </data>
+  <data name="NewUser" xml:space="preserve">
+    <value>Registrar novo usuário</value>
+  </data>
+  <data name="PhoneNumberError" xml:space="preserve">
+    <value>Você deve digitar um número de telefone.</value>
+  </data>
+  <data name="RoleError" xml:space="preserve">
+    <value>Você deve selecionar uma role.</value>
+  </data>
 </root>
