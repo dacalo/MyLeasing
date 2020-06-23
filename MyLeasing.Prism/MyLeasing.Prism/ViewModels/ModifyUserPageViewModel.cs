@@ -71,15 +71,22 @@ namespace MyLeasing.Prism.ViewModels
                 Email = Owner.Email,
                 FirstName = Owner.FirstName,
                 LastName = Owner.LastName,
-                Password = "123456", // It doesn't matter what is sent here. It is only for the model to be valid
+                Password = "123456", //TODO It doesn't matter what is sent here. It is only for the model to be valid
                 Phone = Owner.PhoneNumber
             };
 
             var token = JsonConvert.DeserializeObject<TokenResponse>(Settings.Token);
 
-            var url = Constants.URL_API;
+            if (!_apiService.CheckConnectionAsync())
+            {
+                IsEnabled = true;
+                IsRunning = false;
+                await App.Current.MainPage.DisplayAlert(Languages.Error, Languages.CheckConnection, Languages.Accept);
+                return;
+            }
+
             var response = await _apiService.PutAsync(
-                url,
+                Constants.URL_API,
                 Constants.PREFIX,
                 "Account",
                 userRequest,

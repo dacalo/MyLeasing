@@ -45,6 +45,7 @@
 
         public async Task<User> GetUserByEmailAsync(string email)
         {
+            var user = await _userManager.FindByEmailAsync(email);
             return await _userManager.FindByEmailAsync(email);
         }
 

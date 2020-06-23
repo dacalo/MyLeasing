@@ -9,7 +9,7 @@
     {
         public int Id { get; set; }
 
-        [Display(Name = "Zona*")]
+        [Display(Name = "Estado*")]
         [MaxLength(50, ErrorMessage = "El campo {0} no puede ser mayor a {1} caracteres.")]
         [Required(ErrorMessage = "El campo {0} es obligatorio.")]
         public string Neighborhood { get; set; }
@@ -32,14 +32,14 @@
         [Required(ErrorMessage = "El campo {0} es obligatorio.")]
         public int Rooms { get; set; }
 
-        [Display(Name = "Stratum*")]
+        [Display(Name = "Categoría*")]
         [Required(ErrorMessage = "El campo {0} es obligatorio.")]
         public int Stratum { get; set; }
 
         [Display(Name = "Tiene estacionamiento?")]
         public bool HasParkingLot { get; set; }
 
-        [Display(Name = "Etsá disponible?")]
+        [Display(Name = "Está disponible")]
         public bool IsAvailable { get; set; }
 
         [Display(Name = "Observaciones")]

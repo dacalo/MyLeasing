@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using MyLeasing.Common.Models;
 using Newtonsoft.Json;
 using Plugin.Connectivity;
+using Xamarin.Essentials;
 
 namespace MyLeasing.Common.Services
 {
@@ -106,14 +107,12 @@ namespace MyLeasing.Common.Services
             }
         }
 
-        public async Task<bool> CheckConnectionAsync(string url)
+        public bool CheckConnectionAsync()
         {
-            if (!CrossConnectivity.Current.IsConnected)
-            {
+            if(!(Connectivity.NetworkAccess == NetworkAccess.Internet))
                 return false;
-            }
-
-            return await CrossConnectivity.Current.IsRemoteReachable(url);
+            
+            return true;
         }
 
         public async Task<Response<object>> RegisterUserAsync(

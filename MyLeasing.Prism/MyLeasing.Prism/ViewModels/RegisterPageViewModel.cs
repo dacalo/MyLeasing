@@ -16,9 +16,6 @@ namespace MyLeasing.Prism.ViewModels
         private readonly INavigationService _navigationService;
         private readonly IApiService _apiService;
         private readonly IGeolocatorService _geolocatorService;
-        private Position _position;
-        private string _address;
-
         private bool _isRunning;
         private bool _isEnabled;
         private DelegateCommand _registerCommand;
@@ -94,9 +91,16 @@ namespace MyLeasing.Prism.ViewModels
                 RoleId = Role.Id
             };
 
-            var url = Constants.URL_API;
+            if (!_apiService.CheckConnectionAsync())
+            {
+                IsEnabled = true;
+                IsRunning = false;
+                await App.Current.MainPage.DisplayAlert(Languages.Error, Languages.CheckConnection, Languages.Accept);
+                return;
+            }
+
             var response = await _apiService.RegisterUserAsync(
-                url,
+                Constants.URL_API,
                 Constants.PREFIX,
                 "Account",
                 request);

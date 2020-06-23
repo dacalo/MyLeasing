@@ -59,9 +59,16 @@ namespace MyLeasing.Prism.ViewModels
                 Email = Email
             };
 
-            var url = Constants.URL_API;
+            if (!_apiService.CheckConnectionAsync())
+            {
+                IsEnabled = true;
+                IsRunning = false;
+                await App.Current.MainPage.DisplayAlert(Languages.Error, Languages.CheckConnection, Languages.Accept);
+                return;
+            }
+
             var response = await _apiService.RecoverPasswordAsync(
-                url,
+                Constants.URL_API,
                 Constants.PREFIX,
                 "Account/RecoverPassword",
                 request);

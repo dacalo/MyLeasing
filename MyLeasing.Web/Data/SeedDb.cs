@@ -68,7 +68,8 @@
 
         private async Task<User> CheckUserAsync(
             string document,
-            string firstName,string lastName,
+            string firstName,
+            string lastName,
             string email,
             string phone, 
             string address, 

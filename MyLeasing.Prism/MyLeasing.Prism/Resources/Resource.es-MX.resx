@@ -181,16 +181,16 @@
     <value>Cambiar imagen.</value>
   </data>
   <data name="Neighborhood" xml:space="preserve">
-    <value>Vecindario</value>
+    <value>Estado</value>
   </data>
   <data name="NeighborhoodError" xml:space="preserve">
-    <value>¡Debes entrar en un vecindario!</value>
+    <value>Debes ingresar un Estado</value>
   </data>
   <data name="AddProperty" xml:space="preserve">
     <value>Agregar propiedad</value>
   </data>
   <data name="NeighborhoodPlaceHolder" xml:space="preserve">
-    <value>Entra en el barrio ...!</value>
+    <value>Ingresa el Estado</value>
   </data>
   <data name="Price" xml:space="preserve">
     <value>Precio:</value>

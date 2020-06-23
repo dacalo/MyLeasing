@@ -25,6 +25,9 @@
         [MaxLength(100, ErrorMessage = "El campo {0} no puede ser mayor a {1} caracteres.")]
         public string Address { get; set; }
 
+        [Display(Name ="Teléfono")]
+        public override string PhoneNumber { get; set; }
+
         [Display(Name = "Nombre Completo")]
         public string FullName => $"{FirstName} {LastName}";
 

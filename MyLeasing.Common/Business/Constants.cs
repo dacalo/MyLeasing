@@ -4,7 +4,8 @@
     {
         #region [ Attributes ]
 
-        const string _urlApi = "http://dacalo-001-site4.atempurl.com";
+        const string _urlApi = "http://10.1.114.74:83/";
+        //const string _urlApi = "http://dacalo-001-site4.atempurl.com";
         const string _prefix = "/api/";
 
         #endregion [ Attributes ]

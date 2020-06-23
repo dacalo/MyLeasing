@@ -30,7 +30,7 @@ namespace MyLeasing.Prism.ViewModels
             IsRemember = true;
 
             //TODO: Delete those lines
-            Email = "jzuluaga55@hotmail.com";
+            Email = "divadchl@gmail.com";
             Password = "123456";
             _navigationService = navigationService;
             _apiService = apiService;
@@ -84,9 +84,7 @@ namespace MyLeasing.Prism.ViewModels
             IsRunning = true;
             IsEnabled = false;
 
-            var url = Constants.URL_API;
-            var connection = await _apiService.CheckConnectionAsync(url);
-            if (!connection)
+            if (!_apiService.CheckConnectionAsync())
             {
                 IsEnabled = true;
                 IsRunning = false;
@@ -100,8 +98,7 @@ namespace MyLeasing.Prism.ViewModels
                 Username = Email
             };
 
-            url = Constants.URL_API;
-            var response = await _apiService.GetTokenAsync(url, "Account", "/CreateToken", request);
+            var response = await _apiService.GetTokenAsync(Constants.URL_API, "Account", "/CreateToken", request);
             
             if (!response.IsSuccess)
             {
@@ -113,7 +110,7 @@ namespace MyLeasing.Prism.ViewModels
             }
 
             var token = response.Result;
-            var response2 = await _apiService.GetOwnerByEmailAsync(url, Constants.PREFIX, "Owners/GetOwnerByEmail", Constants.TokenType, token.Token, Email);
+            var response2 = await _apiService.GetOwnerByEmailAsync(Constants.URL_API, Constants.PREFIX, "Owners/GetOwnerByEmail", Constants.TokenType, token.Token, Email);
 
             if (!response2.IsSuccess)
             {

@@ -52,7 +52,6 @@ namespace MyLeasing.Prism.ViewModels
             return _instance;
         }
 
-
         public DelegateCommand AddPropertyCommand => _addPropertyCommand ?? (_addPropertyCommand = new DelegateCommand(AddPropertyAsync));
 
         public DelegateCommand RefreshPropertiesCommand => _refreshPropertiesCommand ?? (_refreshPropertiesCommand = new DelegateCommand(RefreshProperties));
@@ -100,11 +99,16 @@ namespace MyLeasing.Prism.ViewModels
 
         public async Task UpdateOwnerAsync()
         {
-            var url = Constants.URL_API;
             var token = JsonConvert.DeserializeObject<TokenResponse>(Settings.Token);
 
+            if (!_apiService.CheckConnectionAsync())
+            {
+                await App.Current.MainPage.DisplayAlert(Languages.Error, Languages.CheckConnection, Languages.Accept);
+                return;
+            }
+
             var response = await _apiService.GetOwnerByEmailAsync(
-                url,
+                Constants.URL_API,
                 Constants.PREFIX,
                 "Owners/GetOwnerByEmail",
                 Constants.TokenType,
@@ -126,7 +130,6 @@ namespace MyLeasing.Prism.ViewModels
             await UpdateOwnerAsync();
             IsRefreshing = false;
         }
-
 
     }
 }
