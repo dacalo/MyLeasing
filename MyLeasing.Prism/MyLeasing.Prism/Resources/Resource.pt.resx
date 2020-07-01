@@ -368,4 +368,55 @@
   <data name="RoleError" xml:space="preserve">
     <value>Você deve selecionar uma role.</value>
   </data>
+  <data name="RFCPlaceHolder" xml:space="preserve">
+    <value>Introduza o seu</value>
+  </data>
+  <data name="FirstName" xml:space="preserve">
+    <value>Nome</value>
+  </data>
+  <data name="LastName" xml:space="preserve">
+    <value>Sobrenome</value>
+  </data>
+  <data name="FirstNamePlaceHolder" xml:space="preserve">
+    <value>Insira seu nome</value>
+  </data>
+  <data name="LastNamePlaceHolder" xml:space="preserve">
+    <value>Insira seu sobrenome</value>
+  </data>
+  <data name="Phone" xml:space="preserve">
+    <value>Telefone</value>
+  </data>
+  <data name="PhonePlaceHolder" xml:space="preserve">
+    <value>Insira o seu número de telefone</value>
+  </data>
+  <data name="RegisterAs" xml:space="preserve">
+    <value>Registar-se como:</value>
+  </data>
+  <data name="RegisterAsTitle" xml:space="preserve">
+    <value>Selecionar uma função</value>
+  </data>
+  <data name="PasswordConfirm" xml:space="preserve">
+    <value>Confirme a senha</value>
+  </data>
+  <data name="PasswordConfirmPlaceHolder" xml:space="preserve">
+    <value>Digite a senha confirmar ...!</value>
+  </data>
+  <data name="Registering" xml:space="preserve">
+    <value>Registrando</value>
+  </data>
+  <data name="AddressPlaceHolder2" xml:space="preserve">
+    <value>Digite seu endereço</value>
+  </data>
+  <data name="Lessee" xml:space="preserve">
+    <value>Inquilino</value>
+  </data>
+  <data name="Owner" xml:space="preserve">
+    <value>Proprietário</value>
+  </data>
+  <data name="Saving" xml:space="preserve">
+    <value>Salvando...</value>
+  </data>
+  <data name="Sending" xml:space="preserve">
+    <value>Enviando...</value>
+  </data>
 </root>

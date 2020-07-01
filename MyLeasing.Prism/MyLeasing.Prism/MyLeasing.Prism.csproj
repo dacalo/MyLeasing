@@ -5,6 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Acr.UserDialogs" Version="7.1.0.446" />
     <PackageReference Include="Syncfusion.Xamarin.SfBusyIndicator" Version="18.1.0.59" />
     <PackageReference Include="Syncfusion.Xamarin.SfRotator" Version="18.1.0.59" />
     <PackageReference Include="Xam.Plugin.Connectivity" Version="3.2.0" />
@@ -14,6 +15,7 @@
     <PackageReference Include="Xamarin.Forms" Version="4.7.0.968" />
     <PackageReference Include="Prism.DryIoc.Forms" Version="7.2.0.1422" />
     <PackageReference Include="Xamarin.Forms.Maps" Version="4.7.0.968" />
+    <PackageReference Include="Xamarin.Forms.Visual.Material" Version="4.7.0.968" />
   </ItemGroup>
 
   <ItemGroup>

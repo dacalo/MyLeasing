@@ -10,6 +10,7 @@ using MyLeasing.Common.Helpers;
 using Newtonsoft.Json;
 using System;
 using MyLeasing.Common.Business;
+using Acr.UserDialogs;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace MyLeasing.Prism

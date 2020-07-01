@@ -1,4 +1,5 @@
-﻿using MyLeasing.Common.Business;
+﻿using Acr.UserDialogs;
+using MyLeasing.Common.Business;
 using MyLeasing.Common.Helpers;
 using MyLeasing.Common.Models;
 using MyLeasing.Common.Services;
@@ -30,7 +31,7 @@ namespace MyLeasing.Prism.ViewModels
             IsRemember = true;
 
             //TODO: Delete those lines
-            Email = "divadchl@gmail.com";
+            Email = "dacalo.soporte@gmail.com";
             Password = "123456";
             _navigationService = navigationService;
             _apiService = apiService;
@@ -81,6 +82,7 @@ namespace MyLeasing.Prism.ViewModels
                 return;
             }
 
+            UserDialogs.Instance.ShowLoading(Languages.Loading);
             IsRunning = true;
             IsEnabled = false;
 
@@ -88,6 +90,7 @@ namespace MyLeasing.Prism.ViewModels
             {
                 IsEnabled = true;
                 IsRunning = false;
+                UserDialogs.Instance.HideLoading();
                 await App.Current.MainPage.DisplayAlert(Languages.Error, Languages.CheckConnection, Languages.Accept);
                 return;
             }
@@ -103,6 +106,7 @@ namespace MyLeasing.Prism.ViewModels
             if (!response.IsSuccess)
             {
                 IsRunning = false;
+                UserDialogs.Instance.HideLoading();
                 IsEnabled = true;
                 await App.Current.MainPage.DisplayAlert(Languages.Error, Languages.ErrorLogin, Languages.Accept);
                 Password = string.Empty;
@@ -116,6 +120,7 @@ namespace MyLeasing.Prism.ViewModels
             {
                 IsEnabled = true;
                 IsRunning = false;
+                UserDialogs.Instance.HideLoading();
                 await App.Current.MainPage.DisplayAlert(Languages.Error, Languages.ErrorToken, Languages.Accept);
                 return;
             }
@@ -126,6 +131,7 @@ namespace MyLeasing.Prism.ViewModels
             Settings.IsRemembered = IsRemember;
             await _navigationService.NavigateAsync("/LeasingMasterDetailPage/NavigationPage/PropertiesPage");
             IsRunning = false;
+            UserDialogs.Instance.HideLoading();
             IsEnabled = true;
         }
 

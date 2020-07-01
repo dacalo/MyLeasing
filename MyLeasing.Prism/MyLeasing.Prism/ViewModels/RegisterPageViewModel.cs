@@ -1,5 +1,4 @@
-﻿using System.Collections.ObjectModel;
-using System.Threading.Tasks;
+﻿using Acr.UserDialogs;
 using MyLeasing.Common.Business;
 using MyLeasing.Common.Helpers;
 using MyLeasing.Common.Models;
@@ -7,7 +6,8 @@ using MyLeasing.Common.Services;
 using MyLeasing.Prism.Helpers;
 using Prism.Commands;
 using Prism.Navigation;
-using Xamarin.Forms.Maps;
+using System.Collections.ObjectModel;
+using System.Threading.Tasks;
 
 namespace MyLeasing.Prism.ViewModels
 {
@@ -16,7 +16,6 @@ namespace MyLeasing.Prism.ViewModels
         private readonly INavigationService _navigationService;
         private readonly IApiService _apiService;
         private readonly IGeolocatorService _geolocatorService;
-        private bool _isRunning;
         private bool _isEnabled;
         private DelegateCommand _registerCommand;
 
@@ -55,13 +54,6 @@ namespace MyLeasing.Prism.ViewModels
 
         public ObservableCollection<Role> Roles { get; set; }
 
-
-        public bool IsRunning
-        {
-            get => _isRunning;
-            set => SetProperty(ref _isRunning, value);
-        }
-
         public bool IsEnabled
         {
             get => _isEnabled;
@@ -76,7 +68,7 @@ namespace MyLeasing.Prism.ViewModels
                 return;
             }
             
-            IsRunning = true;
+            UserDialogs.Instance.ShowLoading(Languages.Registering);
             IsEnabled = false;
 
             var request = new UserRequest
@@ -94,7 +86,7 @@ namespace MyLeasing.Prism.ViewModels
             if (!_apiService.CheckConnectionAsync())
             {
                 IsEnabled = true;
-                IsRunning = false;
+                UserDialogs.Instance.HideLoading();
                 await App.Current.MainPage.DisplayAlert(Languages.Error, Languages.CheckConnection, Languages.Accept);
                 return;
             }
@@ -105,7 +97,7 @@ namespace MyLeasing.Prism.ViewModels
                 "Account",
                 request);
 
-            IsRunning = false;
+            UserDialogs.Instance.HideLoading();
             IsEnabled = true;
 
             if (!response.IsSuccess)
@@ -212,7 +204,7 @@ namespace MyLeasing.Prism.ViewModels
             {
                 await App.Current.MainPage.DisplayAlert(
                     Languages.Error,
-                    Languages.PasswordError,
+                    Languages.ChangePasswordConfirm,
                     Languages.Accept);
                 return false;
             }
@@ -233,8 +225,8 @@ namespace MyLeasing.Prism.ViewModels
         {
             Roles = new ObservableCollection<Role>
             {
-                new Role { Id = 2, Name = "Lessee" },
-                new Role { Id = 1, Name = "Owner" }
+                new Role { Id = 2, Name = Languages.Lessee },
+                new Role { Id = 1, Name = Languages.Owner }
             };
         }
     }

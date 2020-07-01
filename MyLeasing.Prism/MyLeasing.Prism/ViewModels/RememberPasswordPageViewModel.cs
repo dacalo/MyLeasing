@@ -1,4 +1,5 @@
 ﻿using System.Threading.Tasks;
+using Acr.UserDialogs;
 using MyLeasing.Common.Business;
 using MyLeasing.Common.Helpers;
 using MyLeasing.Common.Models;
@@ -13,7 +14,6 @@ namespace MyLeasing.Prism.ViewModels
     {
         private readonly INavigationService _navigationService;
         private readonly IApiService _apiService;
-        private bool _isRunning;
         private bool _isEnabled;
         private DelegateCommand _recoverCommand;
 
@@ -31,12 +31,6 @@ namespace MyLeasing.Prism.ViewModels
 
         public string Email { get; set; }
 
-        public bool IsRunning
-        {
-            get => _isRunning;
-            set => SetProperty(ref _isRunning, value);
-        }
-
         public bool IsEnabled
         {
             get => _isEnabled;
@@ -51,7 +45,7 @@ namespace MyLeasing.Prism.ViewModels
                 return;
             }
 
-            IsRunning = true;
+            UserDialogs.Instance.ShowLoading(Languages.Recovery);
             IsEnabled = false;
 
             var request = new EmailRequest
@@ -62,7 +56,7 @@ namespace MyLeasing.Prism.ViewModels
             if (!_apiService.CheckConnectionAsync())
             {
                 IsEnabled = true;
-                IsRunning = false;
+                UserDialogs.Instance.HideLoading();
                 await App.Current.MainPage.DisplayAlert(Languages.Error, Languages.CheckConnection, Languages.Accept);
                 return;
             }
@@ -73,7 +67,7 @@ namespace MyLeasing.Prism.ViewModels
                 "Account/RecoverPassword",
                 request);
 
-            IsRunning = false;
+            UserDialogs.Instance.HideLoading();
             IsEnabled = true;
 
             if (!response.IsSuccess)

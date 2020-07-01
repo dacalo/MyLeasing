@@ -137,6 +137,29 @@ namespace MyLeasing.Prism.Helpers
         public static string NewUser => Resource.NewUser;
         public static string PhoneNumberError => Resource.PhoneNumberError;
         public static string RoleError => Resource.RoleError;
-
+        public static string RFCPlaceHolder => Resource.RFCPlaceHolder;
+        public static string FirstName => Resource.FirstName;
+        public static string FirstNamePlaceHolder => Resource.FirstNamePlaceHolder;
+        public static string LastName => Resource.LastName;
+        public static string LastNamePlaceHolder => Resource.LastNamePlaceHolder;
+        public static string Phone => Resource.Phone;
+        public static string PhonePlaceHolder => Resource.PhonePlaceHolder;
+        public static string RegisterAs => Resource.RegisterAs;
+        public static string RegisterAsTitle => Resource.RegisterAsTitle;
+        public static string PasswordConfirm => Resource.PasswordConfirm;
+        public static string PasswordConfirmPlaceHolder => Resource.PasswordConfirmPlaceHolder;
+        public static string Registering => Resource.Registering;
+        public static string AddressPlaceHolder2 => Resource.AddressPlaceHolder2;
+        public static string Lessee => Resource.Lessee;
+        public static string Owner => Resource.Owner;
+        public static string Saving => Resource.Saving;
+        public static string Sending => Resource.Sending;
+        public static string CurrentPassword => Resource.CurrentPassword;
+        public static string CurrentPasswordPlaceHolder => Resource.CurrentPasswordPlaceHolder;
+        public static string NewPassword => Resource.NewPassword;
+        public static string NewPasswordPlaceHolder => Resource.NewPasswordPlaceHolder;
+        public static string ConfirmNewPassword => Resource.ConfirmNewPassword;
+        public static string ConfirmNewPasswordPlaceHolder => Resource.ConfirmNewPasswordPlaceHolder;
+        public static string Recovery => Resource.Recovery;
     }
 }
