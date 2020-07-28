@@ -440,4 +440,31 @@
   <data name="Recovery" xml:space="preserve">
     <value>Recovery...</value>
   </data>
+  <data name="StartDate" xml:space="preserve">
+    <value>Start Date</value>
+  </data>
+  <data name="EndDate" xml:space="preserve">
+    <value>End Date</value>
+  </data>
+  <data name="PropertiesOf" xml:space="preserve">
+    <value>Properties Of:</value>
+  </data>
+  <data name="AvailableProperties" xml:space="preserve">
+    <value>Available Properties</value>
+  </data>
+  <data name="LoaderImage" xml:space="preserve">
+    <value>Loader Image</value>
+  </data>
+  <data name="Type" xml:space="preserve">
+    <value>Type</value>
+  </data>
+  <data name="NotAddressFound" xml:space="preserve">
+    <value>Not Address Found</value>
+  </data>
+  <data name="NotLocationAvailable" xml:space="preserve">
+    <value>Not Location Available</value>
+  </data>
+  <data name="SelectAnAdrress" xml:space="preserve">
+    <value>Select An Address</value>
+  </data>
 </root>

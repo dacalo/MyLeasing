@@ -62,11 +62,11 @@ namespace MyLeasing.Prism.ViewModels
             _owner = JsonConvert.DeserializeObject<OwnerResponse>(Settings.Owner);
             if (_owner.RoleId == 1)
             {
-                Title = $"Properties of: {_owner.FullName}";
+                Title = $"{Languages.PropertiesOf} {_owner.FullName}";
             }
             else
             {
-                Title = "Available Properties";
+                Title = Languages.AvailableProperties;
             }
 
             Properties = new ObservableCollection<PropertyItemViewModel>(_owner.Properties.Select(p => new PropertyItemViewModel(_navigationService)
@@ -101,7 +101,7 @@ namespace MyLeasing.Prism.ViewModels
         {
             var token = JsonConvert.DeserializeObject<TokenResponse>(Settings.Token);
 
-            if (!_apiService.CheckConnectionAsync())
+            if (!_apiService.CheckConnection())
             {
                 await App.Current.MainPage.DisplayAlert(Languages.Error, Languages.CheckConnection, Languages.Accept);
                 return;

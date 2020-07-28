@@ -161,5 +161,17 @@ namespace MyLeasing.Prism.Helpers
         public static string ConfirmNewPassword => Resource.ConfirmNewPassword;
         public static string ConfirmNewPasswordPlaceHolder => Resource.ConfirmNewPasswordPlaceHolder;
         public static string Recovery => Resource.Recovery;
+        public static string StartDate => Resource.StartDate;
+        public static string EndDate => Resource.EndDate;
+        public static string PropertiesOf => Resource.PropertiesOf;
+        public static string AvailableProperties => Resource.AvailableProperties;
+        public static string LoaderImage => Resource.LoaderImage;
+        public static string Type => Resource.Type;
+        public static string NotAddressFound => Resource.NotAddressFound;
+
+        public static string NotLocationAvailable => Resource.NotLocationAvailable;
+
+        public static string SelectAnAdrress => Resource.SelectAnAdrress;
+
     }
 }

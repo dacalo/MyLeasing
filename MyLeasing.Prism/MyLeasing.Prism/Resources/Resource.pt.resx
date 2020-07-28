@@ -419,4 +419,52 @@
   <data name="Sending" xml:space="preserve">
     <value>Enviando...</value>
   </data>
+  <data name="CurrentPassword" xml:space="preserve">
+    <value>Senha atual</value>
+  </data>
+  <data name="CurrentPasswordPlaceHolder" xml:space="preserve">
+    <value>Senha atual</value>
+  </data>
+  <data name="NewPassword" xml:space="preserve">
+    <value>&amp;Nova senha:</value>
+  </data>
+  <data name="NewPasswordPlaceHolder" xml:space="preserve">
+    <value>&amp;Nova senha:</value>
+  </data>
+  <data name="ConfirmNewPassword" xml:space="preserve">
+    <value>Confirmar nova senha</value>
+  </data>
+  <data name="ConfirmNewPasswordPlaceHolder" xml:space="preserve">
+    <value>Confirmar nova senha</value>
+  </data>
+  <data name="Recovery" xml:space="preserve">
+    <value>Recuperação</value>
+  </data>
+  <data name="StartDate" xml:space="preserve">
+    <value>Data de Início</value>
+  </data>
+  <data name="EndDate" xml:space="preserve">
+    <value>Data de Término</value>
+  </data>
+  <data name="PropertiesOf" xml:space="preserve">
+    <value>Propriedades de</value>
+  </data>
+  <data name="AvailableProperties" xml:space="preserve">
+    <value>Propriedades disponíveis</value>
+  </data>
+  <data name="LoaderImage" xml:space="preserve">
+    <value>Imagem do carregador?</value>
+  </data>
+  <data name="Type" xml:space="preserve">
+    <value>Tipo</value>
+  </data>
+  <data name="NotAddressFound" xml:space="preserve">
+    <value>Endereço encontrado!</value>
+  </data>
+  <data name="NotLocationAvailable" xml:space="preserve">
+    <value>Não está disponível!</value>
+  </data>
+  <data name="SelectAnAdrress" xml:space="preserve">
+    <value>Selecionar endereço</value>
+  </data>
 </root>

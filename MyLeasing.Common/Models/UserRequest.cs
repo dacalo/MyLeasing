@@ -29,5 +29,10 @@ namespace MyLeasing.Common.Models
 
         [Required]
         public int RoleId { get; set; } // 1: Owner, 2: Lessee
+
+        public double Longitude { get; set; }
+
+        public double Latitude { get; set; }
+
     }
 }

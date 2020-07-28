@@ -19,7 +19,7 @@ namespace MyLeasing.Common.Services
             string controller,
             TokenRequest request);
 
-        bool CheckConnectionAsync();
+        bool CheckConnection();
 
         Task<Response<object>> RegisterUserAsync(
             string urlBase,

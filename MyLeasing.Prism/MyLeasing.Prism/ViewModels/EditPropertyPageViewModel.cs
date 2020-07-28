@@ -1,4 +1,5 @@
-﻿using MyLeasing.Common.Business;
+﻿using Acr.UserDialogs;
+using MyLeasing.Common.Business;
 using MyLeasing.Common.Helpers;
 using MyLeasing.Common.Models;
 using MyLeasing.Common.Services;
@@ -21,7 +22,6 @@ namespace MyLeasing.Prism.ViewModels
     {
         private PropertyResponse _property;
         private ImageSource _imageSource;
-        private bool _isRunning;
         private bool _isEnabled;
         private bool _isEdit;
         private readonly INavigationService _navigationService;
@@ -42,12 +42,6 @@ namespace MyLeasing.Prism.ViewModels
             _navigationService = navigationService;
             _apiService = apiService;
             IsEnabled = true;
-        }
-
-        public bool IsRunning
-        {
-            get => _isRunning;
-            set => SetProperty(ref _isRunning, value);
         }
 
         public bool IsEdit
@@ -142,7 +136,7 @@ namespace MyLeasing.Prism.ViewModels
         {
             var token = JsonConvert.DeserializeObject<TokenResponse>(Settings.Token);
 
-            if (!_apiService.CheckConnectionAsync())
+            if (!_apiService.CheckConnection())
             {
                 await App.Current.MainPage.DisplayAlert(Languages.Error, Languages.CheckConnection, Languages.Accept);
                 return;
@@ -221,7 +215,7 @@ namespace MyLeasing.Prism.ViewModels
                 return;
             }
 
-            IsRunning = true;
+            UserDialogs.Instance.ShowLoading(Languages.Loading);
             IsEnabled = false;
 
             var token = JsonConvert.DeserializeObject<TokenResponse>(Settings.Token);
@@ -243,10 +237,10 @@ namespace MyLeasing.Prism.ViewModels
                 Stratum = Stratum.Id
             };
 
-            if (!_apiService.CheckConnectionAsync())
+            if (!_apiService.CheckConnection())
             {
                 IsEnabled = true;
-                IsRunning = false;
+                UserDialogs.Instance.HideLoading();
                 await App.Current.MainPage.DisplayAlert(Languages.Error, Languages.CheckConnection, Languages.Accept);
                 return;
             }
@@ -311,7 +305,7 @@ namespace MyLeasing.Prism.ViewModels
                         token.Token);
                     if (!response3.IsSuccess)
                     {
-                        IsRunning = false;
+                        UserDialogs.Instance.HideLoading();
                         IsEnabled = true;
                         await App.Current.MainPage.DisplayAlert(Languages.Error, response3.Message, Languages.Accept);
                     }
@@ -320,7 +314,7 @@ namespace MyLeasing.Prism.ViewModels
 
             if (!response.IsSuccess)
             {
-                IsRunning = false;
+                UserDialogs.Instance.HideLoading();
                 IsEnabled = true;
                 await App.Current.MainPage.DisplayAlert(Languages.Error, response.Message, Languages.Accept);
                 return;
@@ -328,7 +322,7 @@ namespace MyLeasing.Prism.ViewModels
 
             await PropertiesPageViewModel.GetInstance().UpdateOwnerAsync();
 
-            IsRunning = false;
+            UserDialogs.Instance.HideLoading();
             IsEnabled = true;
 
             await App.Current.MainPage.DisplayAlert(
@@ -352,15 +346,15 @@ namespace MyLeasing.Prism.ViewModels
                 return;
             }
 
-            IsRunning = true;
+            UserDialogs.Instance.ShowLoading(Languages.Loading);
             IsEnabled = false;
 
             var token = JsonConvert.DeserializeObject<TokenResponse>(Settings.Token);
 
-            if (!_apiService.CheckConnectionAsync())
+            if (!_apiService.CheckConnection())
             {
                 IsEnabled = true;
-                IsRunning = false;
+                UserDialogs.Instance.HideLoading();
                 await App.Current.MainPage.DisplayAlert(Languages.Error, Languages.CheckConnection, Languages.Accept);
                 return;
             }
@@ -375,7 +369,7 @@ namespace MyLeasing.Prism.ViewModels
 
             if (!response.IsSuccess)
             {
-                IsRunning = false;
+                UserDialogs.Instance.HideLoading();
                 IsEnabled = true;
                 await App.Current.MainPage.DisplayAlert(Languages.Error, response.Message, Languages.Accept);
                 return;
@@ -383,7 +377,7 @@ namespace MyLeasing.Prism.ViewModels
 
             await PropertiesPageViewModel.GetInstance().UpdateOwnerAsync();
 
-            IsRunning = false;
+            UserDialogs.Instance.HideLoading();
             IsEnabled = true;
             await _navigationService.GoBackToRootAsync();
         }

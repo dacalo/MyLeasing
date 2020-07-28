@@ -6,8 +6,11 @@ using MyLeasing.Common.Services;
 using MyLeasing.Prism.Helpers;
 using Prism.Commands;
 using Prism.Navigation;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
 using System.Threading.Tasks;
+using Xamarin.Forms.Maps;
 
 namespace MyLeasing.Prism.ViewModels
 {
@@ -17,6 +20,8 @@ namespace MyLeasing.Prism.ViewModels
         private readonly IApiService _apiService;
         private readonly IGeolocatorService _geolocatorService;
         private bool _isEnabled;
+        private Position _position;
+        private string _address;
         private DelegateCommand _registerCommand;
 
         public RegisterPageViewModel(
@@ -40,8 +45,6 @@ namespace MyLeasing.Prism.ViewModels
 
         public string LastName { get; set; }
 
-        public string Address { get; set; }
-
         public string Email { get; set; }
 
         public string Phone { get; set; }
@@ -59,6 +62,13 @@ namespace MyLeasing.Prism.ViewModels
             get => _isEnabled;
             set => SetProperty(ref _isEnabled, value);
         }
+
+        public string Address
+        {
+            get => _address;
+            set => SetProperty(ref _address, value);
+        }
+
 
         private async void Register()
         {
@@ -80,10 +90,12 @@ namespace MyLeasing.Prism.ViewModels
                 LastName = LastName,
                 Password = Password,
                 Phone = Phone,
-                RoleId = Role.Id
+                RoleId = Role.Id,
+                Longitude = _position.Longitude,
+                Latitude = _position.Latitude
             };
 
-            if (!_apiService.CheckConnectionAsync())
+            if (!_apiService.CheckConnection())
             {
                 IsEnabled = true;
                 UserDialogs.Instance.HideLoading();
@@ -154,6 +166,13 @@ namespace MyLeasing.Prism.ViewModels
                     Languages.Accept);
                 return false;
             }
+
+            var isValidAddress = await ValidateAddressAsync();
+            if (!isValidAddress)
+            {
+                return false;
+            }
+
 
             if (string.IsNullOrEmpty(Email) || !RegexHelper.IsValidEmail(Email))
             {
@@ -229,5 +248,90 @@ namespace MyLeasing.Prism.ViewModels
                 new Role { Id = 1, Name = Languages.Owner }
             };
         }
+
+        private async Task<bool> ValidateAddressAsync()
+        {
+            var geoCoder = new Geocoder();
+            var locations = await geoCoder.GetPositionsForAddressAsync(Address);
+            var locationList = locations.ToList();
+            if (locationList.Count == 0)
+            {
+                var response = await App.Current.MainPage.DisplayAlert(
+                    Languages.Error,
+                    Languages.NotAddressFound,
+                    Languages.Yes,
+                    Languages.No);
+                if (response)
+                {
+                    await _geolocatorService.GetLocationAsync();
+                    if (_geolocatorService.Latitude != 0 && _geolocatorService.Longitude != 0)
+                    {
+                        _position = new Position(
+                            _geolocatorService.Latitude,
+                            _geolocatorService.Longitude);
+
+                        var list = await geoCoder.GetAddressesForPositionAsync(_position);
+                        Address = list.FirstOrDefault();
+                        return true;
+                    }
+                    else
+                    {
+                        await App.Current.MainPage.DisplayAlert(
+                            Languages.Error,
+                            Languages.NotLocationAvailable,
+                            Languages.Accept);
+                        return false;
+                    }
+                }
+                else
+                {
+                    return false;
+                }
+
+            }
+
+            if (locationList.Count == 1)
+            {
+                _position = locationList.FirstOrDefault();
+                return true;
+            }
+
+            if (locationList.Count > 1)
+            {
+                //var addresses = new List<Address>();
+                //var names = new List<string>();
+                //foreach (var location in locationList)
+                //{
+                //    var list = await geoCoder.GetAddressesForPositionAsync(location);
+                //    names.AddRange(list);
+                //    foreach (var item in list)
+                //    {
+                //        addresses.Add(new Address
+                //        {
+                //            Name = item,
+                //            Latitude = location.Latitude,
+                //            Longitude = location.Longitude
+                //        });
+                //    }
+                //}
+
+                //var source = await App.Current.MainPage.DisplayActionSheet(
+                //    Languages.SelectAnAdrress,
+                //    Languages.Cancel,
+                //    null,
+                //    names.ToArray());
+                //if (source == Languages.Cancel)
+                //{
+                //    return false;
+                //}
+
+                //Address = source;
+                //var address = addresses.FirstOrDefault(a => a.Name == source);
+                //_position = new Position(address.Latitude, address.Longitude);
+            }
+
+            return true;
+        }
+
     }
 }

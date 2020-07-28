@@ -3,9 +3,11 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
              xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"             
+             xmlns:i18n="clr-namespace:MyLeasing.Prism.Helpers"
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="MyLeasing.Prism.Views.PropertiesPage"
              BackgroundColor="{StaticResource colorBackgroud}"
+             Visual="Material"
              Title="{Binding Title}">
 
     <ContentPage.ToolbarItems>
@@ -37,7 +39,7 @@
                                     DownsampleToViewSize = "true"
                                     ErrorPlaceholder= "ErrorImage"
                                     HeightRequest="200"
-                                    LoadingPlaceholder= "LoaderImage"
+                                    LoadingPlaceholder= "{i18n:Translate LoaderImage}"
                                     RetryCount= "3"
                                     RetryDelay= "600"
                                     Source="{Binding FirstImage}"/>
@@ -63,7 +65,7 @@
                                             Grid.Row="0"
                                             Grid.Column="0"
                                             FontAttributes="Bold"
-                                            Text="Neighborhood"/>
+                                            Text="{i18n:Translate Neighborhood}"/>
                                         <Label
                                             Grid.Row="0"
                                             Grid.Column="1"
@@ -72,7 +74,7 @@
                                             Grid.Row="1"
                                             Grid.Column="0"
                                             FontAttributes="Bold"
-                                            Text="Address"/>
+                                            Text="{i18n:Translate Address}"/>
                                         <Label
                                             Grid.Row="1"
                                             Grid.Column="1"
@@ -81,7 +83,7 @@
                                             Grid.Row="2"
                                             Grid.Column="0"
                                             FontAttributes="Bold"
-                                            Text="Price"/>
+                                            Text="{i18n:Translate Price}"/>
                                         <Label
                                             Grid.Row="2"
                                             Grid.Column="1"
@@ -90,7 +92,7 @@
                                             Grid.Row="3"
                                             Grid.Column="0"
                                             FontAttributes="Bold"
-                                            Text="Type"/>
+                                            Text="{i18n:Translate Type}"/>
                                         <Label
                                             Grid.Row="3"
                                             Grid.Column="1"
@@ -99,7 +101,7 @@
                                             Grid.Row="4"
                                             Grid.Column="0"
                                             FontAttributes="Bold"
-                                            Text="Is Available?"
+                                            Text="{i18n:Translate IsAvailable}"
                                             VerticalOptions="Center"/>
                                         <CheckBox
                                             Grid.Row="4"

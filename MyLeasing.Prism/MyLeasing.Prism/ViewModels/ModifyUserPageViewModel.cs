@@ -1,4 +1,5 @@
-﻿using MyLeasing.Common.Business;
+﻿using Acr.UserDialogs;
+using MyLeasing.Common.Business;
 using MyLeasing.Common.Helpers;
 using MyLeasing.Common.Models;
 using MyLeasing.Common.Services;
@@ -14,7 +15,6 @@ namespace MyLeasing.Prism.ViewModels
     {
         private readonly INavigationService _navigationService;
         private readonly IApiService _apiService;
-        private bool _isRunning;
         private bool _isEnabled;
         private OwnerResponse _owner;
         private DelegateCommand _saveCommand;
@@ -41,12 +41,6 @@ namespace MyLeasing.Prism.ViewModels
             set => SetProperty(ref _owner, value);
         }
 
-        public bool IsRunning
-        {
-            get => _isRunning;
-            set => SetProperty(ref _isRunning, value);
-        }
-
         public bool IsEnabled
         {
             get => _isEnabled;
@@ -61,7 +55,7 @@ namespace MyLeasing.Prism.ViewModels
                 return;
             }
 
-            IsRunning = true;
+            UserDialogs.Instance.ShowLoading(Languages.Saving);
             IsEnabled = false;
 
             var userRequest = new UserRequest
@@ -77,10 +71,10 @@ namespace MyLeasing.Prism.ViewModels
 
             var token = JsonConvert.DeserializeObject<TokenResponse>(Settings.Token);
 
-            if (!_apiService.CheckConnectionAsync())
+            if (!_apiService.CheckConnection())
             {
                 IsEnabled = true;
-                IsRunning = false;
+                UserDialogs.Instance.HideLoading();
                 await App.Current.MainPage.DisplayAlert(Languages.Error, Languages.CheckConnection, Languages.Accept);
                 return;
             }
@@ -93,7 +87,7 @@ namespace MyLeasing.Prism.ViewModels
                 Constants.TokenType,
                 token.Token);
 
-            IsRunning = false;
+            UserDialogs.Instance.HideLoading();
             IsEnabled = true;
 
             if (!response.IsSuccess)

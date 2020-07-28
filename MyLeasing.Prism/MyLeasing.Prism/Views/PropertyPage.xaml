@@ -33,7 +33,7 @@
                                 DownsampleToViewSize = "true"
                                 ErrorPlaceholder= "ErrorImage"
                                 HeightRequest="300"
-                                LoadingPlaceholder= "LoaderImage"
+                                LoadingPlaceholder= "{i18n:Translate LoaderImage}"
                                 RetryCount= "3"
                                 RetryDelay= "600"
                                 Source="{Binding Image}"/>

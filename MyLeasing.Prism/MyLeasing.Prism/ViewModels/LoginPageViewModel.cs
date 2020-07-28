@@ -86,7 +86,7 @@ namespace MyLeasing.Prism.ViewModels
             IsRunning = true;
             IsEnabled = false;
 
-            if (!_apiService.CheckConnectionAsync())
+            if (!_apiService.CheckConnection())
             {
                 IsEnabled = true;
                 IsRunning = false;

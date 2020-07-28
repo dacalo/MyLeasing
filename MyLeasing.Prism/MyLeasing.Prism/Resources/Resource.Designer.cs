@@ -124,6 +124,15 @@ namespace MyLeasing.Prism.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Available Properties.
+        /// </summary>
+        public static string AvailableProperties {
+            get {
+                return ResourceManager.GetString("AvailableProperties", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Cancel.
         /// </summary>
         public static string Cancel {
@@ -376,6 +385,15 @@ namespace MyLeasing.Prism.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to End Date.
+        /// </summary>
+        public static string EndDate {
+            get {
+                return ResourceManager.GetString("EndDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Error.
         /// </summary>
         public static string Error {
@@ -520,6 +538,15 @@ namespace MyLeasing.Prism.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Loader Image.
+        /// </summary>
+        public static string LoaderImage {
+            get {
+                return ResourceManager.GetString("LoaderImage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Loading....
         /// </summary>
         public static string Loading {
@@ -633,6 +660,24 @@ namespace MyLeasing.Prism.Resources {
         public static string No {
             get {
                 return ResourceManager.GetString("No", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Not Address Found.
+        /// </summary>
+        public static string NotAddressFound {
+            get {
+                return ResourceManager.GetString("NotAddressFound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Not Location Available.
+        /// </summary>
+        public static string NotLocationAvailable {
+            get {
+                return ResourceManager.GetString("NotLocationAvailable", resourceCulture);
             }
         }
         
@@ -768,6 +813,15 @@ namespace MyLeasing.Prism.Resources {
         public static string Properties {
             get {
                 return ResourceManager.GetString("Properties", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Properties Of:.
+        /// </summary>
+        public static string PropertiesOf {
+            get {
+                return ResourceManager.GetString("PropertiesOf", resourceCulture);
             }
         }
         
@@ -952,6 +1006,15 @@ namespace MyLeasing.Prism.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Select An Address.
+        /// </summary>
+        public static string SelectAnAdrress {
+            get {
+                return ResourceManager.GetString("SelectAnAdrress", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Sending....
         /// </summary>
         public static string Sending {
@@ -988,6 +1051,15 @@ namespace MyLeasing.Prism.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Start Date.
+        /// </summary>
+        public static string StartDate {
+            get {
+                return ResourceManager.GetString("StartDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Stratum.
         /// </summary>
         public static string Stratum {
@@ -1011,6 +1083,15 @@ namespace MyLeasing.Prism.Resources {
         public static string StratumPlaceHolder {
             get {
                 return ResourceManager.GetString("StratumPlaceHolder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Type.
+        /// </summary>
+        public static string Type {
+            get {
+                return ResourceManager.GetString("Type", resourceCulture);
             }
         }
         

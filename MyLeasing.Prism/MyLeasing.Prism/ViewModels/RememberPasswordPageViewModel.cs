@@ -53,7 +53,7 @@ namespace MyLeasing.Prism.ViewModels
                 Email = Email
             };
 
-            if (!_apiService.CheckConnectionAsync())
+            if (!_apiService.CheckConnection())
             {
                 IsEnabled = true;
                 UserDialogs.Instance.HideLoading();

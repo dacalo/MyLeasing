@@ -107,7 +107,7 @@ namespace MyLeasing.Common.Services
             }
         }
 
-        public bool CheckConnectionAsync()
+        public bool CheckConnection()
         {
             if(!(Connectivity.NetworkAccess == NetworkAccess.Internet))
                 return false;

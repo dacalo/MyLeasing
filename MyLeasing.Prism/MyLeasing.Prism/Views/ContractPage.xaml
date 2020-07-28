@@ -2,6 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
          	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
          	xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+            xmlns:i18n="clr-namespace:MyLeasing.Prism.Helpers"
          	prism:ViewModelLocator.AutowireViewModel="True"
          	x:Class="MyLeasing.Prism.Views.ContractPage"
             BackgroundColor="{StaticResource colorBackgroud}"
@@ -34,7 +35,7 @@
                 	Grid.Row="0"
                 	Grid.Column="0"
                 	FontAttributes="Bold"
-                	Text="Price"/>
+                	Text="{i18n:Translate Price}"/>
                 <Label
                 	Grid.Row="0"
                 	Grid.Column="1"
@@ -44,7 +45,7 @@
                 	Grid.Row="1"
                 	Grid.Column="0"
                 	FontAttributes="Bold"
-                	Text="Start Date"/>
+                	Text="{i18n:Translate StartDate}"/>
                 <Label
                 	Grid.Row="1"
                 	Grid.Column="1"
@@ -54,7 +55,7 @@
                 	Grid.Row="2"
                 	Grid.Column="0"
                 	FontAttributes="Bold"
-                	Text="End Date"/>
+                	Text="{i18n:Translate EndDate}"/>
                 <Label
                 	Grid.Row="2"
                 	Grid.Column="1"
@@ -64,7 +65,7 @@
                 	Grid.Row="3"
                 	Grid.Column="0"
                 	FontAttributes="Bold"
-                	Text="Is Active?"
+                	Text="{i18n:Translate IsAvailable}"
                 	VerticalOptions="Center"/>
                 <CheckBox
                 	Grid.Row="3"
@@ -75,7 +76,7 @@
                 	Grid.Row="4"
                 	Grid.Column="0"
                 	FontAttributes="Bold"
-                	Text="Lessee"/>
+                	Text="{i18n:Translate Lessee}"/>
                 <Label
                 	Grid.Row="4"
                 	Grid.Column="1"
@@ -85,7 +86,7 @@
                 	Grid.Row="5"
                 	Grid.Column="0"
                 	FontAttributes="Bold"
-                	Text="Remarks"/>
+                	Text="{i18n:Translate Remarks}"/>
                 <Label
                 	Grid.Row="5"
                 	Grid.Column="1"

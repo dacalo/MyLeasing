@@ -420,4 +420,52 @@
   <data name="Sending" xml:space="preserve">
     <value>Enviando...</value>
   </data>
+  <data name="CurrentPassword" xml:space="preserve">
+    <value>Contraseña actual</value>
+  </data>
+  <data name="CurrentPasswordPlaceHolder" xml:space="preserve">
+    <value>Contraseña actual...</value>
+  </data>
+  <data name="NewPassword" xml:space="preserve">
+    <value>Nueva contraseña</value>
+  </data>
+  <data name="NewPasswordPlaceHolder" xml:space="preserve">
+    <value>Nueva contraseña...</value>
+  </data>
+  <data name="ConfirmNewPassword" xml:space="preserve">
+    <value>Confirmar contraseña nueva</value>
+  </data>
+  <data name="ConfirmNewPasswordPlaceHolder" xml:space="preserve">
+    <value>Confirmar contraseña nueva...</value>
+  </data>
+  <data name="Recovery" xml:space="preserve">
+    <value>Recuperación</value>
+  </data>
+  <data name="StartDate" xml:space="preserve">
+    <value>Fecha de inicio</value>
+  </data>
+  <data name="EndDate" xml:space="preserve">
+    <value>Fecha final</value>
+  </data>
+  <data name="PropertiesOf" xml:space="preserve">
+    <value>Propiedades de:</value>
+  </data>
+  <data name="AvailableProperties" xml:space="preserve">
+    <value>Inmuebles disponibles</value>
+  </data>
+  <data name="LoaderImage" xml:space="preserve">
+    <value>Cargando imagen</value>
+  </data>
+  <data name="Type" xml:space="preserve">
+    <value>Tipo</value>
+  </data>
+  <data name="NotAddressFound" xml:space="preserve">
+    <value>Dirección no encontrada</value>
+  </data>
+  <data name="NotLocationAvailable" xml:space="preserve">
+    <value>No hay ubicación disponible</value>
+  </data>
+  <data name="SelectAnAdrress" xml:space="preserve">
+    <value>Seleccionar una dirección</value>
+  </data>
 </root>

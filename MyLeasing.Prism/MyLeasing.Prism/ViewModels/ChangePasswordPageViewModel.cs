@@ -63,7 +63,7 @@ namespace MyLeasing.Prism.ViewModels
                 OldPassword = CurrentPassword
             };
 
-            if (!_apiService.CheckConnectionAsync())
+            if (!_apiService.CheckConnection())
             {
                 IsEnabled = true;
                 UserDialogs.Instance.HideLoading();

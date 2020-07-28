@@ -2,6 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
          	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
          	xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+            xmlns:i18n="clr-namespace:MyLeasing.Prism.Helpers"
          	prism:ViewModelLocator.AutowireViewModel="True"
          	x:Class="MyLeasing.Prism.Views.ContractsPage"
             IconImageSource="ic_action_list_alt"
@@ -23,15 +24,15 @@
             <Label
             	Grid.Column="0"
             	FontAttributes="Bold"
-            	Text="Start Date"/>
+            	Text="{i18n:Translate StartDate}"/>
             <Label
             	Grid.Column="1"
             	FontAttributes="Bold"
-            	Text="End Date"/>
+            	Text="{i18n:Translate EndDate}"/>
             <Label
             	Grid.Column="2"
             	FontAttributes="Bold"
-            	Text="Lessee"/>
+            	Text="{i18n:Translate Lessee}"/>
         </Grid>
         <ListView
         	HasUnevenRows="True"
