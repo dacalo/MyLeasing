@@ -13,6 +13,9 @@
     using Microsoft.AspNetCore.Identity;
     using Microsoft.IdentityModel.Tokens;
     using System.Text;
+    using Microsoft.OpenApi.Models;
+    using System;
+    using Xamarin.Forms;
 
     public class Startup
     {
@@ -80,11 +83,40 @@
             services.AddScoped<IMailHelper, MailHelper>();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+
+            services.AddSwaggerGen(config =>
+            {
+                config.SwaggerDoc("v1", new OpenApiInfo 
+                { 
+                    Title = "API My Leasing", 
+                    Version = "v1", 
+                    Description = "Documentación del API",
+                    TermsOfService = new Uri("http://dacalo-001-site4.atempurl.com/"),
+                    License = new OpenApiLicense
+                    {
+                        Name = "MIT",
+                        Url = new Uri("https://es.lmgtfy.com/?q=MIT+License")
+                    }, 
+                    Contact = new OpenApiContact
+                    {
+                        Name = "David Chávez López",
+                        Email = "dacalo.soporte@gmail.com",
+                        Url = new Uri("http://dacalo-001-site4.atempurl.com/")
+                    }
+                });
+            });
+            services.AddSwaggerGenNewtonsoftSupport();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
+            app.UseSwagger();
+            app.UseSwaggerUI(config =>
+            {
+                config.SwaggerEndpoint("/swagger/v1/swagger.json", "Api de Ejemplo Swagger");
+            });
+            
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -108,6 +140,8 @@
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
+
+            
         }
     }
 }
